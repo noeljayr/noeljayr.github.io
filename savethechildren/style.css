@@ -7,7 +7,7 @@
 }
 
 html {
-  font-size: clamp(13px, 1.5vw, 1.1em);
+  font-size: clamp(11px, 1.5vw, 1.1em);
 }
 
 body {
@@ -21,7 +21,7 @@ body {
 
 .warning-popup {
   position: fixed;
-  max-width: 80%;
+  max-width: 60%;
   background-color: #fff;
   padding: 10px;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.37);
@@ -29,74 +29,66 @@ body {
   top: 10px;
   border-radius: 5px;
   font-size: 0.8rem;
-  display: grid;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
   justify-content: center;
-  grid-template-columns: auto auto auto;
-  grid-template-rows: 1fr;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.37);
 }
 
-.warning-popup::after {
-  content: "";
-  position: absolute;
-  height: 2px;
-  bottom: 0;
-  width: 1%;
-  transition: width 9.5s;
-  background-color: #da291c;
-  visibility: hidden;
-  opacity: 0;
+.top {
+  display: flex;
+  align-items: center;
+  align-items: flex-end;
 }
 
-.warning-active::after {
-  width: 100%;
-  transition: width 9.5s;
-  opacity: 1;
-  visibility: visible;
-}
-
-.disable-warning, .pop-close{
-  visibility: hidden;
-  top: -100%;
-  transition: ease 3s;
-}
-
-
-
-.warning-popup .warning {
-  font-size: 1.2rem;
+.top {
+  font-size: 1.3rem;
   font-weight: bolder;
-  color: #da291c;
 }
 
-.warning-popup .left, .warning-popup .right {
-  height: 100%;
-  width: 50px;
-  display: grid;
-  align-items: center;
-  justify-content: center;
-  margin-right: 10px;
+.top i {
+  color: #da291c;
+  font-size: 2.2rem;
+  margin-top: 2px;
+  margin-right: 0.5rem;
 }
 
-.warning-popup .right{
-  margin: 0;
-  position: absolute;
-  right: -10px;
-  top: -25px;
+.warning-popup p {
+  max-width: 45ch;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
 }
-.warning-popup .right i{
-  font-size: 1.5rem;
-  color: #da291c;
+
+.close-btn {
+  background-color: #da291c;
+  width: fit-content;
+  padding: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: 5px;
+  color: #fff;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.37);
+  margin-top: 1rem;
+  font-weight: bold;
   cursor: pointer;
 }
 
-
-
-
-.warning-popup .left i {
-  font-size: 2.5rem;
-  color: #da291c;
+.close-btn:hover {
+  transition: ease 0.3s;
+  background-color: #ff1100;
 }
+
+
+.pop-close{
+  visibility: hidden;
+  top: -100%;
+  transition: ease 2s;
+}
+
+
 .navbar {
   width: 95%;
   height: fit-content;

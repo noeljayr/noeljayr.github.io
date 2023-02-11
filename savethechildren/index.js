@@ -1,15 +1,12 @@
 const waringBar = document.querySelector(".warning-popup");
-const closePop = document.querySelector(".bi-x-circle-fill");
+const closePop = document.querySelector(".close-btn");
 
 closePop.addEventListener("click", () => {
   waringBar.classList.add("pop-close");
 })
 
-waringBar.classList.add("warning-active");
 
-window.setTimeout(() => {
-  waringBar.classList.add("disable-warning");
-}, 10000)
+
 
 const services = document.getElementById("services");
 const servicesDropdown = document.querySelector(".services-drop");
