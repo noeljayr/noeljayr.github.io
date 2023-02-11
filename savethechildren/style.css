@@ -940,6 +940,5 @@ ul li a:hover {
 
 .warning-popup p a{
 text-decoration: underline;
-color: initial;
-
+font-weight: bold;
 }
