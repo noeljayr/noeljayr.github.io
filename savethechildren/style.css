@@ -62,6 +62,7 @@ body {
   margin-bottom: 0.5rem;
 }
 
+
 .warning-popup .close-btn {
   background-color: #da291c;
   width: fit-content;
@@ -934,4 +935,11 @@ ul li a:hover {
     margin-left: 0;
     margin-top: 25px;
   }
+}
+
+
+.warning-popup p a{
+text-decoration: underline;
+color: initial;
+
 }
