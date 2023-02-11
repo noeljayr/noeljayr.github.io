@@ -16,7 +16,7 @@
 
 html {
   font-family: "Satoshi", sans-serif;
-  font-size: clamp(14px, 1.5vw, 1.1em);
+  font-size: clamp(12px, 1.5vw, 1.1em);
   background-color: var(--bg);
   scroll-behavior: smooth;
   scroll-padding: var(--scroll-padding, 5rem);
@@ -832,7 +832,7 @@ ul li i {
 
 .social-links .contact-links i {
   color: black;
-  font-size: 1.8rem;
+  font-size: 1.4rem;
 }
 
 .social-links .contact-links {
