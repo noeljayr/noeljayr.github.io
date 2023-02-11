@@ -38,18 +38,18 @@ body {
   box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.37);
 }
 
-.top {
+.warning-popup .top {
   display: flex;
   align-items: center;
   align-items: flex-end;
 }
 
-.top {
+.warning-popup .top {
   font-size: 1.3rem;
   font-weight: bolder;
 }
 
-.top i {
+.warning-popup .top i {
   color: #da291c;
   font-size: 2.2rem;
   margin-top: 2px;
@@ -62,7 +62,7 @@ body {
   margin-bottom: 0.5rem;
 }
 
-.close-btn {
+.warning-popup .close-btn {
   background-color: #da291c;
   width: fit-content;
   padding: 0.5rem;
