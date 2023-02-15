@@ -3,7 +3,6 @@ const loader = document.querySelector(".loader-overlay");
 window.addEventListener("load", () => {
   loader.classList.add("loaded");
 
-
   window.setTimeout(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -41,7 +40,7 @@ window.addEventListener("load", () => {
     fadeInElements.forEach((el) => observer.observe(el));
     flyRight.forEach((el) => observer.observe(el));
     popIn.forEach((el) => observer.observe(el));
-  }, 2000)
+  }, 2000);
 });
 
 const leftBtn = document.querySelector(".left-btn");
@@ -103,5 +102,17 @@ document.documentElement.style.setProperty(
   navBarHeight + "px"
 );
 
+const airtel = document.getElementById("airtel-app");
+const projectOverlay = document.querySelector(".project-overlay");
+const airtelImage = document.querySelector(".airtel");
+const closePop = document.querySelector(".close-pop");
 
+airtel.addEventListener("click", () => {
+  projectOverlay.classList.add("project-overlay-active");
+  airtelImage.style.display = "grid";
+});
 
+closePop.addEventListener("click", () => {
+  projectOverlay.classList.remove("project-overlay-active");
+  airtelImage.style.display = "none";
+});
