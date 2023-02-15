@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- icon -->
+
+    <link rel="icon" type="image/x-icon" href="/res/logo/favicon.ico" />
+
+    <!-- css links -->
+    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/partners.css" />
+    <link rel="stylesheet" href="./css/blogs.css" />
+    <link rel="stylesheet" href="./css/login.css" />
+    <link rel="stylesheet" href="./css/admin.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+      integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.0.96/css/materialdesignicons.css"
+      integrity="sha512-+Zybl5OKqmaXx42ysgDdEODFRj8kLRQFy87G77NWmQxS8JMiQhDKovhffSaUuMDyaKxZOZrzouVbQMtBrUcv7w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+    />
+
+    <!-- js links -->
+
+    <script defer src="./js/index.js"></script>
+    <script defer src="./js/admin.js"></script>
+    <script defer src="./js/blogs.js"></script>
+    <title>PAUM</title>
+  </head>
+
+  <body>
+    <div class="navbar admin-nav">
+      <div id="paum-header" class="navlink">
+        <a href="./admin.html">
+          <span class="logo"
+            ><img src="./res/logo/logo-trimmed.png" alt=""
+          /></span>
+          <div class="paum">
+            <span class="abriv">PAUM</span>
+            <span class="full">Physician Assistants Union Malawi</span>
+          </div>
+        </a>
+      </div>
+
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <div class="navlink">
+            <a href="./admin.html">
+              <span class="link-icon"><i class="mdi mdi-home"></i></span>
+              <span class="link-title">HOME</span>
+            </a>
+          </div>
+        </li>
+
+        <li class="nav-item admins-icon">
+          <div class="navlink">
+            <a href="#blogs">
+              <span class="link-icon">
+                <i class="mdi mdi-account-group"></i>
+              </span>
+              <span class="link-title">ADMINS</span>
+            </a>
+          </div>
+        </li>
+
+        <li class="nav-item blogs-icon">
+          <div class="navlink">
+            <a href="#blogs">
+              <span class="link-icon">
+                <i class="bi bi-newspaper"></i>
+              </span>
+              <span class="link-title">BLOGS</span>
+            </a>
+          </div>
+        </li>
+
+        <li class="nav-item partners-icon">
+          <div class="navlink">
+            <a href="#partners">
+              <span class="link-icon"
+                ><i class="fa fa-handshake-o" aria-hidden="true"></i
+              ></span>
+              <span class="link-title">PARTENERS</span>
+            </a>
+          </div>
+        </li>
+
+        <li id="settings-nav" class="nav-item">
+          <div class="navlink">
+            <a id="setting-link">
+              <span class="link-icon"><i class="mdi mdi-account-cog"></i></span>
+              <span class="link-title">SETTINGS</span>
+            </a>
+          </div>
+
+          <div class="settings-drop">
+            <ul class="settings">
+              <li id="edit-option" class="option">
+                <i class="mdi mdi-account-edit"></i>Personal Info
+              </li>
+              <li class="option password-reset">
+                <i class="mdi mdi-lock-reset"></i>Password
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="nav-item">
+          <div id="login-link" class="navlink">
+            <a href="#"> Logout </a>
+          </div>
+        </li>
+      </ul>
+
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+
+    <div class="admin-content">
+      <div class="dashboard-tools">
+        <div class="dash-item">
+          <span class="icon"><i class="mdi mdi-note-plus"></i></span>
+          <span class="title">Post</span>
+        </div>
+        <div class="dash-item">
+          <span class="icon"><i class="mdi mdi-account-plus"></i></span>
+          <span class="title">Admin</span>
+        </div>
+        <div class="dash-item">
+          <span class="icon"><i class="mdi mdi-shield-plus"></i></span>
+          <span class="title">Partner</span>
+        </div>
+        <div class="dash-item">
+          <span class="icon"><i class="mdi mdi-pencil-box"></i></span>
+          <span class="title">Edit info</span>
+        </div>
+      </div>
+
+      <div class="overlay">
+        <div class="admin-form-wrapper">
+          <form action="" class="admin-form">
+            <h3 id="admin-title-header">New Admin Details</h3>
+            <div class="input-group">
+              <input required type="text" placeholder="Enter First Name" />
+            </div>
+
+            <div class="input-group">
+              <input required type="text" placeholder="Enter Last Name" />
+            </div>
+
+            <div class="input-group">
+              <input
+                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                required
+                type="text"
+                placeholder="Enter Phone Number"
+              />
+            </div>
+
+            <div class="input-group">
+              <input required type="email" placeholder="Enter Email" />
+            </div>
+
+            <div class="input-group btns-container">
+              <span class="btn cancel">Cancel</span>
+              <button id="admin-add-btn" type="submit" class="btn">Add</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="password-form">
+          <form action="">
+            <h3>Change Password</h3>
+
+            <div class="input-group">
+              <span class="eye-icon">
+                <i
+                  id="show-icon-admin"
+                  class="fa fa-eye lets-show"
+                  aria-hidden="true"
+                ></i>
+              </span>
+              <input
+                required
+                class="password-input"
+                type="password"
+                placeholder="Enter Current Password"
+              />
+            </div>
+
+            <div class="input-group">
+              <span class="eye-icon">
+                <i
+                  id="show-icon-admin"
+                  class="fa fa-eye lets-show"
+                  aria-hidden="true"
+                ></i>
+              </span>
+              <input
+                required
+                class="password-input"
+                type="password"
+                placeholder="Enter New Password"
+              />
+            </div>
+
+            <div class="input-group">
+              <span class="eye-icon">
+                <i
+                  id="show-icon-admin"
+                  class="fa fa-eye lets-show"
+                  aria-hidden="true"
+                ></i>
+              </span>
+              <input
+                required
+                class="password-input"
+                type="password"
+                placeholder="confirm NewPassword"
+              />
+            </div>
+
+            <div class="input-group btns-container">
+              <span class="btn cancel">Cancel</span>
+              <button id="ad-btn" type="submit" class="btn">Save</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="stuff-form-wrapper">
+          <form action="" class="admin-form">
+            <h3>Stuff Member's Details</h3>
+            <div class="input-group">
+              <input
+                id="stuff-f-name"
+                required
+                type="text"
+                placeholder="Enter First Name"
+              />
+            </div>
+
+            <div class="input-group">
+              <input
+                id="stuff-l-name"
+                required
+                type="text"
+                placeholder="Enter Last Name"
+              />
+            </div>
+
+            <div class="input-group">
+              <input
+                id="stuff-position"
+                required
+                type="text"
+                placeholder="Enter Stuff Member's Position"
+              />
+            </div>
+
+            <div id="upload-image" class="input-group">
+              <span class="upload-text">Photo</span>
+              <input id="s-m-image" required type="file" placeholder="Image" />
+            </div>
+
+            <div id="partner-s" class="input-group btns-container">
+              <span class="btn cancel">Cancel</span>
+              <button id="s-m-add-btn" type="submit" class="btn">Add</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="partner-form-wrapper">
+          <form action="" class="admin-form">
+            <h3>Partner Details</h3>
+            <div class="input-group">
+              <input
+                id="p-name-input"
+                required
+                type="text"
+                placeholder="Enter Name"
+              />
+            </div>
+
+            <div class="input-group">
+              <input
+                id="p-web-input"
+                required
+                type="text"
+                placeholder="Enter Website"
+              />
+            </div>
+
+            <div class="input-group">
+              <textarea
+                required
+                placeholder="Enter Brief Description"
+                name=""
+                id="p-desc-input"
+                cols="30"
+                rows="2"
+              ></textarea>
+            </div>
+
+            <div id="upload-image" class="input-group">
+              <span class="upload-text">Logo</span>
+              <input required type="file" placeholder="Image" />
+            </div>
+
+            <div id="partner-s" class="input-group btns-container">
+              <span class="btn cancel">Cancel</span>
+              <button id="p-add-btn" type="submit" class="btn">Add</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="edit-form-wrapper">
+          <form action="" class="admin-form">
+            <h3>Information About PAUM</h3>
+
+            <div class="input-group">
+              <textarea
+                required
+                placeholder="Enter Information"
+                name=""
+                id=""
+                cols="30"
+                rows="5"
+              ></textarea>
+            </div>
+
+            <div class="input-group">
+              <textarea
+                required
+                placeholder="Enter Summarized Information"
+                name=""
+                id=""
+                cols="30"
+                rows="3 "
+              ></textarea>
+            </div>
+            <div class="input-group btns-container">
+              <span class="btn cancel">Cancel</span>
+              <button type="submit" class="btn">Save</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="post-form-wrapper">
+          <form action="" class="admin-form">
+            <h3>Create A Blog</h3>
+
+            <div class="input-group">
+              <textarea
+                required
+                placeholder="Enter Blog Title"
+                name=""
+                id="blog-title-input"
+                cols="30"
+                rows="1"
+              ></textarea>
+            </div>
+
+            <div class="input-group">
+              <textarea
+                required
+                placeholder="Enter Blog Content"
+                name=""
+                id="blog-info-input"
+                cols="30"
+                rows="7"
+              ></textarea>
+            </div>
+
+            <div id="upload-image-post" class="input-group">
+              <span class="upload-text">Image</span>
+              <input required type="file" placeholder="Image" />
+            </div>
+
+            <div class="input-group btns-container">
+              <span class="btn cancel">Cancel</span>
+              <button type="submit" id="blog-post-btn" class="btn">Post</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- stuff -->
+      <div class="s-header s-s-header">
+        <h2>Stuff Members</h2>
+
+        <span id="stuff-add" class="add-btn">
+          <span class="icon"
+            ><i class="fa fa-plus-circle" aria-hidden="true"></i
+          ></span>
+          <span class="title">Add New</span>
+        </span>
+      </div>
+
+      <div class="stuff active-section">
+        <div class="s-card">
+          <div class="confirm">
+            <span class="confirm-text">Remove Stuff Member?</span>
+            <div class="c-btn-container">
+              <span class="btn no">NO</span>
+              <span class="btn yes">YES</span>
+            </div>
+          </div>
+          <span class="s-card-btns">
+            <span class="btn stuff-button-edit">Edit</span
+            ><span class="btn stuff-button">Remove</span>
+          </span>
+          <span class="s-card-top">
+            <img
+              class="stuff-f-image"
+              src="./res/img/stuff/s1.jpg"
+              alt=""
+              srcset=""
+            />
+          </span>
+          <span class="s-card-bottom">
+            <span class="s-card-name">
+              <span class="s-m-fname">Jonathan</span>
+              <span class="s-m-lname">Mtambo</span>
+            </span>
+            <span class="s-card-position">CEO and founder</span>
+          </span>
+        </div>
+        <div class="s-card">
+          <div class="confirm">
+            <span class="confirm-text">Remove Stuff Member?</span>
+            <div class="c-btn-container">
+              <span class="btn no">NO</span>
+              <span class="btn yes">YES</span>
+            </div>
+          </div>
+          <span class="s-card-btns">
+            <span class="btn stuff-button-edit">Edit</span
+            ><span class="btn stuff-button">Remove</span>
+          </span>
+          <span class="s-card-top">
+            <img src="./res/img/stuff/s2.jpg" alt="" srcset="" />
+          </span>
+          <span class="s-card-bottom">
+            <span class="s-card-name">
+              <span class="s-m-fname">Lucas</span>
+              <span class="s-m-lname">Maura</span>
+            </span>
+            <span class="s-card-position">Assistant Manager</span>
+          </span>
+        </div>
+        <div class="s-card">
+          <div class="confirm">
+            <span class="confirm-text">Remove Stuff Member?</span>
+            <div class="c-btn-container">
+              <span class="btn no">NO</span>
+              <span class="btn yes">YES</span>
+            </div>
+          </div>
+          <span class="s-card-btns">
+            <span class="btn stuff-button-edit">Edit</span
+            ><span class="btn stuff-button">Remove</span>
+          </span>
+          <span class="s-card-top">
+            <img src="./res/img/stuff/s3.jpg" alt="" srcset="" />
+          </span>
+          <span class="s-card-bottom">
+            <span class="s-card-name">
+              <span class="s-m-fname">Virgil</span>
+              <span class="s-m-lname">Zgambo</span>
+            </span>
+            <span class="s-card-position">Human resource manager</span>
+          </span>
+        </div>
+        <div class="s-card">
+          <div class="confirm">
+            <span class="confirm-text">Remove Stuff Member?</span>
+            <div class="c-btn-container">
+              <span class="btn no">NO</span>
+              <span class="btn yes">YES</span>
+            </div>
+          </div>
+          <span class="s-card-btns">
+            <span class="btn stuff-button-edit">Edit</span
+            ><span class="btn stuff-button">Remove</span>
+          </span>
+          <span class="s-card-top">
+            <img src="./res/img/stuff/s4.jpg" alt="" srcset="" />
+          </span>
+          <span class="s-card-bottom">
+            <span class="s-card-name">
+              <span class="s-m-fname">Memphis</span>
+              <span class="s-m-lname">Phiri</span>
+            </span>
+            <span class="s-card-position">Treasure</span>
+          </span>
+        </div>
+      </div>
+
+      <!-- admins -->
+      <div class="s-header s-ad-header">
+        <h2>Administrators</h2>
+      </div>
+
+      <div class="admin-table">
+        <div class="pinned">
+          <div class="table-header">Name</div>
+          <div class="table-row">NOEL</div>
+          <div class="table-row">JR</div>
+          <div class="table-row">Luhanga</div>
+          <div class="table-row">Haa</div>
+        </div>
+
+        <div class="scrollable">
+          <div class="table-column">
+            <div class="table-header">Email</div>
+            <div class="table-row">gaadf@gmail.com</div>
+            <div class="table-row">example@gmail.com</div>
+            <div class="table-row">luhanganoel@gmail.com</div>
+            <div class="table-row">example@gmail.com</div>
+          </div>
+
+          <div class="table-column">
+            <div class="table-header">Phone Number</div>
+            <div class="table-row">0886047774</div>
+            <div class="table-row">0308745321</div>
+            <div class="table-row">6642087412</div>
+            <div class="table-row">7765432445</div>
+          </div>
+
+          <div class="table-column last-column">
+            <div class="table-header">Action</div>
+            <div class="table-row">
+              <span class="disable">Disable</span>
+              <span class="enable">Enable</span>
+            </div>
+            <div class="table-row">
+              <span class="disable">Disable</span>
+              <span class="enable">Enable</span>
+            </div>
+            <div class="table-row">
+              <span class="disable">Disable</span>
+              <span class="enable">Enable</span>
+            </div>
+            <div class="table-row">
+              <span class="disable">Disable</span>
+              <span class="enable">Enable</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Partners -->
+      <div class="s-header s-p-header">
+        <h2>Partners</h2>
+      </div>
+
+      <div class="admin-p">
+        <div class="p-card">
+          <div class="confirm">
+            <span class="confirm-text">Remove Partner?</span>
+            <div class="c-btn-container">
+              <span class="btn no">NO</span>
+              <span class="btn yes">YES</span>
+            </div>
+          </div>
+          <div class="p-card-top">
+            <span class="p-card-btns">
+              <span class="btn p-button-edit">Edit</span
+              ><span class="btn p-button">Remove</span>
+            </span>
+            <img class="p-logo" src="./res/logo/afri.png" alt="" />
+            <div class="p-name">Africare</div>
+          </div>
+          <div class="p-card-bottom">
+            <span style="font-weight: bold"> Website: </span>
+            <span class="p-web">www.africare.org</span>
+            <br />
+            <p class="p-info" style="margin-top: 7px">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos,
+              quod rem dolorem nesciunt qui distinctio doloremque unde maiores,
+              fuga ipsam sapiente id totam ratione in? Nemo accusantium delectus
+              explicabo consequatur!
+            </p>
+          </div>
+        </div>
+        <div class="p-card">
+          <div class="confirm">
+            <span class="confirm-text">Remove Partner?</span>
+            <div class="c-btn-container">
+              <span class="btn no">NO</span>
+              <span class="btn yes">YES</span>
+            </div>
+          </div>
+          <div class="p-card-top">
+            <span class="p-card-btns">
+              <span class="btn p-button-edit">Edit</span
+              ><span class="btn p-button">Remove</span>
+            </span>
+            <img class="p-logo" src="./res/logo/eli.jpg" alt="" />
+            <div class="p-name">Elizabeth Glaser Pediatric AIDS Foundation</div>
+          </div>
+          <div class="p-card-bottom">
+            <span style="font-weight: bold"> Website: </span>
+            <span class="p-web">N/A</span>
+            <br />
+            <p class="p-info" style="margin-top: 7px">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos,
+              quod rem dolorem nesciunt qui distinctio doloremque unde maiores,
+              fuga ipsam sapiente id totam ratione in? Nemo accusantium delectus
+              explicabo consequatur!
+            </p>
+          </div>
+        </div>
+        <div class="p-card">
+          <div class="confirm">
+            <span class="confirm-text">Remove Partner?</span>
+            <div class="c-btn-container">
+              <span class="btn no">NO</span>
+              <span class="btn yes">YES</span>
+            </div>
+          </div>
+          <div class="p-card-top">
+            <span class="p-card-btns">
+              <span class="btn p-button-edit">Edit</span
+              ><span class="btn p-button">Remove</span>
+            </span>
+            <img class="p-logo" src="./res/logo/red.png" alt="" />
+            <div class="p-name">Malawi Red Cross Society</div>
+          </div>
+          <div class="p-card-bottom">
+            <span style="font-weight: bold"> Website: </span>
+            <span class="p-web">www.redcross.mw</span>
+            <br />
+            <p class="p-info" style="margin-top: 7px">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos,
+              quod rem dolorem nesciunt qui distinctio doloremque unde maiores,
+              fuga ipsam sapiente id totam ratione in? Nemo accusantium delectus
+              explicabo consequatur!
+            </p>
+          </div>
+        </div>
+        <div class="p-card">
+          <div class="confirm">
+            <span class="confirm-text">Remove Partner?</span>
+            <div class="c-btn-container">
+              <span class="btn no">NO</span>
+              <span class="btn yes">YES</span>
+            </div>
+          </div>
+          <div class="p-card-top">
+            <span class="p-card-btns">
+              <span class="btn p-button-edit">Edit</span
+              ><span class="btn p-button">Remove</span>
+            </span>
+            <img class="p-logo" src="./res/logo/nb.png" alt="" />
+            <div class="p-name">National Bank of Malawi</div>
+          </div>
+          <div class="p-card-bottom">
+            <span style="font-weight: bold"> Website: </span>
+            <span class="p-web">www.natbank.co.mw</span>
+            <br />
+            <p class="p-info" style="margin-top: 7px">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos,
+              quod rem dolorem nesciunt qui distinctio doloremque unde maiores,
+              fuga ipsam sapiente id totam ratione in? Nemo accusantium delectus
+              explicabo consequatur!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- blogs -->
+      <div class="admin-blogs">
+        <div class="s-header">
+          <h2>Blogs and News</h2>
+        </div>
+        <div class="tool-bar">
+          <div class="sort-buttons">
+            <h3>Sort By:</h3>
+            <span class="srt-btns latest sort-active">Latest</span>
+            <span class="srt-btns oldest">Oldest</span>
+          </div>
+
+          <div class="blogs-search">
+            <form action="">
+              <input placeholder="Search" type="text" />
+              <button><i class="bi bi-search"></i></button>
+            </form>
+          </div>
+        </div>
+
+        <div class="blogs-section">
+          <div class="blog-card admin-blog-card">
+            <div class="confirm">
+              <span class="confirm-text">Remove This Blog?</span>
+              <div class="c-btn-container">
+                <span class="btn no">NO</span>
+                <span class="btn yes">YES</span>
+              </div>
+            </div>
+            <div class="blog-image">
+              <span class="s-card-btns">
+                <span class="btn blog-button-edit">Edit</span
+                ><span class="btn blog-button">Remove</span>
+              </span>
+              <img src="./res/img/1.jpg" alt="" />
+            </div>
+            <div class="blog-title"><h3>Some random Title of a blog</h3></div>
+            <div class="blog-info">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Perspiciatis officia, repellat vel mollitia similique,
+              necessitatibus maiores minus quos voluptatem reprehenderit optio
+              sapiente? Fuga rem vel natus officia, autem ab obcaecati?
+              Praesentium, exercitationem aliquam? Adipisci illum reiciendis
+              debitis nemo vero id, autem tempora iure dolor temporibus porro
+              est explicabo sequi minima mollitia rerum fuga nobis excepturi
+              animi sunt quam eius? Dolorem. Cum labore saepe dolorem.
+              Voluptates inventore recusandae eligendi nihil iste sed doloribus
+              et incidunt sapiente itaque ipsa, sint culpa voluptatibus labore
+              at tempore magni architecto asperiores cumque enim dolorem in!
+              Recusandae labore illo laudantium veniam velit eaque numquam ex,
+              delectus autem cumque culpa eius quae cum atque obcaecati rerum
+              saepe fugit porro quia explicabo itaque! Reiciendis voluptate
+              ducimus debitis voluptatum! Est expedita molestias quae harum
+              eligendi incidunt, optio quisquam rem provident reprehenderit
+              necessitatibus cumque odio dolorem rerum eum delectus ad
+              laudantium ipsum quidem quia eaque minus accusantium nostrum
+              ullam? Fugit! In amet laborum dignissimos, repudiandae commodi
+              deleniti atque voluptatem quo dolore. Voluptatem temporibus
+              provident incidunt eaque laudantium iste! Ipsa debitis dolores
+              nemo autem necessitatibus excepturi est numquam possimus
+              recusandae optio! Aliquam ab, debitis quasi vero quisquam facilis
+              consequuntur autem in soluta recusandae rerum voluptatum vitae
+              quis quidem modi voluptatem, earum quibusdam omnis! Voluptatem, ea
+              officia ut amet saepe maxime esse. Sit cum, necessitatibus
+              excepturi labore, vitae dolores, omnis molestiae laboriosam
+              aspernatur deleniti optio pariatur? Non minus tenetur numquam ad
+              possimus quod velit omnis nisi ipsa praesentium, inventore,
+              reiciendis laboriosam odit! Voluptatem molestiae asperiores
+              voluptate quis velit soluta placeat consectetur, adipisci eaque,
+              beatae perferendis aliquam quibusdam architecto aperiam?
+              Necessitatibus nisi amet, minus sint modi officia odio, dolorem
+              autem deleniti eos sequi.
+            </div>
+            <div class="read-more">
+              <div class="date">3 Oct. 2022</div>
+              <a href="#">Read More...</a>
+            </div>
+          </div>
+          <div class="blog-card admin-blog-card">
+            <div class="confirm">
+              <span class="confirm-text">Remove This Blog?</span>
+              <div class="c-btn-container">
+                <span class="btn no">NO</span>
+                <span class="btn yes">YES</span>
+              </div>
+            </div>
+            <div class="blog-image">
+              <span class="s-card-btns">
+                <span class="btn blog-button-edit">Edit</span
+                ><span class="btn blog-button">Remove</span>
+              </span>
+              <img src="./res/img/2.jpg" alt="" />
+            </div>
+            <div class="blog-title"><h3>Some random Title of a blog</h3></div>
+            <div class="blog-info">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Perspiciatis officia, repellat vel mollitia similique,
+              necessitatibus maiores minus quos voluptatem reprehenderit optio
+              sapiente? Fuga rem vel natus officia, autem ab obcaecati?
+              Praesentium, exercitationem aliquam? Adipisci illum reiciendis
+              debitis nemo vero id, autem tempora iure dolor temporibus porro
+              est explicabo sequi minima mollitia rerum fuga nobis excepturi
+              animi sunt quam eius? Dolorem. Cum labore saepe dolorem.
+              Voluptates inventore recusandae eligendi nihil iste sed doloribus
+              et incidunt sapiente itaque ipsa, sint culpa voluptatibus labore
+              at tempore magni architecto asperiores cumque enim dolorem in!
+              Recusandae labore illo laudantium veniam velit eaque numquam ex,
+              delectus autem cumque culpa eius quae cum atque obcaecati rerum
+              saepe fugit porro quia explicabo itaque! Reiciendis voluptate
+              ducimus debitis voluptatum! Est expedita molestias quae harum
+              eligendi incidunt, optio quisquam rem provident reprehenderit
+              necessitatibus cumque odio dolorem rerum eum delectus ad
+              laudantium ipsum quidem quia eaque minus accusantium nostrum
+              ullam? Fugit! In amet laborum dignissimos, repudiandae commodi
+              deleniti atque voluptatem quo dolore. Voluptatem temporibus
+              provident incidunt eaque laudantium iste! Ipsa debitis dolores
+              nemo autem necessitatibus excepturi est numquam possimus
+              recusandae optio! Aliquam ab, debitis quasi vero quisquam facilis
+              consequuntur autem in soluta recusandae rerum voluptatum vitae
+              quis quidem modi voluptatem, earum quibusdam omnis! Voluptatem, ea
+              officia ut amet saepe maxime esse. Sit cum, necessitatibus
+              excepturi labore, vitae dolores, omnis molestiae laboriosam
+              aspernatur deleniti optio pariatur? Non minus tenetur numquam ad
+              possimus quod velit omnis nisi ipsa praesentium, inventore,
+              reiciendis laboriosam odit! Voluptatem molestiae asperiores
+              voluptate quis velit soluta placeat consectetur, adipisci eaque,
+              beatae perferendis aliquam quibusdam architecto aperiam?
+              Necessitatibus nisi amet, minus sint modi officia odio, dolorem
+              autem deleniti eos sequi.
+            </div>
+            <div class="read-more">
+              <div class="date">3 Oct. 2022</div>
+              <a href="#">Read More...</a>
+            </div>
+          </div>
+          <div class="blog-card admin-blog-card">
+            <div class="confirm">
+              <span class="confirm-text">Remove This Blog?</span>
+              <div class="c-btn-container">
+                <span class="btn no">NO</span>
+                <span class="btn yes">YES</span>
+              </div>
+            </div>
+            <div class="blog-image">
+              <span class="s-card-btns">
+                <span class="btn blog-button-edit">Edit</span
+                ><span class="btn blog-button">Remove</span>
+              </span>
+              <img src="./res/img/3.jpg" alt="" />
+            </div>
+            <div class="blog-title"><h3>Some random Title of a blog</h3></div>
+            <div class="blog-info">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Perspiciatis officia, repellat vel mollitia similique,
+              necessitatibus maiores minus quos voluptatem reprehenderit optio
+              sapiente? Fuga rem vel natus officia, autem ab obcaecati?
+              Praesentium, exercitationem aliquam? Adipisci illum reiciendis
+              debitis nemo vero id, autem tempora iure dolor temporibus porro
+              est explicabo sequi minima mollitia rerum fuga nobis excepturi
+              animi sunt quam eius? Dolorem. Cum labore saepe dolorem.
+              Voluptates inventore recusandae eligendi nihil iste sed doloribus
+              et incidunt sapiente itaque ipsa, sint culpa voluptatibus labore
+              at tempore magni architecto asperiores cumque enim dolorem in!
+              Recusandae labore illo laudantium veniam velit eaque numquam ex,
+              delectus autem cumque culpa eius quae cum atque obcaecati rerum
+              saepe fugit porro quia explicabo itaque! Reiciendis voluptate
+              ducimus debitis voluptatum! Est expedita molestias quae harum
+              eligendi incidunt, optio quisquam rem provident reprehenderit
+              necessitatibus cumque odio dolorem rerum eum delectus ad
+              laudantium ipsum quidem quia eaque minus accusantium nostrum
+              ullam? Fugit! In amet laborum dignissimos, repudiandae commodi
+              deleniti atque voluptatem quo dolore. Voluptatem temporibus
+              provident incidunt eaque laudantium iste! Ipsa debitis dolores
+              nemo autem necessitatibus excepturi est numquam possimus
+              recusandae optio! Aliquam ab, debitis quasi vero quisquam facilis
+              consequuntur autem in soluta recusandae rerum voluptatum vitae
+              quis quidem modi voluptatem, earum quibusdam omnis! Voluptatem, ea
+              officia ut amet saepe maxime esse. Sit cum, necessitatibus
+              excepturi labore, vitae dolores, omnis molestiae laboriosam
+              aspernatur deleniti optio pariatur? Non minus tenetur numquam ad
+              possimus quod velit omnis nisi ipsa praesentium, inventore,
+              reiciendis laboriosam odit! Voluptatem molestiae asperiores
+              voluptate quis velit soluta placeat consectetur, adipisci eaque,
+              beatae perferendis aliquam quibusdam architecto aperiam?
+              Necessitatibus nisi amet, minus sint modi officia odio, dolorem
+              autem deleniti eos sequi.
+            </div>
+            <div class="read-more">
+              <div class="date">3 Oct. 2022</div>
+              <a href="#">Read More...</a>
+            </div>
+          </div>
+          <div class="blog-card admin-blog-card">
+            <div class="confirm">
+              <span class="confirm-text">Remove This Blog?</span>
+              <div class="c-btn-container">
+                <span class="btn no">NO</span>
+                <span class="btn yes">YES</span>
+              </div>
+            </div>
+            <div class="blog-image">
+              <span class="s-card-btns">
+                <span class="btn blog-button-edit">Edit</span
+                ><span class="btn blog-button">Remove</span>
+              </span>
+              <img src="./res/img/4.jpg" alt="" />
+            </div>
+            <div class="blog-title"><h3>Some random Title of a blog</h3></div>
+            <div class="blog-info">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Perspiciatis officia, repellat vel mollitia similique,
+              necessitatibus maiores minus quos voluptatem reprehenderit optio
+              sapiente? Fuga rem vel natus officia, autem ab obcaecati?
+              Praesentium, exercitationem aliquam? Adipisci illum reiciendis
+              debitis nemo vero id, autem tempora iure dolor temporibus porro
+              est explicabo sequi minima mollitia rerum fuga nobis excepturi
+              animi sunt quam eius? Dolorem. Cum labore saepe dolorem.
+              Voluptates inventore recusandae eligendi nihil iste sed doloribus
+              et incidunt sapiente itaque ipsa, sint culpa voluptatibus labore
+              at tempore magni architecto asperiores cumque enim dolorem in!
+              Recusandae labore illo laudantium veniam velit eaque numquam ex,
+              delectus autem cumque culpa eius quae cum atque obcaecati rerum
+              saepe fugit porro quia explicabo itaque! Reiciendis voluptate
+              ducimus debitis voluptatum! Est expedita molestias quae harum
+              eligendi incidunt, optio quisquam rem provident reprehenderit
+              necessitatibus cumque odio dolorem rerum eum delectus ad
+              laudantium ipsum quidem quia eaque minus accusantium nostrum
+              ullam? Fugit! In amet laborum dignissimos, repudiandae commodi
+              deleniti atque voluptatem quo dolore. Voluptatem temporibus
+              provident incidunt eaque laudantium iste! Ipsa debitis dolores
+              nemo autem necessitatibus excepturi est numquam possimus
+              recusandae optio! Aliquam ab, debitis quasi vero quisquam facilis
+              consequuntur autem in soluta recusandae rerum voluptatum vitae
+              quis quidem modi voluptatem, earum quibusdam omnis! Voluptatem, ea
+              officia ut amet saepe maxime esse. Sit cum, necessitatibus
+              excepturi labore, vitae dolores, omnis molestiae laboriosam
+              aspernatur deleniti optio pariatur? Non minus tenetur numquam ad
+              possimus quod velit omnis nisi ipsa praesentium, inventore,
+              reiciendis laboriosam odit! Voluptatem molestiae asperiores
+              voluptate quis velit soluta placeat consectetur, adipisci eaque,
+              beatae perferendis aliquam quibusdam architecto aperiam?
+              Necessitatibus nisi amet, minus sint modi officia odio, dolorem
+              autem deleniti eos sequi.
+            </div>
+            <div class="read-more">
+              <div class="date">3 Oct. 2022</div>
+              <a href="#">Read More...</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="pagination">
+          <ul>
+            <!--pages or li are comes from javascript -->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

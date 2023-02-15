@@ -1,0 +1,27 @@
+
+https://kuwalahmt.org/
+
+
+So we have planned it that it will have :-
+
+Home page 
+-this is where your org activities, objectives, a little background of the org and latest blog news will be displayed
+
+Profile page
+-where all organization information will be displayed including all members and their positions 
+
+(and we were suggesting that we should have a membership form their so that people can easily join you org by simply signing a membership form online and then he/she will send membership fee manually)
+
+Blog page 
+-where all news will be displayed like the way kuwala is you have to write an article and attaching a photo or video to it just to show the viewers what your org does wherever charity work etc
+
+Gallery page 
+-this is where all your images like those that were sent to my inbox can be displayed just like a place where you can keep org memories that viewers can see
+
+Partner's page(optimal)
+-this is where all your partners details will be displayed (contact details logo, and a little description of how they have contributed to your org or what help they offered/they are offering to your org
+
+Donation page
+-This page will have your organization bank details e.g account number or if you we can just provide contact details where by can just contact you directly
+
+So this is what we will start developing if their is somewhere, where it should be collected you can tell us

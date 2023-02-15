@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- icon -->
+
+    <link rel="icon" type="image/x-icon" href="/res/logo/favicon.ico" />
+
+    <!-- css links -->
+    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/donation.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+      integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.0.96/css/materialdesignicons.css"
+      integrity="sha512-+Zybl5OKqmaXx42ysgDdEODFRj8kLRQFy87G77NWmQxS8JMiQhDKovhffSaUuMDyaKxZOZrzouVbQMtBrUcv7w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+    />
+
+    <!-- js links -->
+
+    <script defer src="./js/ScrollMagic.min.js"></script>
+
+    <script defer src="./js/debug.addIndicators.min.js"></script>
+
+    <script defer src="./js/index.js"></script>
+    <script defer src="./js/donation.js"></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
+      integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <title>PAUM</title>
+  </head>
+
+  <body>
+    <div class="navbar">
+      <div id="paum-header" class="navlink">
+        <a href="/">
+          <span class="logo"
+            ><img src="./res/logo/logo-trimmed.png" alt=""
+          /></span>
+          <div class="paum">
+            <span class="abriv">PAUM</span>
+            <span class="full">Physician Assistants Union Malawi</span>
+          </div>
+        </a>
+      </div>
+
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <div class="navlink">
+            <a href="/">
+              <span class="link-icon"><i class="mdi mdi-home"></i></span>
+              <span class="link-title">HOME</span>
+            </a>
+          </div>
+        </li>
+
+        <li class="nav-item">
+          <div class="navlink">
+            <a href="./blogs.html">
+              <span class="link-icon">
+                <i class="bi bi-newspaper"></i>
+              </span>
+              <span class="link-title">BLOGS</span>
+            </a>
+          </div>
+        </li>
+
+        <li class="nav-item">
+          <div class="navlink">
+            <a href="./partners.html">
+              <span class="link-icon"
+                ><i class="fa fa-handshake-o" aria-hidden="true"></i
+              ></span>
+              <span class="link-title">PARTENERS</span>
+            </a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <div class="navlink">
+            <a href="./donation.html">
+              <span class="link-icon"><i class="mdi mdi-hand-heart"></i></span>
+              <span class="link-title">DONATION</span>
+            </a>
+          </div>
+        </li>
+
+        <li class="nav-item">
+          <div class="navlink">
+            <a href="./about.html">
+              <span class="link-icon"><i class="mdi mdi-information"></i></span>
+              <span class="link-title">ABOUT</span>
+            </a>
+          </div>
+        </li>
+
+        <li class="nav-item">
+          <div id="login-link" class="navlink">
+            <a href="./login.html"> Login </a>
+          </div>
+        </li>
+      </ul>
+
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+
+    <div class="donation-middle">
+      <div class="donation-top">
+        <h1>Donate to help us achieve our cause</h1>
+        <div class="donation-info-box">
+          <img src="./res/img/4.jpg" alt="" class="donation-img" />
+          <div class="clip-path">
+            <h1>Donate Today</h1>
+
+            <div class="brief">
+              The little you give can have a big impact
+              <br />
+              on another person's life,
+              <br />
+              Your donation can save a life,
+              <br />
+              Be a <span class="hero">HERO</span> today.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="donation-content">
+        <div class="payment-details">
+          <div class="donation_wrapper">
+            <div class="title">Make a donation</div>
+            <div class="single_amount_wrapper">
+              <div class="single_amount" value="1">1$</div>
+              <div class="single_amount" value="2">2$</div>
+              <div class="single_amount" value="5">5$</div>
+              <div class="single_amount" value="10">10$</div>
+            </div>
+            <div class="amount_wrapper">
+              <input type="number" value="10.00" step="0.1" min="1.00" />
+              <div class="suffix">$</div>
+            </div>
+            <a href="https://www.paypal.me/" target="_blank" rel="nofollow"
+              >Donate</a
+            >
+          </div>
+          <!-- <h2>Donation Options</h2>
+
+          <span class="inst">(Tap/Click to copy account number )</span> -->
+
+          <!-- <div class="pay-wrapper">
+            <div id="nb-trigger" class="pay-option">
+              <span id="nb" class="pay-img"></span>
+              <div>
+                <span class="pay-name"> PAUM money </span>
+                <span id="nb-acc" class="pay-number">0123000124</span>
+              </div>
+            </div>
+            <div id="tnm-trigger" class="pay-option">
+              <span id="tnm" class="pay-img"></span>
+              <div>
+                <span class="pay-name"> PAUM money </span>
+                <span id="tnm-num" class="pay-number"> 0882926155 </span>
+              </div>
+            </div>
+            <div id="air-trigger" class="pay-option">
+              <span id="air" class="pay-img"></span>
+              <div>
+                <span class="pay-name"> PAUM money </span>
+                <span id="air-num" class="pay-number"> 0993335397 </span>
+              </div>
+            </div>
+          </div>
+
+          <div id="toast" class="toast" data-tost>
+            <span class="tick-icon">
+              <svg
+                class="checkmark"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 52 52"
+              >
+                <circle
+                  class="checkmark__circle"
+                  cx="26"
+                  cy="26"
+                  r="25"
+                  fill="none"
+                />
+                <path
+                  class="checkmark__check"
+                  fill="none"
+                  d="M14.1 27.2l7.1 7.2 16.7-16.8"
+                />
+              </svg>
+            </span>
+            <span class="text-info"> </span>
+          </div> -->
+        </div>
+
+        <div class="donation-add-ons">
+          <div class="add-on-div-wrapper">
+            <p>
+              <span>Commit to making a difference</span>
+
+              We are committed to making a difference in peoples lives. By
+              making a donation to our organization, you can help us directly
+              support those in need of improved access to health care and
+              education.
+            </p>
+          </div>
+
+          <div class="add-on-div-wrapper">
+            <p>
+              <span>How we use your donation</span>
+
+              We use the donations to provide resources and support for members
+              to access continued education, We use the funds to support legal
+              representation for members in disputes with their employers or to
+              lobby for changes to laws and regulations that affect the rights
+              of its members, use donations to provide resources and support for
+              members to access continued education.
+            </p>
+          </div>
+
+          <div class="add-on-div-wrapper">
+            <p>
+              <span>Donation is not only limited to funds</span>
+
+              Donation can be in form of resources, equipments, education
+              materials, you can volunteer to assist with organizing events,
+              providing mentorship, or contributing to outreach programs. By
+              donating your skills and time to the union, you are helping to
+              ensure that healthcare professionals in Malawi have the support
+              they need to succeed.
+            </p>
+          </div>
+
+          <div class="add-on-div-wrapper">
+            <p>
+              <span>Do your part</span>
+
+              Doing your part to support the union is an important way to help
+              healthcare professionals in Malawi. Donating funds is a great way
+              to contribute, but there are other ways to give too. By doing your
+              part to help the union, you are showing your support for
+              healthcare professionals in Malawi and helping to ensure that they
+              have the support they need to succeed. Every contribution, no
+              matter how big or small, makes a difference and helps the union
+              reach its goals.
+            </p>
+          </div>
+
+          <div class="add-on-div-wrapper">
+            <p>
+              <span>More Ways To Give</span>
+
+              There are many ways to contribute to the union and make a
+              difference in the lives of healthcare professionals in Malawi. By
+              donating your time, skills , you are helping to create a brighter
+              future for healthcare professionals in the country.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      // const toast = document.getElementById("toast");
+      // const txtInfo = document.querySelector(".text-info");
+      // const copyTnm = document.getElementById("tnm-trigger");
+      // const copyNb = document.getElementById("nb-trigger");
+      // const copyAirtel = document.getElementById("air-trigger");
+
+      // copyTnm.addEventListener("click", () => {
+      //   const number = document.getElementById("tnm-num").textContent;
+      //   navigator.clipboard.writeText(number);
+
+      //   document.getElementById("toast").classList.add("toast-active");
+      //   document.getElementById("toast").style.visibility = "visible";
+
+      //   txtInfo.innerHTML = "TNM Mpamba Number Copied";
+      //   setTimeout(() => {
+      //     document.getElementById("toast").classList.remove("toast-active");
+      //     document.getElementById("toast").style.visibility = "hidden";
+      //   }, 3000);
+      // });
+
+      // copyNb.addEventListener("click", () => {
+      //   const number = document.getElementById("nb-acc").textContent;
+      //   navigator.clipboard.writeText(number);
+
+      //   document.getElementById("toast").classList.add("toast-active");
+      //   document.getElementById("toast").style.visibility = "visible";
+
+      //   txtInfo.innerHTML = "National Bank Number Copied";
+      //   setTimeout(() => {
+      //     document.getElementById("toast").classList.remove("toast-active");
+      //     document.getElementById("toast").style.visibility = "hidden";
+      //   }, 3000);
+      // });
+
+      // copyAirtel.addEventListener("click", () => {
+      //   const number = document.getElementById("air-num").textContent;
+      //   navigator.clipboard.writeText(number);
+
+      //   document.getElementById("toast").classList.add("toast-active");
+      //   document.getElementById("toast").style.visibility = "visible";
+
+      //   txtInfo.innerHTML = "Airtel Money Number Copied";
+      //   setTimeout(() => {
+      //     document.getElementById("toast").classList.remove("toast-active");
+      //     document.getElementById("toast").style.visibility = "hidden";
+      //   }, 3000);
+      // });
+
+      var donate_link = "#";
+      //Init link with input amount
+      setTimeout(function () {
+        $(".donation_wrapper > .amount_wrapper > input").trigger("change");
+      }, 20);
+      //Update link on change or input
+      $(document).on(
+        "change input",
+        ".donation_wrapper > .amount_wrapper > input",
+        function () {
+          $(this).val(parseFloat($(this).val()).toFixed(2));
+          $(this)
+            .parent()
+            .parent()
+            .find("> a")
+            .attr(
+              "href",
+              donate_link.replace(
+                "{amount}",
+                parseFloat($(this).val()).toFixed(2)
+              )
+            );
+        }
+      );
+      //Change amount on button click
+      $(document).on(
+        "click",
+        ".donation_wrapper > .single_amount_wrapper > .single_amount",
+        function () {
+          $(".donation_wrapper > .amount_wrapper > input")
+            .val(parseFloat($(this).attr("value")).toFixed(2))
+            .trigger("change");
+        }
+      );
+    </script>
+ <div class="home-about">
+      <div class="info-box">
+        <h3>Physician Assistants Union Malawi (PAUM)</h3>
+
+        <p>
+          We serve as a union for individuals who work in the healthcare field
+          as Clinical Technicians, Clinical Officers, Clinical Associates, and
+          Medical Assistants.
+          <br /> <br>
+         P/A Kamuzu Central Hospital Lilowngwe, Area 33.
+          <br />
+          P.O Box 342, Mzuzu
+        </p>
+      </div>
+
+      <div class="contact-links">
+        <h3>Links</h3>
+        <ul class="page-links">
+          <li><a href="./blogs.html">Blogs</a></li>
+          <li><a href="./partners.html">Parteners</a></li>
+          <li>
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://forms.gle/aM7WJFgZwHYCHkfL9"
+              >Register</a
+            >
+          </li>
+          <li><a href="./donation.html">Donation</a></li>
+          <li><a href="./about.html">About Us</a></li>
+        </ul>
+      </div>
+
+      <ul class="social-links">
+        <h3>Get in touch</h3>
+        <li>
+          <a
+            target="_blank"
+            href="https://web.facebook.com/physiciansassistantsunion"
+            ><i class="fa fa-facebook-square" aria-hidden="true"></i>Physician
+            Assistants Union of Malawi</a
+          >
+        </li>
+        <li>
+          <a href=""
+            ><i class="fa fa-whatsapp" aria-hidden="true"></i>099333539</a
+          >
+        </li>
+        <li>
+          <a href="#"
+            ><i class="fa fa-phone-square" aria-hidden="true"></i>0993335397</a
+          >
+        </li>
+        <li>
+          <a href="#"
+            ><i class="fa fa-envelope" aria-hidden="true"></i
+            >presidentpaum@gmail.com</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div class="footer">© PAUM<span id="year"></span></div>
+  </body>
+</html>

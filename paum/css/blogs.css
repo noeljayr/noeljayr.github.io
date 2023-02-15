@@ -1,0 +1,385 @@
+.tool-bar {
+  margin-top: 95px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  gap: 10px;
+}
+
+@media (max-width: 520px) {
+  .tool-bar {
+    flex-direction: column;
+    margin-bottom: 60px;
+  }
+}
+
+.sort-buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+}
+
+.tool-bar h3 {
+  font-size: 14px;
+}
+
+.srt-btns {
+  border: 1px solid var(--primary);
+  padding: 5px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: ease-in 0.3s;
+  font-size: 14px;
+}
+
+.srt-btns:hover {
+  background-color: var(--primary);
+}
+
+.sort-active {
+  background-color: var(--primary);
+}
+
+.blogs-search {
+  position: relative;
+  margin-left: auto;
+  margin-right: 10px;
+}
+
+.blogs-search input {
+  width: 300px;
+  border: 1.6px solid var(--primary);
+  border-radius: 20px;
+  padding: 5px;
+  padding-left: 40px;
+  padding-right: 10px;
+}
+
+.blogs-search button {
+  cursor: pointer;
+  border: none;
+  position: absolute;
+  left: 0;
+  padding-left: 10px;
+  padding-right: 8px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-color: var(--primary);
+}
+
+.blogs-search button:hover {
+  background-color: var(--secondary);
+}
+
+@media (max-width: 520px) {
+  .tool-bar {
+    flex-direction: column;
+    margin-bottom: 60px;
+  }
+
+  .blogs-search {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 95%;
+  }
+
+  .blogs-search input {
+    width: 100%;
+  }
+}
+
+/* Pagination */
+
+.pagination ul {
+  width: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  background: #fff;
+  padding: 5px;
+  margin-top: 15px;
+  margin-left: 10px;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.37);
+  margin-bottom: 20px;
+}
+.pagination ul li {
+  color: var(--primary);
+  list-style: none;
+  line-height: 45px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.3s ease;
+  background-color: transparent;
+}
+.pagination ul li.numb {
+  list-style: none;
+  height: 45px;
+  width: 45px;
+  margin: 0 3px;
+  line-height: 45px;
+  border-radius: 50%;
+}
+.pagination ul li.numb.first {
+  margin: 0px 3px 0 -5px;
+}
+.pagination ul li.numb.last {
+  margin: 0px -5px 0 3px;
+}
+.pagination ul li.dots {
+  font-size: 22px;
+  cursor: default;
+}
+.pagination ul li.btn {
+  padding: 0 20px;
+  border-radius: 50px;
+}
+.pagination li.active,
+.pagination ul li.numb:hover,
+.pagination ul li:first-child:hover,
+.pagination ul li:last-child:hover {
+  color: #fff;
+  background: var(--primary);
+}
+
+/* Single Blog  */
+
+.blog {
+  align-self: center;
+  margin-top: 76px;
+  width: 97vw;
+  height: 87.5vh;
+  display: flex;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.37);
+}
+
+@media (max-width: 900px) {
+  .blog {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.post {
+  width: 75%;
+  height: 100%;
+  overflow: auto;
+  padding-bottom: 20px;
+}
+
+.post-image {
+  width: 100%;
+  height: 260px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.post-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.post-title {
+  position: absolute;
+  top: 220px;
+  height: 40px;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    177deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(175, 175, 175, 0.328011033514968) 64%
+  );
+  justify-content: center;
+  font-size: 2.5vmin;
+}
+
+.read-time {
+  font-size: 11px;
+  margin-left: auto;
+  margin-right: 10px;
+}
+
+.post-date {
+  font-size: 11px;
+  margin-right: auto;
+  margin-left: 10px;
+}
+
+.post-content {
+  padding: 20px;
+  
+}
+
+@media (max-width: 900px) {
+  .blog {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .post {
+    width: 100%;
+    height: 100vh;
+  }
+}
+
+/*recent section*/
+
+.recent-posts {
+  border-left: 1px solid var(--primary);
+  height: 100%;
+  width: 25%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  align-items: center;
+  overflow: auto;
+}
+
+.recent-posts h2 {
+  margin-top: 10px;
+}
+
+.header-line {
+  height: 2px;
+  background-color: var(--primary);
+  width: 100%;
+}
+
+.recent {
+  width: 92%;
+  height: 85px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.37);
+  position: relative;
+  margin-left: 20px;
+ 
+  border-radius: 5px;
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+}
+
+.recent:hover {
+  background-color: rgb(243, 243, 243);
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.6);
+}
+
+.number {
+  position: absolute;
+  left: 0;
+  font-size: 15px;
+  font-weight: bolder;
+  background-color: #fff;
+  padding: 7px;
+  border-bottom-right-radius: 50%;
+}
+
+.recent-post-image img {
+  width: 86px;
+  height: 100%;
+}
+
+.view-more {
+  margin-top: 20px;
+  text-decoration: none;
+  color: black;
+  background-color: var(--primary);
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+}
+
+.view-more:hover {
+  background-color: var(--secondary);
+}
+
+.recent-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title-top {
+  margin-bottom: 15px;
+  font-size: 12px;
+}
+
+.recent-title p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 20px;
+  margin-left: 7px;
+  font-weight: 520;
+  width: 210px;
+}
+
+@media (max-width: 900px) {
+  .blog {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;  
+  }
+
+  
+
+  .post {
+    width: 100%;
+    min-height: 90vh;
+  }
+
+  .recent-posts {
+    border-top: 2px solid var(--primary);
+    border-left: 0px;
+    height: 100%;
+    width: 100%;
+  }
+
+  .recent-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.title-top{
+  margin-left: 20px;
+}
+
+  .recent-title p {
+   margin-left: 20px;
+    width: 75vw;
+  }
+}
+
+
+@media (max-width: 670px) {
+ .recent-title p {
+   margin-left: 20px;
+    width: 65vw;
+  }
+}
