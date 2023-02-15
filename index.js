@@ -104,15 +104,40 @@ document.documentElement.style.setProperty(
 
 const airtel = document.getElementById("airtel-app");
 const projectOverlay = document.querySelector(".project-overlay");
+const saveSMS = document.querySelector(".save-sms");
+const saveLink = document.getElementById("save-mart");
 const airtelImage = document.querySelector(".airtel");
 const closePop = document.querySelector(".close-pop");
 
 airtel.addEventListener("click", () => {
   projectOverlay.classList.add("project-overlay-active");
+  saveSMS.style.display = "none";
   airtelImage.style.display = "grid";
+});
+
+saveLink.addEventListener("click", () => {
+  projectOverlay.classList.add("project-overlay-active");
+  airtelImage.style.display = "none";
+  saveSMS.style.display = "grid";
 });
 
 closePop.addEventListener("click", () => {
   projectOverlay.classList.remove("project-overlay-active");
   airtelImage.style.display = "none";
+  saveSMS.style.display = "none";
 });
+
+
+
+var thumbnails = document.getElementById("thumbnails");
+var imgs = thumbnails.getElementsByTagName("img");
+var main = document.getElementById("main");
+var counter = 0;
+
+for (let i = 0; i < imgs.length; i++) {
+  let img = imgs[i];
+
+  img.addEventListener("click", function () {
+    main.src = this.src;
+  });
+}

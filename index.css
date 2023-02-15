@@ -22,7 +22,7 @@ html {
   scroll-padding: var(--scroll-padding, 5rem);
 }
 
-.loader-overlay{
+.loader-overlay {
   background-color: black;
   left: 0;
   top: 0;
@@ -33,7 +33,6 @@ html {
   display: grid;
   place-items: center;
 }
-
 
 .loader {
   width: 150px;
@@ -168,14 +167,10 @@ html {
   }
 }
 
-
-
-
-
 .hidden {
   opacity: 0;
   transition: all 1s;
-  
+
   transform: translateX(-100%);
 }
 
@@ -198,7 +193,6 @@ html {
   opacity: 0;
   transform: scale(0.5);
   transition: all 1s;
-  
 }
 
 .pop-in-show {
@@ -220,11 +214,11 @@ html {
   transition: all 1s;
 }
 
-@media(prefers-reduced-motion){
+@media (prefers-reduced-motion) {
   .fly-in-right-hidden,
   .pop-in-hidden,
   .fade-in-hidden,
-  .hidden{
+  .hidden {
     transition: none;
   }
 }
@@ -894,8 +888,6 @@ iframe {
     flex-direction: column;
   }
 
-  
-
   .hero-section {
     height: 60%;
     width: 70%;
@@ -907,7 +899,6 @@ iframe {
     margin-left: 0px;
     margin-top: 20px;
   }
-
 
   .project-wrapper {
     display: grid;
@@ -957,13 +948,10 @@ iframe {
     transform: scale(0.5);
   }
 
-  
   .links-wrapper {
     display: none;
   }
 }
-
-
 
 @media screen and (max-width: 550px) {
   .hero-section {
@@ -974,9 +962,7 @@ iframe {
   }
 }
 
-
-
-.project-overlay{
+.project-overlay {
   width: 100vw;
   height: 100vh;
   background-color: var(--bg);
@@ -990,16 +976,14 @@ iframe {
   transition: ease 0.5s;
 }
 
-.project-overlay-active{
- transform: scale(1);
+.project-overlay-active {
+  transform: scale(1);
   visibility: visible;
   opacity: 1;
   transition: ease 0.5s;
 }
 
-
-
-.back{
+.back {
   position: absolute;
   left: 20px;
   top: 20px;
@@ -1017,17 +1001,17 @@ iframe {
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4);
 }
 
-.back:hover{
+.back:hover {
   background-color: var(--phover);
 }
 
-.back i{
+.back i {
   margin-right: 5px;
   font-size: 1.1rem;
   color: var(--bg);
 }
 
-.airtel{
+.airtel {
   width: 100%;
   height: 100%;
   display: grid;
@@ -1035,24 +1019,101 @@ iframe {
   display: none;
 }
 
-.airtel-app{
+.airtel-app {
   width: 60vw;
 }
 
-@media screen and (max-width: 800px) {
-.airtel-app{
-  width: 80vw;
+#thumbnails img,
+#main {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
 }
+
+#thumbnails {
+  display: grid;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: repeat(7, 150px);
+  grid-template-rows: 100px;
+  overflow-x: auto;
+  padding: 10px;
+  column-gap: 20px;
+  height: fit-content;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-top: auto;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+#thumbnails * {
+  transition: ease 0.3s;
+}
+
+#thumbnails img {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transition: ease 0.3s;
+}
+/* @media only screen and (max-width: 480px) {
+	 #thumbnails img {
+		 width: 50px;
+		 height: 50px;
+	}
+} */
+#thumbnails img:hover {
+  transform: scale(1.05);
+}
+#main {
+  width: 60%;
+  object-fit: cover;
+  display: block;
+  margin-top: 40px;
+}
+
+.save-sms {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  display: none;
+}
+/* @media only screen and (max-width: 480px) {
+	 #main {
+		 width: 100%;
+	}
+}
+ .hidden-img {
+	 opacity: 0;
+} */
+
+@media screen and (max-width: 800px) {
+  .airtel-app {
+    width: 80vw;
+  }
+
+  #main {
+    width: 80%;
+  }
 }
 
 @media screen and (max-width: 600px) {
-.airtel-app{
-  width: 90vw;
-}
+  .airtel-app {
+    width: 90vw;
+  }
+
+  #main {
+    width: 90%;
+  }
 }
 
 @media screen and (max-width: 400px) {
-.airtel-app{
-  width: 100vw;
-}
+  .airtel-app {
+    width: 98vw;
+  }
+
+  #main {
+    width: 98%;
+  }
 }
