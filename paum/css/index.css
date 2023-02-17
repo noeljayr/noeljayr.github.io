@@ -970,12 +970,12 @@ body {
 
   .contact-links {
     width: 100%;
-    padding-left: 40px;
+    padding-left: 20px;
   }
 
   .social-links {
     width: fit-content;
-    margin-left: 40px;
+    margin-left: 20px;
   }
 
   .home-about {

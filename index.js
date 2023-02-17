@@ -129,7 +129,7 @@ closePop.addEventListener("click", () => {
 
 
 
-var thumbnails = document.getElementById("thumbnails");
+var thumbnails = document.querySelector(".image-selectors");
 var imgs = thumbnails.getElementsByTagName("img");
 var main = document.getElementById("main");
 var counter = 0;
