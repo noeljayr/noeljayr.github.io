@@ -5,8 +5,6 @@
 
 //   // Get a reference to the range input, the current-time span, and the end-time span
 
-
-
 // const like = document.getElementById("like-song");
 
 // like.addEventListener("click", () => {
@@ -473,13 +471,10 @@ const playPrev = () => {
   audio.play();
 };
 
-
 function updateAudioVolume() {
   audio.volume = volumeSlider.value / 100;
   localStorage.setItem("rangeValue", audio.volume);
 }
-
-
 
 const range = document.getElementById("volume-slider");
 const volume = document.querySelector(".volume");
@@ -502,6 +497,11 @@ range.addEventListener("input", () => {
     volume.children[2].style.display = "inline-block";
   }
 });
+
+range.value = 70;
+volume.children[0].style.display = "none";
+volume.children[1].style.display = "none";
+volume.children[2].style.display = "inline-block";
 
 if (storedValue) {
   range.value = storedValue;
@@ -542,7 +542,6 @@ function updateVolume() {
 
 updateVolume();
 
-
 // Event listener
 volumeSlider.addEventListener("input", updateAudioVolume);
 function updateAudioVolume() {
@@ -552,12 +551,6 @@ function updateAudioVolume() {
 
 // Event listener
 volumeSlider.addEventListener("input", updateAudioVolume);
-
-
-
-
-
-
 
 //add event listeners to controls
 // playBtn.addEventListener("click", togglePlay);
