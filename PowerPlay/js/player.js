@@ -499,14 +499,14 @@ range.addEventListener("input", () => {
 });
 
 range.value = 70;
-volume.children[0].style.display = "none";
-volume.children[1].style.display = "none";
-volume.children[2].style.display = "inline-block";
+
 
 if (storedValue) {
   range.value = storedValue;
+  updateVolume();
 } else {
   range.value = 70;
+  updateVolume();
 }
 
 volume.addEventListener("click", (event) => {
