@@ -5,65 +5,7 @@
 
 //   // Get a reference to the range input, the current-time span, and the end-time span
 
-// const range = document.getElementById("volume-slider");
-// const volume = document.querySelector(".volume");
 
-// range.addEventListener("input", () => {
-//   localStorage.setItem("rangeValue", range.value);
-
-//   if (range.value == 0) {
-//     volume.children[0].style.display = "none";
-//     volume.children[1].style.display = "inline-block";
-//     volume.children[2].style.display = "none";
-//   } else if (range.value < 50) {
-//     volume.children[0].style.display = "inline-block";
-//     volume.children[1].style.display = "none";
-//     volume.children[2].style.display = "none";
-//   } else {
-//     volume.children[0].style.display = "none";
-//     volume.children[1].style.display = "none";
-//     volume.children[2].style.display = "inline-block";
-//   }
-// });
-
-// const storedValue = localStorage.getItem("rangeValue");
-
-// if (storedValue) {
-//   range.value = storedValue;
-// }
-
-// volume.addEventListener("click", (event) => {
-//   if (event.target.classList.contains("bi-volume-mute")) {
-//     event.target.className = "bi-volume-mute";
-
-//     const range = document.getElementById("volume-slider");
-//     range.value = 3;
-//     localStorage.setItem("rangeValue", range.value);
-//   } else {
-//     range.value = 0;
-//     localStorage.setItem("rangeValue", range.value);
-//   }
-//   updateVolume();
-//   updateAudioVolume();
-// });
-
-// function updateVolume() {
-//   if (range.value == 0) {
-//     volume.children[0].style.display = "none";
-//     volume.children[1].style.display = "inline-block";
-//     volume.children[2].style.display = "none";
-//   } else if (range.value < 50) {
-//     volume.children[0].style.display = "inline-block";
-//     volume.children[1].style.display = "none";
-//     volume.children[2].style.display = "none";
-//   } else {
-//     volume.children[0].style.display = "none";
-//     volume.children[1].style.display = "none";
-//     volume.children[2].style.display = "inline-block";
-//   }
-// }
-
-// updateVolume();
 
 // const like = document.getElementById("like-song");
 
@@ -449,37 +391,38 @@ const slider = document.querySelector(".slider");
 const audioSlider = document.getElementById("audio-slider");
 const current = document.querySelector(".current-time");
 const end = document.querySelector(".end-time");
+const volumeSlider = document.querySelector("#volume-slider");
 
 // create object for the tracks and artists
 const tracks = {
   1: {
-    title: "No Role Modelz",
-    artist: "J. Cole",
-    art: "./res/img/arts/1.jpg",
+    title: "Cry For You",
+    artist: "Lacrae",
+    art: "./res/img/arts/cry.jpg",
     src: "./res/tracks/1.mp3",
   },
   2: {
-    title: "Someone You Loved",
-    artist: "Lewis Capaldi",
-    art: "./res/img/arts/2.jpg",
+    title: "Twenty To One",
+    artist: "Dave",
+    art: "./res/img/arts/twenty.jpg",
     src: "./res/tracks/2.mp3",
   },
   3: {
-    title: "The Hills",
-    artist: "The Weeknd",
-    art: "./res/img/arts/3.jpg",
+    title: "JUST LIKE YOU",
+    artist: "NF",
+    art: "./res/img/arts/just.jpg",
     src: "./res/tracks/3.mp3",
   },
   4: {
-    title: "Dancing With A Stranger",
-    artist: "Sam Smith ft. Normani",
-    art: "./res/img/arts/4.jpg",
+    title: "I'll Find You",
+    artist: "Lacrae",
+    art: "./res/img/arts/find.jpg",
     src: "./res/tracks/4.mp3",
   },
   5: {
-    title: "Blinding Lights",
-    artist: "The Weeknd",
-    art: "./res/img/arts/5.jpg",
+    title: "Dear God",
+    artist: "Dax",
+    art: "./res/img/arts/6.jpg",
     src: "./res/tracks/5.mp3",
   },
 };
@@ -529,6 +472,92 @@ const playPrev = () => {
   artistName.textContent = tracks[trackNumber].artist;
   audio.play();
 };
+
+
+function updateAudioVolume() {
+  audio.volume = volumeSlider.value / 100;
+  localStorage.setItem("rangeValue", audio.volume);
+}
+
+
+
+const range = document.getElementById("volume-slider");
+const volume = document.querySelector(".volume");
+const storedValue = localStorage.getItem("rangeValue");
+
+range.addEventListener("input", () => {
+  localStorage.setItem("rangeValue", range.value);
+
+  if (range.value == 0) {
+    volume.children[0].style.display = "none";
+    volume.children[1].style.display = "inline-block";
+    volume.children[2].style.display = "none";
+  } else if (range.value < 50) {
+    volume.children[0].style.display = "inline-block";
+    volume.children[1].style.display = "none";
+    volume.children[2].style.display = "none";
+  } else {
+    volume.children[0].style.display = "none";
+    volume.children[1].style.display = "none";
+    volume.children[2].style.display = "inline-block";
+  }
+});
+
+if (storedValue) {
+  range.value = storedValue;
+} else {
+  range.value = 70;
+}
+
+volume.addEventListener("click", (event) => {
+  if (event.target.classList.contains("bi-volume-mute")) {
+    event.target.className = "bi-volume-mute";
+
+    const range = document.getElementById("volume-slider");
+    range.value = 10;
+    localStorage.setItem("rangeValue", range.value);
+  } else {
+    range.value = 0;
+    localStorage.setItem("rangeValue", range.value);
+  }
+  updateVolume();
+  updateAudioVolume();
+});
+
+function updateVolume() {
+  if (range.value == 0) {
+    volume.children[0].style.display = "none";
+    volume.children[1].style.display = "inline-block";
+    volume.children[2].style.display = "none";
+  } else if (range.value < 50) {
+    volume.children[0].style.display = "inline-block";
+    volume.children[1].style.display = "none";
+    volume.children[2].style.display = "none";
+  } else {
+    volume.children[0].style.display = "none";
+    volume.children[1].style.display = "none";
+    volume.children[2].style.display = "inline-block";
+  }
+}
+
+updateVolume();
+
+
+// Event listener
+volumeSlider.addEventListener("input", updateAudioVolume);
+function updateAudioVolume() {
+  audio.volume = volumeSlider.value / 100;
+  localStorage.setItem("rangeValue", audio.volume);
+}
+
+// Event listener
+volumeSlider.addEventListener("input", updateAudioVolume);
+
+
+
+
+
+
 
 //add event listeners to controls
 // playBtn.addEventListener("click", togglePlay);
