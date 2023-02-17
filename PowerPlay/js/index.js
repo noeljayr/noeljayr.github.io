@@ -1,3 +1,12 @@
+const noticeOverlay = document.querySelector(".notice-overlay");
+const closeOverlay = document.querySelector(".close-notice-btn");
+
+closeOverlay.addEventListener("click", () => {
+  noticeOverlay.classList.add("notice-overlay-proceed");
+})
+
+
+
 /*sidebar */
 
 const toggleBtn = document.querySelector(".toggle");

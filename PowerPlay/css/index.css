@@ -37,6 +37,102 @@ body {
   height: 100vh;
 }
 
+.notice-overlay {
+  width: 100vw;
+  height: 100vh;
+  z-index: 99;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  transition: ease 0.6s;
+}
+
+.notice-overlay-proceed {
+  opacity: 0;
+  transform: scale(0);
+  visibility: hidden;
+}
+
+.notice-overlay .notice-container {
+  background-color: var(--bg3);
+  border-radius: 10px;
+  padding: 20px;
+  padding: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  max-width: 50%;
+}
+
+.notice-overlay .notice-container p {
+  max-width: 100%;
+  margin-top: 10px;
+}
+
+.notice-container .close-notice-btn {
+  background-color: var(--bg4);
+  width: fit-content;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 6px;
+  margin-top: 20px;
+  cursor: pointer;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.37);
+}
+
+@media screen and (max-width: 800px) {
+  .notice-overlay .notice-container {
+    background-color: var(--bg3);
+    border-radius: 10px;
+    padding: 20px;
+    padding: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    max-width: 70%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .notice-overlay .notice-container {
+    background-color: var(--bg3);
+    border-radius: 10px;
+    padding: 20px;
+    padding: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .notice-overlay .notice-container {
+    background-color: var(--bg3);
+    border-radius: 10px;
+    padding: 20px;
+    padding: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    max-width: 95%;
+  }
+}
+
+.notice-overlay .top {
+  border-bottom: 1px solid var(--text);
+  font-size: 1.3rem;
+}
+
+.notice-container .top i {
+  font-size: 1.6rem;
+}
+
 .flex-box {
   display: flex;
 }
@@ -285,7 +381,6 @@ input {
   scrollbar-width: none; */
 }
 
-
 .playlist {
   opacity: 0.5;
   font-size: 14px;
@@ -295,9 +390,8 @@ input {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-   text-decoration: none;
+  text-decoration: none;
 }
-
 
 .shrink-side .playlist {
   opacity: 0;

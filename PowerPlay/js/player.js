@@ -473,16 +473,15 @@ const playPrev = () => {
 
 function updateAudioVolume() {
   audio.volume = volumeSlider.value / 100;
-  localStorage.setItem("rangeValue", audio.volume);
+ 
 }
 
 const range = document.getElementById("volume-slider");
 const volume = document.querySelector(".volume");
-const storedValue = localStorage.getItem("rangeValue");
 
 range.addEventListener("input", () => {
-  localStorage.setItem("rangeValue", range.value);
-
+  
+  
   if (range.value == 0) {
     volume.children[0].style.display = "none";
     volume.children[1].style.display = "inline-block";
@@ -498,16 +497,16 @@ range.addEventListener("input", () => {
   }
 });
 
-range.value = 70;
 
+// console.log(storedValue)
 
-if (storedValue) {
-  range.value = storedValue;
-  updateVolume();
-} else {
-  range.value = 70;
-  updateVolume();
-}
+// if (storedValue) {
+//   range.value = storedValue;
+//   updateVolume();
+// } else {
+//   range.value = 70;
+//   updateVolume();
+// }
 
 volume.addEventListener("click", (event) => {
   if (event.target.classList.contains("bi-volume-mute")) {
@@ -515,10 +514,10 @@ volume.addEventListener("click", (event) => {
 
     const range = document.getElementById("volume-slider");
     range.value = 10;
-    localStorage.setItem("rangeValue", range.value);
+   
   } else {
     range.value = 0;
-    localStorage.setItem("rangeValue", range.value);
+   
   }
   updateVolume();
   updateAudioVolume();
@@ -546,7 +545,8 @@ updateVolume();
 volumeSlider.addEventListener("input", updateAudioVolume);
 function updateAudioVolume() {
   audio.volume = volumeSlider.value / 100;
-  localStorage.setItem("rangeValue", audio.volume);
+  
+
 }
 
 // Event listener

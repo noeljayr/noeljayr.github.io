@@ -47,6 +47,43 @@
   </head>
 
   <body>
+    <div class="notice-overlay glassmorphism">
+      <div class="notice-container">
+        <div class="top">
+          <i class="bi bi-exclamation-triangle-fill"></i> NOTICE
+        </div>
+
+        <p>
+          We would like to inform you that the web app you are currently using
+          is still under development. Please note that the app does not have a
+          backend yet, and all links are implemented using vanilla Javascript.
+          As a result, there may be some errors or unexpected behavior when
+          reloading pages or performing certain actions.
+          <br />
+          <br />
+          Additionally, we are still working on the app's design, so the look
+          and feel of the app may be subject to change in the future. We
+          apologize for any inconvenience this may cause, and we appreciate your
+          patience and understanding as we continue to work on improving the
+          app.
+          <br />
+          <br />
+          If you have any questions or concerns, please do not hesitate to
+          contact us.
+          <br />
+          <br />
+          Thank you for your understanding.
+          <br />
+          <br />
+          Best regards, <br />
+          The Development Team
+        </p>
+
+        <div class="close-notice-btn glassmorphism">
+          Proceed
+        </div>
+      </div>
+    </div>
     <div class="bottom-nav flex-box">
       <a class="link-sp" href="/powerplay">
         <span class="icon"><i class="mdi mdi-home-variant"></i></span>
@@ -512,10 +549,10 @@
       </div>
       <input
         value="0"
-        class="mobile-slider"
+        class="mobile-slider track-progress-slider"
         type="range"
         name=""
-        id="audio-slider"
+        id="audio-slider-mobile"
       />
       <div class="left">
         <div
@@ -543,7 +580,7 @@
           <span class="current-time">00:00</span>
           <input
             value="0"
-            class="slider"
+            class="slider track-progress-slider"
             type="range"
             name=""
             id="audio-slider"
@@ -574,7 +611,13 @@
           <i class="bi bi-volume-mute"></i>
           <i class="bi bi-volume-up"></i>
         </span>
-        <input class="slider" type="range" value="70" name="" id="volume-slider" />
+        <input
+          class="slider"
+          type="range"
+          value="70"
+          name=""
+          id="volume-slider"
+        />
       </div>
     </div>
 
