@@ -50,10 +50,7 @@ links.forEach(function (link) {
     // Add active class to clicked link
     this.classList.add("link-active");
 
-    var link = this.getAttribute("href");
-    var name = link.substr(link.indexOf("#") + 1);
-    var url = "/" + name;
-
+    var url = this.getAttribute("href");
 
     fetch("/templates" + url + ".html")
       .then(function (response) {
