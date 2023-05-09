@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lalibela - Luxury Rooms & Restaurant</title>
 
-    <link rel="stylesheet" href="lalibela/css/index.css" />
-    <link rel="stylesheet" href="lalibela/css/admin.css" />
+    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="../css/admin.css" />
 
-    <link rel="shortcut icon" href="lalibela/res/logo-gfx.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../res/logo-gfx.png" type="image/x-icon" />
 
     <link
       rel="stylesheet"
@@ -25,36 +25,40 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <script defer src="lalibela/admin/admin.js"></script>
-    <script defer src="lalibela/admin/settings.js"></script>
+    <script defer src="./admin.js"></script>
+    <script defer src="./settings.js"></script>
   </head>
   <body>
     <div class="content">
       <div class="side-bar">
-        <a href="lalibela/admin/dashboard.html" class="side-link active-side-link">
+        <a href="/admin/dashboard.html" class="side-link active-side-link">
           <i class="bi bi-house-fill"></i>
           Dashboard
         </a>
-        <a href="lalibela/admin/bookings.html" class="side-link">
+        <a href="/admin/bookings.html" class="side-link">
           <i class="bi bi-calendar2-check-fill"></i>
           Bookings
 
           <span class="noti-badge">1</span>
         </a>
-        <a href="lalibela/admin/analytics.html" class="side-link">
+        <a href="/admin/analytics.html" class="side-link">
           <i class="bi bi-pie-chart-fill"></i>
           Analytics
         </a>
-        <a href="lalibela/admin/admins.html" class="side-link">
+        <a href="/admin/admins.html" class="side-link">
           <i class="bi bi-people-fill"></i>
           Admins
         </a>
       </div>
 
       <div class="top-bar">
-        <a href="lalibela/" class="logo">
-          <img src="lalibela/res/logo-gfx.png" alt="Lalibela Logo" class="logo-gfx" />
-          <img src="lalibela/res/logo-name.png" alt="Lalibela Name" class="logo-name" />
+        <a href="/" class="logo">
+          <img src="../res/logo-gfx.png" alt="Lalibela Logo" class="logo-gfx" />
+          <img
+            src="../res/logo-name.png"
+            alt="Lalibela Name"
+            class="logo-name"
+          />
         </a>
 
         <span class="settings">
@@ -163,34 +167,18 @@
 
         <div class="input-group">
           <span class="name">Password: </span>
-          <input
-            id="current-password"
-            class="password-input"
-            readonly
-            value="1234"
-            type="password"
-          />
+          <input id="current-password" class="password-input" readonly value="1234" type="password" />
           <span class="edit-password">Edit</span>
         </div>
 
-        <div class="input-group hidden">
+        <div class="input-group  hidden">
           <span class="name">Old Password: </span>
-          <input
-            required
-            class="password-input old-password-group"
-            readonly
-            type="password"
-          />
+          <input required class="password-input old-password-group" readonly type="password" />
         </div>
 
         <div class="input-group hidden">
           <span class="name">New Password: </span>
-          <input
-            required
-            class="password-input new-password-group"
-            readonly
-            type="password"
-          />
+          <input required class="password-input new-password-group" readonly type="password" />
         </div>
 
         <div class="input-group conf-password-group hidden">
