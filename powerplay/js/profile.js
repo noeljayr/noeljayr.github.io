@@ -3,7 +3,7 @@ const editProfilebtn = document.querySelector(".edit-profile-btn");
 closeBtns.forEach((closeBtn) => {
   closeBtn.addEventListener("click", () => {
     playlistOverlay.classList.remove("add-playlist-overlay-active");
-    editProfile.style.display = "none";
+    editProfilebtn.style.display = "none";
     playlistForm.style.display = "none";
   });
 });
@@ -11,7 +11,7 @@ closeBtns.forEach((closeBtn) => {
 editProfilebtn.addEventListener("click", () => {
   playlistOverlay.classList.add("add-playlist-overlay-active");
   playlistForm.style.display = "none";
-  editProfile.style.display = "flex";
+  editProfilebtn.style.display = "flex";
 });
 
 /*Follow */

@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lalibela - Luxury Rooms & Restaurant</title>
+
+    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="../css/admin.css" />
+    <link rel="stylesheet" href="../css/analytics.css" />
+
+    <link rel="shortcut icon" href="../res/logo-gfx.png" type="image/x-icon" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+      integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script defer src="./settings.js"></script>
+  </head>
+  <body>
+    <div class="content">
+      <div class="side-bar">
+        <a href="/admin/dashboard.html" class="side-link">
+          <i class="bi bi-house-fill"></i>
+          Dashboard
+        </a>
+        <a href="/admin/bookings.html" class="side-link">
+          <i class="bi bi-calendar2-check-fill"></i>
+          Bookings
+
+          <span class="noti-badge">1</span>
+        </a>
+        <a href="/admin/analytics.html" class="side-link active-side-link">
+          <i class="bi bi-pie-chart-fill"></i>
+          Analytics
+        </a>
+        <a href="/admin/admins.html" class="side-link">
+          <i class="bi bi-people-fill"></i>
+          Admins
+        </a>
+      </div>
+
+      <div class="top-bar">
+        <a href="/" class="logo">
+          <img src="../res/logo-gfx.png" alt="Lalibela Logo" class="logo-gfx" />
+          <img
+            src="../res/logo-name.png"
+            alt="Lalibela Name"
+            class="logo-name"
+          />
+        </a>
+
+        <span class="settings">
+          <i class="bi bi-person-fill-gear"></i>
+        </span>
+      </div>
+
+      <span class="greeting">
+        <h1>Analytics</h1>
+      </span>
+
+      <form class="range-form">
+        <div class="input-wrapper">
+          <div class="input-group">
+            <label for="">From:</label>
+            <input class="start-date" readonly type="text" />
+
+            <div id="start-calendar" class="date-picker">
+              <div class="calendar-input">
+                <div class="header ignore">
+                  <span class="prevMonth">
+                    <i class="bi bi-chevron-left"></i>
+                  </span>
+                  <h2 class="monthYear"></h2>
+                  <span class="nextMonth">
+                    <i class="bi bi-chevron-right"></i>
+                  </span>
+                </div>
+                <table>
+                  <caption></caption>
+                  <thead class="ignore">
+                    <tr>
+                      <th scope="col">Sun</th>
+                      <th scope="col">Mon</th>
+                      <th scope="col">Tue</th>
+                      <th scope="col">Wed</th>
+                      <th scope="col">Thu</th>
+                      <th scope="col">Fri</th>
+                      <th scope="col">Sat</th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="">To:</label>
+            <input class="end-date" readonly type="text" />
+
+            <div id="end-calendar" class="date-picker">
+              <div class="calendar-input">
+                <div class="header ignore">
+                  <span class="prevMonth">
+                    <i class="bi bi-chevron-left"></i>
+                  </span>
+                  <h2 class="monthYear"></h2>
+                  <span class="nextMonth">
+                    <i class="bi bi-chevron-right"></i>
+                  </span>
+                </div>
+                <table>
+                  <caption></caption>
+                  <thead class="ignore">
+                    <tr>
+                      <th scope="col">Sun</th>
+                      <th scope="col">Mon</th>
+                      <th scope="col">Tue</th>
+                      <th scope="col">Wed</th>
+                      <th scope="col">Thu</th>
+                      <th scope="col">Fri</th>
+                      <th scope="col">Sat</th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit">Generate Report</button>
+      </form>
+
+      <div class="stat-container">
+        <div class="stat-card">
+          <span class="stat-title">Total Booking</span>
+          <span class="stat-number">35</span>
+        </div>
+
+        <div class="stat-card">
+          <span class="stat-title">Completed</span>
+
+          <!-- this number is for the number of new booking requests today, be it
+          bookings that are a month from now but just new booking requests both
+          approved or not -->
+          <span class="stat-number">5</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-title">Pending</span>
+
+          <!-- this is for those guests coming in today or who will come today -->
+          <span class="stat-number">12</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-title">Canceled</span>
+
+          <!-- this is for guests who are leaving today -->
+          <span class="stat-number">6</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-title">Site Visits</span>
+          <span class="stat-number">6</span>
+        </div>
+      </div>
+
+      <div class="chart-header">
+        <div class="heading">Overview</div>
+      </div>
+
+      <form class="settings-form">
+        <h1>Profile Settings</h1>
+        <div class="avatar-upload">
+          <div class="avatar-edit">
+            <input type="file" id="imageUpload" accept=".png, .jpg, .jpeg" />
+            <label for="imageUpload"></label>
+          </div>
+          <div class="avatar-preview">
+            <div id="imagePreview"></div>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <span class="name">First Name: </span>
+          <input class="text-input" readonly value="Noel" type="text" />
+          <span class="edit-btn">Edit</span>
+        </div>
+        <div class="input-group">
+          <span class="name">Last Name: </span>
+          <input class="text-input" readonly value="Luhanga" type="text" />
+          <span class="edit-btn">Edit</span>
+        </div>
+        <div class="input-group">
+          <span class="name">Phone: </span>
+          <input
+            class="text-input"
+            readonly
+            value="+265886047774"
+            type="text"
+          />
+          <span class="edit-btn">Edit</span>
+        </div>
+        <div class="input-group">
+          <span class="name">Email: </span>
+          <input
+            class="text-input"
+            readonly
+            value="noeljayr01@gmail.com"
+            type="text"
+          />
+          <span class="edit-btn">Edit</span>
+        </div>
+
+        <div class="input-group">
+          <span class="name">Password: </span>
+          <input
+            id="current-password"
+            class="password-input"
+            readonly
+            value="1234"
+            type="password"
+          />
+          <span class="edit-password">Edit</span>
+        </div>
+
+        <div class="input-group hidden">
+          <span class="name">Old Password: </span>
+          <input
+            required
+            class="password-input old-password-group"
+            readonly
+            type="password"
+          />
+        </div>
+
+        <div class="input-group hidden">
+          <span class="name">New Password: </span>
+          <input
+            required
+            class="password-input new-password-group"
+            readonly
+            type="password"
+          />
+        </div>
+
+        <div class="input-group conf-password-group hidden">
+          <span class="name">Confirm Password: </span>
+          <input required class="password-input" readonly type="password" />
+        </div>
+
+        <div class="btn-container">
+          <span class="btn discard-edit">Discard</span>
+          <button class="btn save-settings" type="submit">Save</button>
+        </div>
+      </form>
+
+      <div style="height: 25rem">
+        <canvas id="myChart"></canvas>
+      </div>
+
+      <script>
+        const today = new Date();
+        const month = today.getMonth();
+        const year = today.getFullYear();
+
+        // Get the number of days in the current month
+        const numDays = new Date(year, month + 1, 0).getDate();
+
+        const data = [
+          3, 8, 6, 14, 18, 20, 22, 24, 5, 11, 21, 8, 12, 6, 17, 20, 18, 16, 9,
+          2, 7, 10, 23, 3,
+        ];
+
+        const labels = Array.from({ length: data.length }, (_, i) => i + 1);
+
+        const maxXValue = data.length;
+        /*
+        - days will be automatically added
+        - for the values use json to get data from database and pass it to the "Data" array
+        - make user the data should be per day, i hope you will create a table to keep track of bookings on each day
+        - this is a business website for its only right that we have a graph on the dashboard
+        - data passed should be for the current month
+        - you can do it mahn i know you good at backend 🤣🤣
+        */
+
+        const chartOptions = {
+          labels: labels,
+          datasets: [
+            {
+              label: "Hotel Bookings",
+              data: data,
+              fill: false,
+              borderColor: "#0d46d7",
+              borderWidth: 1.3,
+              pointBackgroundColor: "#0d46d7",
+              pointBorderColor: "#0d46d7",
+              tension: 0.4,
+            },
+          ],
+        };
+
+        const options = {
+          maintainAspectRatio: false,
+          scales: {
+            x: {
+              title: {
+                display: true,
+                text: "Days",
+              },
+              ticks: {
+                beginAtZero: true,
+                stepSize: 2,
+                max: maxXValue,
+                callback: function (value, index, values) {
+                  if (value % 2 === 0) {
+                    return value;
+                  } else {
+                    return "";
+                  }
+                },
+              },
+              grid: {
+                color: "rgba(13, 70, 215, 0.12)",
+              },
+            },
+            y: {
+              title: {
+                display: true,
+                text: "Bookings",
+              },
+              grid: {
+                color: "rgba(13, 70, 215, 0.12)",
+              },
+            },
+          },
+        };
+
+        const ctx = document.getElementById("myChart").getContext("2d");
+        const myChart = new Chart(ctx, {
+          type: "line",
+          data: chartOptions,
+          options: options,
+        });
+
+        function createCalendar(x, y) {
+          var calendar = x;
+          var date = new Date();
+          var year = date.getFullYear();
+          var month = date.getMonth();
+
+          var monthYear = calendar.querySelector(".monthYear");
+          var prevMonth = calendar.querySelector(".prevMonth");
+          var nextMonth = calendar.querySelector(".nextMonth");
+
+          // Update the month and year in the header
+          updateHeader();
+
+          // Add event listeners to the previous and next buttons
+          prevMonth.addEventListener("click", showPrevMonth);
+          nextMonth.addEventListener("click", showNextMonth);
+
+          // Update the calendar
+          updateCalendar();
+
+          function updateHeader() {
+            monthYear.textContent = getMonthName() + " " + year;
+          }
+
+          function showPrevMonth() {
+            if (month === 0) {
+              year--;
+              month = 11;
+            } else {
+              month--;
+            }
+            updateHeader();
+            updateCalendar();
+          }
+
+          function showNextMonth() {
+            if (month === 11) {
+              year++;
+              month = 0;
+            } else {
+              month++;
+            }
+            updateHeader();
+            updateCalendar();
+          }
+
+          function updateCalendar() {
+            var tbody = calendar.querySelector("tbody");
+            tbody.innerHTML = "";
+
+            var today = new Date();
+            var firstDay = new Date(year, month, 1).getDay();
+            var daysInMonth = new Date(year, month + 1, 0).getDate();
+
+            var date = 1;
+            for (var i = 0; i < 6; i++) {
+              var row = document.createElement("tr");
+              for (var j = 0; j < 7; j++) {
+                var cell = document.createElement("td");
+
+                if (i === 0 && j < firstDay) {
+                  // Fill in empty cells before the first day
+                  var text = document.createTextNode("");
+                  cell.appendChild(text);
+                } else if (date > daysInMonth) {
+                  // Fill in empty cells after the last day
+                  var text = document.createTextNode("");
+                  cell.appendChild(text);
+                } else {
+                  // Fill in cells with the day numbers
+                  var text = document.createTextNode(date);
+                  cell.appendChild(text);
+
+                  // Add event listener to update the selected date
+                  cell.addEventListener("click", function () {
+                    var selected = tbody.querySelector(".selected");
+                    if (selected) {
+                      selected.classList.remove("selected");
+                    }
+                    this.classList.add("selected");
+                    var day = this.textContent;
+                    var fullDate = new Date(year, month, day);
+                    var options = {
+                      month: "long",
+                      year: "numeric",
+                      day: "numeric",
+                    };
+                    var formattedDate = fullDate.toLocaleDateString(
+                      "en-US",
+                      options
+                    );
+
+                    const startDate = y;
+                    startDate.value = formattedDate;
+                  });
+
+                  // If this is the current date, add the 'today' class
+                  if (
+                    date === today.getDate() &&
+                    month === today.getMonth() &&
+                    year === today.getFullYear()
+                  ) {
+                    cell.classList.add("today");
+                  }
+
+                  date++;
+                }
+
+                if (cell.innerText === "") {
+                  cell.classList.add("ignore");
+                }
+                row.appendChild(cell);
+              }
+              tbody.appendChild(row);
+            }
+          }
+
+          function getMonthName() {
+            var monthNames = [
+              "January",
+              "February",
+              "March",
+              "April",
+              "May",
+              "June",
+              "July",
+              "August",
+              "September",
+              "October",
+              "November",
+              "December",
+            ];
+            return monthNames[month];
+          }
+        }
+
+        const calendars = document.querySelectorAll(".calendar-input");
+        const startDate = document.querySelector(".start-date");
+        startDate.value = "";
+        const endDate = document.querySelector(".end-date");
+        endDate.value = "";
+        createCalendar(calendars[0], startDate);
+        createCalendar(calendars[1], endDate);
+
+        const startCalendar = document.querySelector("#start-calendar");
+        const endCalendar = document.querySelector("#end-calendar");
+        const ignoreEl = document.querySelectorAll(".ignore");
+
+        // Add an event listener to the first input group
+        startDate.addEventListener("click", function () {
+          // Add the active class to the calendar
+          startCalendar.classList.add("date-picker-active");
+        });
+
+        endDate.addEventListener("click", function () {
+          // Add the active class to the calendar
+          endCalendar.classList.add("date-picker-active");
+        });
+
+        // Add an event listener to the document
+        document.addEventListener("click", function (event) {
+          // Check if the clicked element is not the first input group or the calendar
+
+          if (
+            event.target !== startDate &&
+            event.target !== startCalendar &&
+            !event.target.classList.contains("ignore") &&
+            !event.target.classList.contains("disabled")
+          ) {
+            // Remove the active class from the calendar
+            startCalendar.classList.remove("date-picker-active");
+          }
+        });
+
+        document.addEventListener("click", function (event) {
+          // Check if the clicked element is not the first input group or the calendar
+
+          if (
+            event.target !== endDate &&
+            event.target !== endCalendar &&
+            !event.target.classList.contains("ignore") &&
+            !event.target.classList.contains("disabled")
+          ) {
+            // Remove the active class from the calendar
+            endCalendar.classList.remove("date-picker-active");
+          }
+        });
+
+        ignoreEl.forEach((el) => {
+          el.addEventListener("click", function (event) {
+            event.stopPropagation();
+          });
+        });
+      </script>
+    </div>
+  </body>
+</html>
