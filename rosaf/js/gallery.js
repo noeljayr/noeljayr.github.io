@@ -1,48 +1,48 @@
 // You should pass the array of objects with ajax check the code below... check the sample on the php page
 const imageData = [
   {
-    src: "/public/images/1.jpg",
+    src: "./public/images/1.jpg",
     caption: "Random Caption",
     date: "2023-06-10 10:39:37",
   },
   {
-    src: "/public/images/2.jpg",
+    src: "./public/images/2.jpg",
     caption: "Random Caption",
     date: "2023-06-11 10:30:00",
   },
 
   {
-    src: "/public/images/3.jpg",
+    src: "./public/images/3.jpg",
     caption: "Random Caption",
     date: "2023-06-6 10:39:37",
   },
 
   {
-    src: "/public/images/4.jpg",
+    src: "./public/images/4.jpg",
     caption: "Random Caption",
     date: "2023-05-6 10:39:37",
   },
 
   {
-    src: "/public/images/5.jpg",
+    src: "./public/images/5.jpg",
     caption: "Random Caption",
     date: "2023-05-11 10:39:37",
   },
 
   {
-    src: "/public/images/6.jpg",
+    src: "./public/images/6.jpg",
     caption: "Random Caption",
     date: "2023-05-13 10:39:37",
   },
 
   {
-    src: "/public/images/7.jpg",
+    src: "./public/images/7.jpg",
     caption: "Random Caption",
     date: "2023-06-18 10:39:37",
   },
 
   {
-    src: "/public/images/8.jpg",
+    src: "./public/images/8.jpg",
     caption: "Random Caption",
     date: "2023-04-10 10:39:37",
   },
