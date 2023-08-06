@@ -1,0 +1,201 @@
+<!-- <?php
+
+if (isset($_POST['jsonData'])) {
+
+  $jsonData = urldecode($_POST['jsonData']);
+  $data = json_decode($jsonData, true);
+
+}
+?> -->
+ 
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Management System</title>
+
+    <link rel="stylesheet" href="css/index.css" />
+
+    <script src="js/jquery.js"></script>
+
+    <script src="js/jquery.dataTables.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+
+    <style>
+      .user-content {
+        background-color: #f3f3f3;
+        min-height: 100vh;
+        justify-content: center;
+        padding: 1.5rem;
+      }
+    </style>
+  </head>
+  <body class="user-content">
+    <div class="cart-wrapper">
+      <div class="left">
+        <div class="cart-header">
+          <span class="header name">Product</span>
+          <span class="header price">Price(MK)</span>
+          <span class="header qty">Qty</span>
+          <span class="header total">Total(MK)</span>
+        </div>
+
+        <div id="product-container">
+          
+
+         
+        </div>
+      </div>
+
+      <div class="right">
+        <span class="line-top"></span>
+        <div class="total">
+          <span class="total-info">
+            <span class="title">Grand Total</span>
+            <span class="total-price">MK <span>0</span></span>
+            <p>Taxes calculated at checkout</p>
+          </span>
+        </div>
+
+        <div class="agree">
+          <input type="checkbox" name="agree" id="agree" />
+          <label for="agree">I agree to <span>Terms & Conditions</span></label>
+        </div>
+
+        <div class="checkout-btn">
+          <i class="bi bi-lock"></i>
+          Checkout
+        </div>
+        <div class="checkout-btn paypal">
+          <img src="public/images/paypal.png" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        const regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)");
+        const results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return "";
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+      }
+
+      // Get the serialized JSON data from the URL
+      const serializedProducts = getParameterByName("data");
+
+      // Parse the JSON data back into an array of objects
+      const products = JSON.parse(serializedProducts);
+
+      // Get the container where we'll display the products
+      const productContainer = document.getElementById("product-container");
+
+      // Loop through the products array and create a div for each product
+      products.forEach((product) => {
+        const productDiv = document.createElement("div");
+        productDiv.innerHTML = `
+      
+
+      <div class="cart-product">
+            <span class="remaining hidden">${product.left}</span>
+            <span class="remove-btn"> X </span>
+            <span class="product-info name">
+              <span class="product-img">
+                <img src="${product.imgSrc}" alt="" class="" />
+              </span>
+              <span title="${product.name}" class="product-name">${product.name}</span>
+            </span>
+            <span class="product-info price">${product.price}</span>
+            <span class="product-info qty">
+              <span class="btn sub">-</span>
+              <span class="number">${product.qty}</span>
+              <span class="btn add">+</span>
+            </span>
+            <span class="product-info total"></span>
+            <div class="info"></div>
+          </div>
+
+
+
+    `;
+        productContainer.appendChild(productDiv);
+      });
+
+      function calcGrand() {
+        var prices = document.querySelectorAll(".cart-product .price");
+        var totalPrice = document.querySelectorAll(".cart-product .total");
+        var grandEl = document.querySelector(".total-price span");
+        var total = 0;
+        for (var i = 0; i < prices.length; i++) {
+          var qty = prices[i].parentElement.querySelector(".qty .number");
+          totalPrice[i].textContent =
+            parseInt(qty.textContent) *
+            parseInt(prices[i].textContent.replace(/,/g, ""), 10);
+          total =
+            total + parseInt(totalPrice[i].textContent.replace(/,/g, ""), 10);
+
+          grandEl.textContent = total.toLocaleString();
+        }
+      }
+
+      calcGrand();
+
+      const remove = document.querySelectorAll(".remove-btn");
+      remove.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          var parent = btn.parentElement;
+
+          var parentTotal = parent.querySelector(".cart-product .total");
+          var grandEl = document.querySelector(".total-price span");
+          var total =
+            parseInt(grandEl.textContent.replace(/,/g, ""), 10) -
+            parseInt(parentTotal.textContent.replace(/,/g, ""), 10);
+          grandEl.textContent = total.toLocaleString();
+
+          parent.remove();
+        });
+      });
+
+      const addBtns = document.querySelectorAll(".product-info .add");
+      const minusBtns = document.querySelectorAll(".product-info .sub");
+
+      addBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          var parent = btn.parentElement.parentElement;
+          var qty = parent.querySelector(".qty .number");
+          var left = parent.querySelector(".remaining");
+
+          if (parseInt(qty.textContent) < parseInt(left.textContent)) {
+            qty.textContent = parseInt(qty.textContent) + 1;
+            calcGrand();
+          }
+        });
+      });
+
+      minusBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          var parent = btn.parentElement.parentElement;
+          var qty = parent.querySelector(".qty .number");
+
+          if (parseInt(qty.textContent) > 1) {
+            qty.textContent = parseInt(qty.textContent) - 1;
+            calcGrand();
+          }
+        });
+      });
+
+
+      const pricesRaw = document.querySelectorAll(".cart-product .price")
+
+      pricesRaw.forEach((p)=>{
+       console.log(p.textContent.toLocaleString())
+      })
+    </script>
+  </body>
+</html>
