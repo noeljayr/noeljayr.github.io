@@ -649,8 +649,8 @@ a {
 
 .question .plus span {
   background-color: var(--purple);
-  height: 5px;
-  width: 0.5rem;
+  height: 3px;
+  width: 0.8rem;
   border-radius: 4px;
   transition: var(--transition);
   -webkit-transition: var(--transition);
