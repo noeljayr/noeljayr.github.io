@@ -792,6 +792,15 @@ body {
   flex-direction: column;
 }
 
+@media screen and (max-width: 640px) {
+  .user-content{
+    padding: 2rem
+  }
+  .user-content .form {
+    width: 90%;
+  }
+}
+
 .user-content .form .input-group {
   width: 100%;
   display: flex;
