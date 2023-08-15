@@ -63,6 +63,8 @@ a {
 .cta {
   background-color: var(--purple);
   padding: var(--padding);
+  padding-right: 1.3rem;
+  padding-left: 1.3rem;
   border-radius: var(--radius);
   color: var(--white);
   cursor: pointer;
