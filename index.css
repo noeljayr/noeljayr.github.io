@@ -168,7 +168,7 @@ a {
   align-self: center;
 }
 
-@media screen and (min-width: 1300px) {
+@media screen and (min-width: 1600px) {
   .projects-container {
     justify-content: center;
     gap: 2rem;
