@@ -171,7 +171,7 @@ a {
 @media screen and (min-width: 1600px) {
   .projects-container {
     justify-content: center;
-    gap: 2rem;
+    gap: 1rem;
     grid-template-columns: 30rem 30rem;
     grid-template-rows: 30rem 30rem;
   }
