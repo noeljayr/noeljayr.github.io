@@ -148,7 +148,7 @@ a {
 }
 
 .hero .cta {
-  width: 8rem;
+  width: fit-content;
   margin-top: 1rem;
 }
 
