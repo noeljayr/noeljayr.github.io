@@ -1,0 +1,1645 @@
+.content {
+  padding-left: 16rem;
+  padding-right: 1.5rem;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.side-bar {
+  width: 14rem;
+  background-color: var(--red-2);
+  height: 100vh;
+  padding: 1.5rem;
+  padding-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.top-bar {
+  display: flex;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  align-items: center;
+}
+
+.top-bar .logo {
+  display: flex;
+}
+
+.top-bar .logo img {
+  height: 1.5rem;
+  margin-right: 1rem;
+}
+
+.top-bar a {
+  display: flex;
+  align-items: center;
+}
+
+.side-bar .side-link {
+  width: 100%;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  padding: 1rem;
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
+  border-radius: var(--radius);
+  position: relative;
+}
+
+.side-bar .noti-badge {
+  width: 1rem;
+  height: 1rem;
+  position: absolute;
+  background-color: var(--red);
+  border-radius: 50%;
+  font-size: var(--font-xs);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 2rem;
+  top: 0.8rem;
+}
+
+.side-bar .active-side-link .noti-badge {
+  background-color: var(--white);
+  color: var(--red);
+}
+
+.side-bar .side-link:nth-child(1) {
+  margin-top: 4rem;
+}
+.side-bar .side-link i {
+  width: 20%;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 1rem;
+}
+
+.active-side-link {
+  background-color: var(--red);
+  color: var(--white);
+}
+
+.active-side-link i {
+  color: var(--white);
+}
+
+.side-bar .side-link:hover {
+  background-color: var(--red-2);
+}
+
+.side-bar .active-side-link:hover {
+  background-color: var(--red-3);
+}
+
+.top-bar {
+  width: 100%;
+  height: 2.5rem;
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.greeting {
+  display: flex;
+  font-size: var(--font-l);
+}
+
+.greeting h1 {
+  font-size: var(--font-l);
+}
+
+.greeting span {
+  font-size: var(--font-l);
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.greeting .first-name {
+  color: var(--black);
+}
+
+.settings {
+  margin-left: auto;
+  height: 2.5rem;
+  width: 2.5rem;
+  background-color: var(--red-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.settings:hover {
+  background-color: var(--red);
+}
+
+.settings:hover i {
+  color: var(--white);
+}
+
+.settings i {
+  font-size: var(--font-l);
+  transition: var(--transition);
+}
+
+.stat-container {
+  width: 100%;
+  display: flex;
+}
+
+.heading {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  font-size: var(--font-m);
+  display: flex;
+  align-items: flex-end;
+}
+
+.month-name {
+  opacity: 0.7;
+  font-weight: 400;
+  margin-left: auto;
+}
+
+.stat-card,
+.client {
+  height: 6rem;
+  width: 8rem;
+  border-radius: var(--radius);
+  background-color: var(--red-2);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+  padding: var(--padding);
+}
+.grid-stat .stat-card,
+.grid-stat .client {
+  width: 100%;
+  height: 12rem;
+  margin: 0;
+}
+
+.grid-stat {
+  margin-top: 2rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11.5rem, 1fr));
+  gap: 2rem;
+}
+
+.grid-stat .client {
+  cursor: default;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.grid-stat .action-wrapper {
+  background-color: var(--grey-2);
+}
+
+.grid-stat .client .logo {
+  width: 100%;
+  height: 80%;
+  border-radius: var(--radius);
+  background-color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.grid-stat .client .logo img {
+  width: 5rem;
+  height: 5rem;
+  object-fit: contain;
+}
+
+.grid-stat .remove-client {
+  margin-top: 0.5rem;
+}
+
+.grid-stat .client .name {
+  font-weight: bold;
+  margin-top: 0.5rem;
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  text-transform: capitalize;
+}
+
+
+.form .file-input input{
+  border: 0;
+  background-color: var(--white);
+  padding: 0;
+  border-radius: 0;
+}
+
+.stat-card i {
+  font-size: 2rem;
+}
+
+.grid-stat i {
+  color: var(--white);
+}
+
+.stat-card .counter {
+  background-color: #fadbdb;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: -0.5rem;
+  top: -0.5rem;
+  border: 5px solid var(--white);
+  font-size: var(--font-ss);
+}
+
+.stat-card:first-child {
+  margin-left: 0;
+}
+
+.stat-title {
+  font-size: var(--font-ss);
+}
+
+.stat-number {
+  font-weight: bold;
+  font-size: var(--font-l);
+  margin-top: 0.5rem;
+}
+
+svg {
+  height: 4rem;
+  transform: rotate(-90deg) scale(1.2);
+  width: 4rem;
+  position: relative;
+}
+
+.percentage {
+  position: absolute;
+  font-weight: bold;
+  top: 54%;
+  left: 41%;
+}
+
+.progress-bar__background {
+  fill: none;
+  stroke: var(--red-2);
+  stroke-width: 2.1;
+}
+.progress-bar__progress {
+  fill: none;
+  stroke: var(--red-2);
+  stroke: var(--red);
+  stroke-dasharray: 100 100;
+  stroke-dashoffset: 100;
+  stroke-linecap: round;
+  stroke-width: 2.1;
+  transition: stroke-dashoffset 2s ease-in-out;
+}
+
+.stat-card:nth-child(4) .stat-title {
+  margin-bottom: 0.5rem;
+}
+
+.chart-header {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.chart-header .heading {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.date-range {
+  font-size: var(--font-ss);
+  margin-left: auto;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  transition: var(--transition);
+}
+
+@media screen and (max-width: 680px) {
+  .content {
+    padding-left: 1.5rem;
+    padding-top: 6rem;
+    height: 100vh;
+  }
+
+  .side-bar {
+    flex-direction: row;
+    width: 100vw;
+    height: fit-content;
+    padding: 0;
+    top: unset;
+    bottom: 0;
+    left: 0;
+    justify-content: space-between;
+    padding: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  .top-bar .logo-name {
+    display: none;
+  }
+
+  .side-bar .side-link .noti-badge {
+    top: 1px;
+    right: 0.5rem;
+  }
+
+  .side-bar .side-link {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 6rem;
+    padding: 1rem;
+  }
+  .side-bar .side-link i {
+    width: unset;
+    margin: 0;
+    padding: 0;
+    height: unset;
+    margin-bottom: 0.5rem;
+    font-size: var(--font-m);
+  }
+  .side-bar .side-link:nth-child(1) {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .stat-card:nth-child(4) {
+    display: none;
+  }
+}
+@media screen and (max-width: 360px) {
+  .stat-card {
+    height: 5rem;
+    width: 7rem;
+  }
+}
+
+/*Admin page*/
+
+.admin-card-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11.5rem, 1fr));
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.admin-card,
+.add-card {
+  background-color: var(--red-2);
+  height: 12rem;
+  border-radius: var(--radius);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-card span,
+.grid-stat .icon {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  background-color: var(--red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.add-card span:hover,
+.grid-stat .icon:hover {
+  background-color: var(--red-3);
+}
+.add-card span i {
+  color: var(--white);
+  font-size: 2rem;
+}
+
+.action-wrapper {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 0.5rem;
+  align-items: flex-end;
+  background-color: var(--white);
+  padding: 0.5rem;
+  border-radius: var(--radius);
+}
+
+.action-wrapper i {
+  font-size: 0.8rem;
+}
+
+.action-wrapper .action {
+  height: 1.5rem;
+  width: 1.5rem;
+  border: 1.5px solid blue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  transition: var(--transition);
+  display: flex;
+  overflow: hidden;
+}
+
+.action-wrapper .action:hover {
+  background-color: blue;
+  cursor: pointer;
+  color: var(--white);
+  width: 5.7rem;
+  justify-content: center;
+}
+
+.action-wrapper .action i {
+  color: blue;
+}
+
+.action-wrapper .action:hover i {
+  color: var(--white);
+  margin-right: 5px;
+}
+
+.action-wrapper .disable-admin,
+.action-wrapper .remove-client {
+  border: 1.5px solid red;
+  margin-top: 0.5rem;
+}
+
+.action-wrapper .disable-admin i,
+.action-wrapper .remove-client i {
+  color: red;
+}
+
+.action-wrapper .disable-admin:hover,
+.action-wrapper .remove-client:hover {
+  background-color: red;
+  width: 5rem;
+}
+
+.disabled .disable-admin {
+  display: none;
+}
+
+.action-wrapper .enable-admin {
+  margin-top: 0.5rem;
+  border: 1.5px solid green;
+  display: none;
+}
+
+.disabled .action-wrapper .enable-admin {
+  display: flex;
+}
+
+.action-wrapper .enable-admin i {
+  color: green;
+}
+
+.action-wrapper .enable-admin:hover {
+  background-color: green;
+  width: 5rem;
+}
+
+.action .action-title {
+  display: none;
+}
+
+.action:hover .action-title {
+  display: block;
+  color: var(--white);
+  font-size: var(--font-ss);
+  white-space: nowrap;
+}
+
+.admin-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar {
+  font-size: 8rem;
+  color: var(--red-2);
+  display: none;
+}
+
+.no-profile-img .avatar {
+  display: flex;
+}
+
+.add-form,
+.view-admin,
+.add-booking-form,
+.view-booking-details {
+  width: 60%;
+  padding: 1rem;
+  border-radius: var(--radius);
+  background-color: var(--white);
+  position: fixed;
+  z-index: 3;
+  align-self: center;
+  top: 1rem;
+  transform: scale(0);
+  box-shadow: 0px 1.4px 5.3px -6px rgba(0, 0, 0, 0.098),
+    0px 4.7px 17.9px -6px rgba(0, 0, 0, 0.118),
+    0px 21px 80px -6px rgba(0, 0, 0, 0.17);
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition);
+}
+
+.view-admin-active {
+  transform: scale(1);
+  opacity: 1;
+  visibility: visible;
+  transition: var(--transition);
+}
+
+@media screen and (max-width: 680px) {
+  .add-form,
+  .view-admin,
+  .add-booking-form,
+  .view-booking-details {
+    width: 90%;
+  }
+}
+
+.add-form-active {
+  transform: scale(1);
+  opacity: 1;
+  visibility: visible;
+  transition: var(--transition);
+}
+
+.add-form h1 {
+  font-size: var(--font-l);
+}
+
+.btn-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-container .btn {
+  padding: var(--padding);
+  height: 3rem;
+  border-radius: var(--radius);
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  width: 7rem;
+  display: flex;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  user-select: none;
+}
+.btn-container .btn i {
+  margin-right: 5px;
+}
+.btn-container button {
+  background-color: var(--red);
+  color: var(--white);
+  margin-left: auto;
+}
+
+.btn-container button:hover {
+  background-color: var(--red-3);
+}
+
+.btn-container button i {
+  color: var(--white);
+}
+
+.btn-container .discard-btn {
+  background-color: var(--white);
+  border: 2px solid var(--red-2);
+  color: var(--black);
+}
+
+.btn-container .discard-btn:hover {
+  background-color: var(--red-2);
+}
+
+.disable-confirmation {
+  width: 95%;
+  height: 95%;
+  position: absolute;
+  border-radius: var(--radius);
+  box-shadow: 0px 1.4px 5.3px -6px rgba(0, 0, 0, 0.098),
+    0px 4.7px 17.9px -6px rgba(0, 0, 0, 0.118),
+    0px 21px 80px -6px rgba(0, 0, 0, 0.17);
+  background-color: var(--white);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0);
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition);
+}
+
+.disable-admin-active .disable-confirmation {
+  transform: scale(1);
+  opacity: 1;
+  visibility: visible;
+  transition: var(--transition);
+}
+
+.disable-confirmation .btn {
+  width: 4rem;
+  padding-left: 0;
+  padding-right: 0;
+  background-color: var(--red);
+  color: var(--white);
+  transition: var(--transition);
+}
+
+.disable-confirmation .btn:hover {
+  background-color: var(--red-3);
+}
+
+.disable-confirmation .btn-container {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-top: 1rem;
+}
+
+.disable-confirmation .btn:nth-child(2) {
+  background-color: var(--white);
+  color: var(--black);
+  border: 2px solid red;
+  margin-left: auto;
+}
+
+.disable-confirmation .btn:nth-child(2):hover {
+  background-color: red;
+  color: var(--white);
+}
+
+.view-admin {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.view-admin .profile-img {
+  height: 8rem;
+  width: 8rem;
+  border: 2px solid var(--red-2);
+  align-self: center;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.view-admin .profile-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.view-admin .profile-img i {
+  font-size: 6rem;
+  color: var(--red-2);
+  display: none;
+}
+
+.view-admin .info {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.info .info-title {
+  font-weight: bold;
+  width: 5rem;
+}
+
+.info .lName {
+  margin-left: 5px;
+}
+
+.enabled-status {
+  background-color: green;
+  padding: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: var(--font-xs);
+  color: var(--white);
+  border-radius: var(--radius);
+}
+.disabled-status {
+  background-color: red;
+  padding: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: var(--font-xs);
+  color: var(--white);
+  border-radius: var(--radius);
+}
+
+.view-admin .btn-container {
+  margin-top: 1rem;
+}
+
+.view-admin .close-btn {
+  margin-left: auto;
+  background-color: var(--red);
+  color: var(--white);
+}
+
+.view-admin .close-btn:hover {
+  background-color: var(--red-3);
+}
+
+.view-admin .view-disable-btn {
+  border: 2px solid red;
+}
+.view-admin .view-disable-btn:hover {
+  background-color: red;
+  color: var(--white);
+}
+
+.view-admin .view-disable-btn:hover i {
+  color: var(--white);
+}
+
+.view-admin .view-enable-btn {
+  border: 2px solid green;
+}
+
+.view-admin .view-enable-btn:hover {
+  background-color: green;
+  color: var(--white);
+}
+
+.view-admin .view-enable-btn:hover i {
+  color: var(--white);
+}
+
+.settings-form {
+  position: fixed;
+  max-height: 30rem;
+  overflow: hidden;
+  overflow-y: auto;
+  top: 1.5rem;
+  visibility: hidden;
+  opacity: 0;
+  right: -100%;
+  transition: var(--transition);
+  background-color: var(--white);
+  padding: 1rem;
+  box-shadow: 0px 1.4px 5.3px -6px rgba(0, 0, 0, 0.098),
+    0px 4.7px 17.9px -6px rgba(0, 0, 0, 0.118),
+    0px 21px 80px -6px rgba(0, 0, 0, 0.17);
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: var(--radius);
+  margin-bottom: 2rem;
+}
+
+@media screen and (min-height: 800px) {
+  .settings-form {
+    max-height: unset;
+    height: fit-content;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .add-form,
+  .view-admin {
+    width: 90%;
+  }
+
+  .settings-form {
+    width: calc(96.9% - 1.5rem);
+  }
+}
+
+.settings-form-active {
+  visibility: visible;
+  opacity: 1;
+  right: 1.5rem;
+  transition: var(--transition);
+}
+
+.settings-form span {
+  all: unset;
+}
+
+.settings-form .input-group {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.settings-form .input-group .edit-btn,
+.settings-form .input-group .edit-password {
+  background-color: var(--red);
+  padding: 0.5rem;
+  height: 1rem;
+  font-size: var(--font-xs);
+  color: var(--white);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  margin-left: 5px;
+}
+
+.settings-form .input-group .edit-btn:hover,
+.settings-form .input-group .edit-password:hover {
+  background-color: var(--red-3);
+}
+
+.settings-form .input-group input {
+  width: 70%;
+  margin-left: 0.5rem;
+  margin-right: auto;
+  border-radius: var(--radius);
+  border: 0px solid var(--red-2);
+  outline: 0;
+  background-color: var(--white);
+  transition: var(--transition);
+  cursor: default;
+  padding: 0.5rem;
+}
+
+.settings-form .input-group .editable {
+  border: 2px solid var(--red-2);
+  padding-left: 1rem;
+  cursor: auto;
+}
+
+.settings-form .input-group .name {
+  font-weight: bold;
+  width: 9rem;
+}
+
+.settings-form .btn-container {
+  margin-top: 1rem;
+}
+
+.settings-form .btn-container .discard-edit {
+  border: 2px solid var(--red-2);
+  height: initial;
+}
+
+.settings-form .btn-container .discard-edit:hover {
+  background-color: var(--red-2);
+}
+
+/* .settings-form .btn-container .save-settings {
+  display: none;
+} */
+
+.settings-form .hidden {
+  display: none;
+}
+
+.avatar-upload {
+  position: relative;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.avatar-upload .avatar-edit {
+  position: absolute;
+  right: 12px;
+  z-index: 1;
+  top: 0px;
+}
+.avatar-upload .avatar-edit input {
+  display: none;
+}
+.avatar-upload .avatar-edit input + label {
+  display: inline-block;
+  width: 1.8rem;
+  height: 1.8rem;
+  margin-bottom: 0;
+  border-radius: 100%;
+  background: var(--white);
+  border: 2px solid var(--red-2);
+  cursor: pointer;
+  font-weight: normal;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.avatar-upload .avatar-edit input + label:hover {
+  border: 2px solid var(--red);
+  background-color: var(--red);
+}
+.avatar-upload .avatar-edit input + label:after {
+  content: "\F429";
+  font-family: "bootstrap-icons";
+  color: var(--black);
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.avatar-upload .avatar-edit input + label:hover:after {
+  color: var(--white);
+}
+.avatar-upload .avatar-preview {
+  width: 6rem;
+  height: 6rem;
+  position: relative;
+  border-radius: 100%;
+  border: 2px solid var(--red-2);
+}
+.avatar-upload .avatar-preview > div {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Booking */
+
+.tool-bar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.tool-bar .pending-btn {
+  background: var(--red-2);
+  display: flex;
+  align-items: center;
+  height: 2.2rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  border-radius: var(--radius);
+  position: relative;
+  margin-right: 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+  border: 2px solid transparent;
+}
+
+.tool-bar .pending-btn:hover {
+  border: 2px solid var(--red-2);
+}
+
+.tool-bar .pending-btn .pill-counter {
+  background-color: var(--red);
+  position: absolute;
+  right: -12px;
+  top: -10px;
+  font-size: var(--font-ss);
+  color: var(--white);
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.add-booking-btn {
+  width: 2.2rem;
+  height: 2.2rem;
+  background-color: var(--red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-right: auto;
+}
+
+.add-booking-btn:hover {
+  background-color: var(--red-3);
+}
+
+.add-booking-btn i {
+  font-size: var(--font-m);
+  color: var(--white);
+}
+
+.tool-bar .sort-btn {
+  background-color: var(--red-2);
+  height: 2.2rem;
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: var(--radius);
+  font-weight: bold;
+}
+
+.tool-bar .sort-btn .select {
+  font-weight: normal;
+  margin-left: 5px;
+}
+
+.search-container {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+
+.search-container input {
+  width: 100%;
+  height: 2.2rem;
+  padding: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 3.1rem;
+  border: 2px solid var(--red-2);
+  border-radius: 2rem;
+}
+
+.search-container button {
+  background-color: var(--red);
+  border: 0;
+  outline: 0;
+  position: absolute;
+  height: 2.2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.search-container button i {
+  font-size: var(--font-m);
+  color: var(--white);
+}
+
+.search-container button:hover {
+  background-color: var(--red-3);
+}
+
+#bookings-table {
+  border-collapse: collapse;
+  width: 100%;
+  border: 2px solid var(--red-2);
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-radius: var(--radius);
+}
+
+#bookings-table td,
+#bookings-table th {
+  padding: 0.5rem;
+  font-size: var(--font-ss);
+  text-align: start;
+  border: 2px solid var(--red-2);
+}
+
+#bookings-table td:nth-child(5),
+#bookings-table td:nth-child(6) {
+  text-align: center;
+}
+
+.bookings-table .pending {
+  background-color: rgba(255, 255, 0, 0.45);
+}
+
+.bookings-table .table-pill {
+  padding: 0.3rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border-radius: var(--radius);
+  font-size: 0.7rem;
+}
+
+.bookings-table .complete {
+  background-color: rgba(0, 128, 0, 0.75);
+  color: var(--white);
+}
+
+.bookings-table .canceled {
+  background-color: rgba(255, 0, 0, 0.8);
+  color: var(--white);
+}
+
+.bookings-table .action {
+  padding: 0.3rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border-radius: var(--radius);
+  font-size: 0.7rem;
+  background-color: var(--red);
+  color: var(--white);
+  transition: var(--transition);
+  cursor: pointer;
+  user-select: none;
+}
+
+.bookings-table .action:hover {
+  background-color: var(--red-3);
+}
+
+.dataTables_length label {
+  font-size: var(--font-ss);
+}
+
+.dataTables_length select {
+  border: 0;
+  outline: 0;
+  background-color: var(--red-2);
+  color: var(--black);
+  padding: 0.5rem;
+  border-radius: var(--radius);
+}
+
+.dataTables_length select option {
+  background-color: var(--white);
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.dataTables_info {
+  font-size: var(--font-ss);
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.dataTables_paginate {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.dataTables_filter {
+  display: none;
+}
+
+.dataTables_paginate a {
+  padding: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-collapse: collapse;
+  font-size: var(--font-ss);
+  cursor: pointer;
+  border-radius: var(--radius);
+}
+
+.dataTables_paginate a:hover {
+  background-color: var(--red);
+  color: var(--white);
+}
+
+#bookings-table_previous,
+#bookings-table_next {
+  padding: 0.5rem;
+  font-size: var(--font-ss);
+  background-color: var(--red-2);
+}
+
+#bookings-table_previous:hover,
+#bookings-table_next:hover {
+  background-color: var(--red-2);
+  color: var(--black);
+}
+
+#bookings-table_previous {
+  margin-right: 5px;
+}
+
+#bookings-table_next {
+  margin-left: 5px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: var(--font-ss);
+}
+
+.dataTables_paginate .disabled {
+  color: #6c757d;
+  cursor: default;
+  font-size: var(--font-ss);
+}
+
+.disabled:hover {
+  color: #6c757d;
+}
+
+.dataTables_paginate .current {
+  background-color: var(--red);
+  color: var(--white);
+  border: 2px solid transparent;
+  font-size: var(--font-ss);
+}
+
+/* .bookings-table th:nth-child(6), .bookings-table td:nth-child(6){
+  display: none;
+} */
+
+@media screen and (max-width: 664px) {
+  .bookings-table th:nth-child(4),
+  .bookings-table td:nth-child(4) {
+    display: none;
+  }
+}
+@media screen and (max-width: 440px) {
+  .bookings-table th:nth-child(3),
+  .bookings-table td:nth-child(3) {
+    display: none;
+  }
+}
+
+.tool-bar .sort-container {
+  font-size: var(--font-ss);
+  height: 2.2rem;
+}
+
+.tool-bar .sort-container label {
+  font-weight: bold;
+}
+
+.tool-bar .sort-container select {
+  background-color: transparent;
+  border: 0;
+  padding: 0.5rem;
+  background-color: var(--red-2);
+  border-radius: var(--radius);
+}
+
+.tool-bar .sort-container select option {
+  background-color: var(--white);
+}
+
+.hidden {
+  display: none;
+}
+
+.add-booking-form-active {
+  transform: scale(1);
+  opacity: 1;
+  visibility: visible;
+}
+
+.add-booking-form .input-group {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.add-booking-form label {
+  font-weight: bold;
+}
+
+.add-booking-form select {
+  border: 0;
+  background-color: transparent;
+  outline: 0;
+}
+
+.add-booking-form .input-group .select-container {
+  background-color: var(--red-2);
+  border-radius: var(--radius);
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  width: 6rem;
+}
+
+.add-booking-form .input-group input {
+  border: 2px solid var(--red-2);
+  border-radius: var(--radius);
+  height: 2rem;
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+}
+
+.add-booking-form .input-group .guest-form-wrapper {
+  display: flex;
+}
+
+.add-booking-form .input-group div input {
+  width: 4rem;
+  margin-left: 5px;
+}
+
+.add-booking-form .input-group div .wrapper:nth-child(2) {
+  margin-left: 1rem;
+}
+
+.add-booking-form .btn-container {
+  margin-top: 1rem;
+}
+
+.add-booking-form .btn-container .btn:nth-child(1) {
+  border: 2px solid var(--red-2);
+}
+
+.add-booking-form .btn-container .btn:nth-child(1):hover {
+  background-color: var(--red-2);
+}
+
+.add-booking-form .btn-container button i {
+  margin-right: 5px;
+}
+
+.add-booking-form h1 {
+  font-size: var(--font-l);
+  text-align: center;
+}
+
+.add-booking-form .input-group .date-picker {
+  display: block;
+  transition: 0.3s;
+}
+
+.date-picker-active {
+  top: calc(100% + 0.3rem);
+  opacity: 1;
+  visibility: visible;
+  transition: 0.3s;
+  z-index: 2;
+}
+
+.view-booking-details-active {
+  transform: scale(1);
+  opacity: 1;
+  visibility: visible;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.view-booking-details .info {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.view-booking-details h1 {
+  font-size: var(--font-l);
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.view-booking-details .info .info-name {
+  width: 8rem;
+  font-weight: bold;
+}
+
+.view-booking-details .info .status {
+  font-size: var(--font-ss);
+  padding: 0.5rem;
+  border-radius: var(--radius);
+}
+
+.view-booking-details .guest-info .total {
+  margin-right: 5px;
+}
+.view-booking-details .guest-info .adults {
+  margin-right: 5px;
+}
+
+.view-booking-details .guest-info .children {
+  margin-right: 5px;
+}
+.view-booking-details .info .complete {
+  background-color: rgba(0, 128, 0, 0.75);
+  color: var(--white);
+}
+
+.view-booking-details .info .pending {
+  background-color: rgba(255, 255, 0, 0.45);
+  color: var(--black);
+}
+
+.view-booking-details .info .canceled {
+  background-color: rgba(255, 0, 0, 0.8);
+  color: var(--white);
+}
+.btn-container .change-status-btn {
+  background-color: var(--red-2);
+  width: fit-content;
+  font-size: var(--font-ss);
+  font-weight: bold;
+}
+
+.btn-container .change-status-btn select {
+  font-size: var(--font-ss);
+  margin-left: 5px;
+  background-color: transparent;
+  border: 0;
+}
+.view-booking-details .btn-container {
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.view-booking-details .btn-container .btn:nth-child(1) {
+  border: 2px solid var(--red-2);
+}
+
+.view-booking-details .btn-container .btn:nth-child(1):hover {
+  background-color: var(--red-2);
+}
+
+.view-booking-details .btn-container .save-btn {
+  background-color: var(--red);
+  border: 0;
+  color: var(--white);
+  transition: var(--transition);
+}
+
+.view-booking-details .btn-container .save-btn:hover {
+  background-color: var(--red-3);
+}
+
+.login-form {
+  padding: 1rem;
+  background-color: var(--white);
+  box-shadow: 0px 1.4px 5.3px -6px rgba(0, 0, 0, 0.098),
+    0px 4.7px 17.9px -6px rgba(0, 0, 0, 0.118),
+    0px 21px 80px -6px rgba(0, 0, 0, 0.17);
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.login-form span {
+  font-size: var(--font-ss);
+  color: var(--red);
+  font-weight: bold;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  align-self: center;
+}
+
+.login-form h1 {
+  font-size: var(--font-l);
+  display: flex;
+  align-items: flex-end;
+  align-self: center;
+}
+
+.login-form img {
+  height: 1.5rem;
+  margin-right: 0.5rem;
+  margin-bottom: 5px;
+}
+
+.login-form .input-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  position: relative;
+  justify-content: center;
+}
+
+.login-form .show-icon {
+  background-color: var(--red-2);
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 0.5rem;
+  top: 1.5rem;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: var(--transition);
+}
+
+.login-form .show-icon:hover {
+  border: 2px solid var(--red-2);
+}
+
+.login-form .input-group input {
+  width: 100%;
+  padding: 0.5rem;
+  padding-right: 1rem;
+  height: 2.5rem;
+  border: 2px solid var(--red-2);
+  border-radius: var(--radius);
+}
+
+.login-form .input-group label {
+  margin-bottom: 0.5rem;
+}
+
+.login-form button {
+  outline: 0;
+  border: 0;
+  background-color: var(--red);
+  color: var(--white);
+  height: 2.5rem;
+  border-radius: var(--radius);
+  margin-top: 1rem;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.login-form button:hover {
+  background-color: var(--red-3);
+}
+
+@media screen and (max-width: 800px) {
+  .login-form {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .login-form {
+    width: 100%;
+  }
+}
