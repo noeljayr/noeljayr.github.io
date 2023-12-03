@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      On-point Finance and Business Consultants - Lending to small medium
+      businesses
+    </title>
+
+    <link rel="stylesheet" href="css/index.css" />
+
+    <link
+      rel="shortcut icon"
+      href="public/logos/favicon.png"
+      type="image/x-icon"
+    />
+
+    <script defer src="js/components/footer.js"></script>
+    <script defer src="js/menu.js"></script>
+  </head>
+  <body>
+    <div class="navbar section"></div>
+    <script>
+      const page = "Services";
+    </script>
+    <script src="js/components/navbar.js"></script>
+
+    <div style="margin-top: 8rem" class="main-content service-content section">
+      <div class="service-info">
+        <h1 style="margin-bottom: 1rem">Business Plan and Proposals</h1>
+
+        
+
+        <h1>Client registration</h1>
+
+        <div style="margin-top: 1rem" class="form-wrapper">
+          <form action="" class="form">
+            <div class="input-group">
+              <label for="">Name</label>
+              <input
+                required
+                oninput="this.value = this.value.replace(/[0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                placeholder="Enter your full name"
+                type="text"
+                name="name"
+              />
+            </div>
+
+            <div class="input-group">
+              <label for="">Phone</label>
+              <input
+                required
+                oninput="this.value = this.value.replace(/[^0-9+]/g, '').replace(/(\+.*)\+.*/g, '$1');"
+                placeholder="+265....."
+                type="text"
+                name="phone"
+              />
+            </div>
+
+            <div class="input-group">
+              <label for="">Email</label>
+              <input
+                name="email"
+                required
+                placeholder="example@gmail.com"
+                type="email"
+              />
+            </div>
+
+            <div class="input-group check-input">
+              <label for="">Type</label>
+              <span class="check-wrapper selected-box">
+                <span class="checkbox checked">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M5 12L10 17L20 7"
+                      stroke="#f7fbff"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+
+                <span class="title">New Business</span>
+              </span>
+
+              <span class="check-wrapper">
+                <span class="checkbox">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M5 12L10 17L20 7"
+                      stroke="#f7fbff"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+
+                <span class="title">Continued Business</span>
+              </span>
+
+              <input required hidden name="type" id="type-input" type="text" />
+            </div>
+
+            <div class="input-group">
+              <label for="">Service</label>
+
+              <span class="option-selector">
+                <span class="select">
+                  <span class="selected"></span>
+                </span>
+
+                <input required hidden id="select" name="service" type="text" />
+              </span>
+            </div>
+
+            <button class="cta" type="submit">Looks good, Register</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="more-services">
+        <h2>More Services</h2>
+      </div>
+    </div>
+    <div class="section footer"></div>
+
+    <script>
+      const services = [
+        {
+          title: "Investment Platform",
+          link: "investment-platform",
+        },
+        {
+          title: "Customized Business Accounting Systems Support",
+          link: "business-accounting-systems-support",
+        },
+        {
+          title: "Finance Management Support Training",
+          link: "finance-management-support-training",
+        },
+        {
+          title: "Business Plan and Proposals",
+          link: "business-plan-and-proposals",
+        },
+        {
+          title: "Book Keeping Training",
+          link: "book-keeping-training",
+        },
+        {
+          title: "Data Entry",
+          link: "data-entry",
+        },
+        {
+          title: "Tax Computations",
+          link: "tax-computations",
+        },
+        {
+          title: "Corporate Reports Preparations",
+          link: "corporate-reports-preparations",
+        },
+        {
+          title: "Free Advice On Business Development Strategies",
+          link: "free-advice-on-business-development-strategies",
+        },
+      ];
+
+      var current = "Business Plan and Proposals";
+      const moreDiv = document.querySelector(".service-content .more-services");
+      const formServInf = document.getElementById("select");
+      const selectedServ = document.querySelector(
+        ".option-selector .select .selected"
+      );
+
+      if (current == "Lending to small medium businesses") {
+        current = "Loan";
+      }
+      formServInf.value = current;
+
+      selectedServ.textContent = current;
+
+      function showMoreServices() {
+        services.forEach((s) => {
+          if (s.title != current) {
+            var serv = document.createElement("a");
+            serv.href = s.link + ".html";
+            serv.title = s.title;
+            serv.innerHTML = `
+             
+                  <span class="title">${s.title}</span>
+
+                  <span class="cta-2">
+                    <img src="public/icons/tabler-icon-arrow-narrow-right.svg" alt="">
+                  </span>
+           
+            `;
+
+            moreDiv.appendChild(serv);
+          }
+        });
+      }
+
+      showMoreServices();
+
+      const check = document.querySelectorAll(".check-wrapper");
+      const other = document.querySelectorAll(".checkbox");
+      const typeInput = document.getElementById("type-input");
+
+      typeInput.value = "New Business";
+
+      check.forEach((c) => {
+        c.addEventListener("click", () => {
+          var box = c.querySelector(".checkbox");
+          var value = c.querySelector(".title").textContent;
+          check.forEach((c2) => {
+            c2.classList.remove("selected-box");
+          });
+          c.classList.toggle("selected-box");
+          other.forEach((b) => {
+            b.classList.remove("checked");
+          });
+          box.classList.toggle("checked");
+          typeInput.value = value;
+        });
+      });
+    </script>
+  </body>
+</html>

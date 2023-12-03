@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>On-point Finance and Business Consultants</title>
+
+    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="../css/admin.css" />
+    <link rel="stylesheet" href="../css/animations.css" />
+
+    <link
+      rel="shortcut icon"
+      href="../public/logos/favicon.png"
+      type="image/x-icon"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
+
+    <script defer src="js/admin.js"></script>
+
+    <script src="js/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="content">
+      <div class="side-bar"></div>
+      <script>
+        const page = "Dashboard";
+      </script>
+
+      <script src="../js/components/sidebar.js"></script>
+
+      <div class="top-bar">
+        <a href="dashboard " class="logo">
+          <img
+            src="../public/logos/logo.png"
+            alt="Girl Engineer Logo"
+            class="logo-gfx"
+          />
+          <h1>OPFBC</h1>
+        </a>
+
+        <span class="settings">
+          <i class="bi bi-person-fill-gear"></i>
+
+          <span class="options">
+            <a href="profile.html">Profile</a>
+            <a href="includes/logout ">Logout</a>
+          </span>
+        </span>
+      </div>
+
+      <span class="greeting">
+        <span>Welcome,</span>
+        <span class="first-name"> Noel</span>
+      </span>
+
+      <div class="top-dashboard">
+        <div class="section-container quick-action-container">
+          <span class="quick-action stat-card">
+            <span class="quick-action-title">Clients</span>
+
+            <div class="number">52</div>
+          </span>
+
+          <a href="emails.html" class="quick-action">
+            <span class="quick-action-title"></span>
+
+            <i class="bi bi-chat-square-text-fill"></i>
+            <span class="counter">7</span>
+          </a>
+
+          <a href="#" class="quick-action add-video-btn">
+            <span class="quick-action-title">Upload video</span>
+
+            <i class="bi bi-play-btn-fill"></i>
+          </a>
+
+          <a href="#team" class="quick-action">
+            <span class="quick-action-title">Team</span>
+
+            <i class="bi bi-people-fill"></i>
+          </a>
+        </div>
+
+        <div class="piechart">
+          <canvas id="clientRegistrationChart"></canvas>
+        </div>
+      </div>
+
+      <div class="section-container client-chart-wrapper">
+        <canvas height="450" id="clientChart"></canvas>
+
+        <div class="lable-legend">
+          <h2>Services</h2>
+          <ul>
+            <li><b>A </b>: Loan</li>
+            <li><b>B </b>: Investment Platform</li>
+            <li><b>C </b>: Business Accounting Systems Support</li>
+            <li><b>D </b>: Finance Management Support Training</li>
+            <li><b>E </b>: Book Keeping Training</li>
+            <li><b>F </b>: Business Plan and Proposals</li>
+            <li><b>G </b>: Data Entry</li>
+            <li><b>H </b>: Tax Computations</li>
+            <li><b>I </b>: Corporate Reports Preparations</li>
+            <li><b>J </b>: Business Development Strategies</li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="team" class="section-container dashboard-team-container">
+        <h1>Team</h1>
+        <div class="quick-action add-member-btn">
+          <i class="bi bi-person-plus-fill"></i>
+        </div>
+
+        <div class="team-container"></div>
+      </div>
+
+      <form id="add-member-form" class="modal-form form">
+        <h1>Team Member</h1>
+        <div class="avatar-upload">
+          <div class="avatar-preview">
+            <div id="imagePreview"></div>
+          </div>
+          <div class="avatar-edit">
+            <input
+              required
+              type="file"
+              id="imageUpload"
+              name="photo"
+              accept=".png, .jpg, .jpeg, .webp"
+            />
+            <label for="imageUpload"></label>
+          </div>
+        </div>
+        <div class="input-group">
+          <label class="input-label">Name</label>
+          <input
+            required
+            name="name"
+            type="text"
+            class="input-1"
+            oninput="this.value = this.value.replace(/[0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+          />
+        </div>
+
+        <div class="input-group">
+          <label class="input-label">Position</label>
+          <input
+            required
+            name="position"
+            type="text"
+            class="input-1"
+            oninput="this.value = this.value.replace(/[0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+          />
+        </div>
+
+        <div class="btn-container">
+          <span class="discard-btn btn"> Discard </span>
+
+          <div class="msg-container success-container">
+            <div class="svg ui-success">
+              <svg
+                viewBox="0 0 87 87"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+                <g
+                  id="Page-1"
+                  stroke="none"
+                  stroke-width="1"
+                  fill="none"
+                  fill-rule="evenodd"
+                >
+                  <g id="Group-3" transform="translate(2.000000, 2.000000)">
+                    <circle
+                      id="Oval-2"
+                      stroke="rgba(165, 220, 134, 0.2)"
+                      stroke-width="4"
+                      cx="41.5"
+                      cy="41.5"
+                      r="41.5"
+                    ></circle>
+                    <circle
+                      class="ui-success-circle"
+                      id="Oval-2"
+                      stroke="#A5DC86"
+                      stroke-width="4"
+                      cx="41.5"
+                      cy="41.5"
+                      r="41.5"
+                    ></circle>
+                    <polyline
+                      class="ui-success-path"
+                      id="Path-2"
+                      stroke="#A5DC86"
+                      stroke-width="4"
+                      points="19 38.8036813 31.1020744 54.8046875 63.299221 28"
+                    ></polyline>
+                  </g>
+                </g>
+              </svg>
+            </div>
+
+            <span class="msg">Member added succefully</span>
+          </div>
+
+          <div class="msg-container error-container">
+            <div class="svg ui-error">
+              <svg
+                viewBox="0 0 87 87"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+                <g
+                  id="Page-1"
+                  stroke="none"
+                  stroke-width="1"
+                  fill="none"
+                  fill-rule="evenodd"
+                >
+                  <g id="Group-2" transform="translate(2.000000, 2.000000)">
+                    <circle
+                      id="Oval-2"
+                      stroke="rgba(252, 191, 191, .5)"
+                      stroke-width="4"
+                      cx="41.5"
+                      cy="41.5"
+                      r="41.5"
+                    ></circle>
+                    <circle
+                      class="ui-error-circle"
+                      stroke="#F74444"
+                      stroke-width="4"
+                      cx="41.5"
+                      cy="41.5"
+                      r="41.5"
+                    ></circle>
+                    <path
+                      class="ui-error-line1"
+                      d="M22.244224,22 L60.4279902,60.1837662"
+                      id="Line"
+                      stroke="#F74444"
+                      stroke-width="3"
+                      stroke-linecap="square"
+                    ></path>
+                    <path
+                      class="ui-error-line2"
+                      d="M60.755776,21 L23.244224,59.8443492"
+                      id="Line"
+                      stroke="#F74444"
+                      stroke-width="3"
+                      stroke-linecap="square"
+                    ></path>
+                  </g>
+                </g>
+              </svg>
+            </div>
+
+            <span class="msg">Something went wrong</span>
+          </div>
+
+          <button class="btn" type="submit">
+            <span class="add">Add</span>
+            <span class="wait">Please Wait...</span>
+          </button>
+        </div>
+      </form>
+
+      <form id="add-video-form" class="modal-form form">
+        <h1>Upload A Video</h1>
+
+        <div class="input-group file-input-group upload-active">
+          <input
+            required
+            style="display: none"
+            id="fileInput"
+            name="video"
+            accept="video/*"
+            type="file"
+            onchange="updateFileName()"
+          />
+          <label class="custom-file-label" for="fileInput">
+            <span id="label-placeholder" class="label-placeholder"
+              >Choose a video</span
+            >
+          </label>
+        </div>
+
+        <div class="input-group">
+          <label class="input-label">Title</label>
+          <input required name="video" type="text" class="input-1" />
+        </div>
+
+        <div class="input-group">
+          <label for="">Category</label>
+
+          <span class="option-selector">
+            <span class="select">
+              <span class="selected">Choose the category</span>
+              <span class="options">
+                <span>Advert</span>
+                <span>Testimonial</span>
+              </span>
+            </span>
+
+            <input required hidden id="select" name="service" type="text" />
+            <span class="cta-2 selector-trigger">
+              <img src="../public/icons/tabler-icon-chevron-down.svg" alt="" />
+            </span>
+          </span>
+        </div>
+
+        <div class="btn-container">
+          <span class="discard-btn btn"> Discard </span>
+
+          <div class="msg-container success-container">
+            <div class="svg ui-success">
+              <svg
+                viewBox="0 0 87 87"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+                <g
+                  id="Page-1"
+                  stroke="none"
+                  stroke-width="1"
+                  fill="none"
+                  fill-rule="evenodd"
+                >
+                  <g id="Group-3" transform="translate(2.000000, 2.000000)">
+                    <circle
+                      id="Oval-2"
+                      stroke="rgba(165, 220, 134, 0.2)"
+                      stroke-width="4"
+                      cx="41.5"
+                      cy="41.5"
+                      r="41.5"
+                    ></circle>
+                    <circle
+                      class="ui-success-circle"
+                      id="Oval-2"
+                      stroke="#A5DC86"
+                      stroke-width="4"
+                      cx="41.5"
+                      cy="41.5"
+                      r="41.5"
+                    ></circle>
+                    <polyline
+                      class="ui-success-path"
+                      id="Path-2"
+                      stroke="#A5DC86"
+                      stroke-width="4"
+                      points="19 38.8036813 31.1020744 54.8046875 63.299221 28"
+                    ></polyline>
+                  </g>
+                </g>
+              </svg>
+            </div>
+
+            <span class="msg">Video uploaded succefully</span>
+          </div>
+
+          <div class="msg-container error-container">
+            <div class="svg ui-error">
+              <svg
+                viewBox="0 0 87 87"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+                <g
+                  id="Page-1"
+                  stroke="none"
+                  stroke-width="1"
+                  fill="none"
+                  fill-rule="evenodd"
+                >
+                  <g id="Group-2" transform="translate(2.000000, 2.000000)">
+                    <circle
+                      id="Oval-2"
+                      stroke="rgba(252, 191, 191, .5)"
+                      stroke-width="4"
+                      cx="41.5"
+                      cy="41.5"
+                      r="41.5"
+                    ></circle>
+                    <circle
+                      class="ui-error-circle"
+                      stroke="#F74444"
+                      stroke-width="4"
+                      cx="41.5"
+                      cy="41.5"
+                      r="41.5"
+                    ></circle>
+                    <path
+                      class="ui-error-line1"
+                      d="M22.244224,22 L60.4279902,60.1837662"
+                      id="Line"
+                      stroke="#F74444"
+                      stroke-width="3"
+                      stroke-linecap="square"
+                    ></path>
+                    <path
+                      class="ui-error-line2"
+                      d="M60.755776,21 L23.244224,59.8443492"
+                      id="Line"
+                      stroke="#F74444"
+                      stroke-width="3"
+                      stroke-linecap="square"
+                    ></path>
+                  </g>
+                </g>
+              </svg>
+            </div>
+
+            <span class="msg">Something went wrong</span>
+          </div>
+
+          <button class="btn" type="submit">
+            <span class="add">Upload</span>
+            <span class="wait">Please Wait...</span>
+          </button>
+        </div>
+      </form>
+
+      <form id="edit-member-form" class="modal-form form">
+        <h1>Edit Team Member</h1>
+        <div class="avatar-upload">
+          <div class="avatar-preview">
+            <div id="editImagePreview"></div>
+          </div>
+          <div class="avatar-edit">
+            <input
+              required
+              type="file"
+              id="editImageUpload"
+              name="photo"
+              accept=".png, .jpg, .jpeg, .webp"
+            />
+            <label for="editImageUpload"></label>
+          </div>
+        </div>
+        <div class="input-group">
+          <label class="input-label">Name</label>
+          <input
+            required
+            id="name"
+            name="name"
+            type="text"
+            class="input-1"
+            oninput="this.value = this.value.replace(/[0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+          />
+        </div>
+
+        <div class="input-group">
+          <label class="input-label">Position</label>
+          <input
+            required
+            id="position"
+            name="position"
+            type="text"
+            class="input-1"
+            oninput="this.value = this.value.replace(/[0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+          />
+        </div>
+
+        <input hidden name="memeber-id" id="member-id" type="text" />
+
+        <div class="btn-container">
+          <span class="discard-btn btn"> Discard </span>
+
+          <div class="msg-container success-container">
+            <div class="svg ui-success">
+              <svg
+                viewBox="0 0 87 87"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+                <g
+                  id="Page-1"
+                  stroke="none"
+                  stroke-width="1"
+                  fill="none"
+                  fill-rule="evenodd"
+                >
+                  <g id="Group-3" transform="translate(2.000000, 2.000000)">
+                    <circle
+                      id="Oval-2"
+                      stroke="rgba(165, 220, 134, 0.2)"
+                      stroke-width="4"
+                      cx="41.5"
+                      cy="41.5"
+                      r="41.5"
+                    ></circle>
+                    <circle
+                      class="ui-success-circle"
+                      id="Oval-2"
+                      stroke="#A5DC86"
+                      stroke-width="4"
+                      cx="41.5"
+                      cy="41.5"
+                      r="41.5"
+                    ></circle>
+                    <polyline
+                      class="ui-success-path"
+                      id="Path-2"
+                      stroke="#A5DC86"
+                      stroke-width="4"
+                      points="19 38.8036813 31.1020744 54.8046875 63.299221 28"
+                    ></polyline>
+                  </g>
+                </g>
+              </svg>
+            </div>
+
+            <span class="msg">Edited Successfully</span>
+          </div>
+
+          <div class="msg-container error-container">
+            <div class="svg ui-error">
+              <svg
+                viewBox="0 0 87 87"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+                <g
+                  id="Page-1"
+                  stroke="none"
+                  stroke-width="1"
+                  fill="none"
+                  fill-rule="evenodd"
+                >
+                  <g id="Group-2" transform="translate(2.000000, 2.000000)">
+                    <circle
+                      id="Oval-2"
+                      stroke="rgba(252, 191, 191, .5)"
+                      stroke-width="4"
+                      cx="41.5"
+                      cy="41.5"
+                      r="41.5"
+                    ></circle>
+                    <circle
+                      class="ui-error-circle"
+                      stroke="#F74444"
+                      stroke-width="4"
+                      cx="41.5"
+                      cy="41.5"
+                      r="41.5"
+                    ></circle>
+                    <path
+                      class="ui-error-line1"
+                      d="M22.244224,22 L60.4279902,60.1837662"
+                      id="Line"
+                      stroke="#F74444"
+                      stroke-width="3"
+                      stroke-linecap="square"
+                    ></path>
+                    <path
+                      class="ui-error-line2"
+                      d="M60.755776,21 L23.244224,59.8443492"
+                      id="Line"
+                      stroke="#F74444"
+                      stroke-width="3"
+                      stroke-linecap="square"
+                    ></path>
+                  </g>
+                </g>
+              </svg>
+            </div>
+
+            <span class="msg">Something went wrong</span>
+          </div>
+
+          <button class="btn" type="submit">
+            <span class="add">Update</span>
+            <span class="wait">Please Wait...</span>
+          </button>
+        </div>
+      </form>
+
+      <form id="delete-member-form" class="modal-form form">
+        <p>Are you sure you want to remove <b></b> from the Team list</p>
+
+        <input hidden id="delete-member-id" type="text" />
+
+        <div class="btn-container">
+          <span class="discard-btn btn"> Cancel </span>
+
+          <div class="msg-container success-container">
+            <div class="svg ui-success">
+              <svg
+                viewBox="0 0 87 87"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+                <g
+                  id="Page-1"
+                  stroke="none"
+                  stroke-width="1"
+                  fill="none"
+                  fill-rule="evenodd"
+                >
+                  <g id="Group-3" transform="translate(2.000000, 2.000000)">
+                    <circle
+                      id="Oval-2"
+                      stroke="rgba(165, 220, 134, 0.2)"
+                      stroke-width="4"
+                      cx="41.5"
+                      cy="41.5"
+                      r="41.5"
+                    ></circle>
+                    <circle
+                      class="ui-success-circle"
+                      id="Oval-2"
+                      stroke="#A5DC86"
+                      stroke-width="4"
+                      cx="41.5"
+                      cy="41.5"
+                      r="41.5"
+                    ></circle>
+                    <polyline
+                      class="ui-success-path"
+                      id="Path-2"
+                      stroke="#A5DC86"
+                      stroke-width="4"
+                      points="19 38.8036813 31.1020744 54.8046875 63.299221 28"
+                    ></polyline>
+                  </g>
+                </g>
+              </svg>
+            </div>
+
+            <span class="msg">Member Removed Successfully</span>
+          </div>
+
+          <div class="msg-container error-container">
+            <div class="svg ui-error">
+              <svg
+                viewBox="0 0 87 87"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+                <g
+                  id="Page-1"
+                  stroke="none"
+                  stroke-width="1"
+                  fill="none"
+                  fill-rule="evenodd"
+                >
+                  <g id="Group-2" transform="translate(2.000000, 2.000000)">
+                    <circle
+                      id="Oval-2"
+                      stroke="rgba(252, 191, 191, .5)"
+                      stroke-width="4"
+                      cx="41.5"
+                      cy="41.5"
+                      r="41.5"
+                    ></circle>
+                    <circle
+                      class="ui-error-circle"
+                      stroke="#F74444"
+                      stroke-width="4"
+                      cx="41.5"
+                      cy="41.5"
+                      r="41.5"
+                    ></circle>
+                    <path
+                      class="ui-error-line1"
+                      d="M22.244224,22 L60.4279902,60.1837662"
+                      id="Line"
+                      stroke="#F74444"
+                      stroke-width="3"
+                      stroke-linecap="square"
+                    ></path>
+                    <path
+                      class="ui-error-line2"
+                      d="M60.755776,21 L23.244224,59.8443492"
+                      id="Line"
+                      stroke="#F74444"
+                      stroke-width="3"
+                      stroke-linecap="square"
+                    ></path>
+                  </g>
+                </g>
+              </svg>
+            </div>
+
+            <span class="msg">Something went wrong</span>
+          </div>
+
+          <button style="background-color: red" class="btn" type="submit">
+            <span class="add">Remove</span>
+            <span class="wait">Please Wait...</span>
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <div class="modal-overlay"></div>
+
+    <script src="js/modals.js"></script>
+    <script src="../js/team.js"></script>
+    <script src="js/chart.js"></script>
+
+    <script>
+      Chart.defaults.font.family = "Jost";
+
+      var serviceCtx = document.getElementById("clientChart").getContext("2d");
+      const services = [
+        "Loan",
+        "Investment Platform",
+        "Business Accounting Systems Support",
+        "Finance Management Support Training",
+        "Book Keeping Training",
+        "Business Plan and Proposals",
+        "Data Entry",
+        "Tax Computations",
+        "Corporate Reports Preparations",
+        "Business Development Strategies",
+      ];
+
+      const serviceLabels = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"];
+
+      const numberOfClientsRegistered = [15, 2, 7, 1, 5, 11, 6, 1, 3, 1];
+
+      var myBarChart = new Chart(serviceCtx, {
+        type: "bar",
+        data: {
+          labels: serviceLabels,
+          datasets: [
+            {
+              label: "Number of Clients",
+              data: numberOfClientsRegistered,
+              backgroundColor: "#d3e0ef",
+              borderColor: "#356dae",
+              borderWidth: 1.5,
+              borderRadius: 2.5,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+          responsive: false,
+          maintainAspectRatio: false,
+          indexAxis: "y",
+          plugins: {
+            tooltip: {
+              callbacks: {
+                title: function (context) {
+                  return services[context[0].dataIndex];
+                },
+              },
+            },
+          },
+        },
+      });
+
+      const months = ["Aug", "Sept", "Oct", "Nov"];
+      const registrations = [5, 3, 15, 8];
+
+      const ctx = document
+        .getElementById("clientRegistrationChart")
+        .getContext("2d");
+
+      const myChart = new Chart(ctx, {
+        type: "line", // Use 'line' type to create an area chart
+        data: {
+          labels: months,
+          datasets: [
+            {
+              label: "Client Registrations Last Three Months",
+              data: registrations,
+              backgroundColor: "rgba(211,224,239, 0.2)", // Area fill color
+              borderColor: "rgba(211,224,239, 0.5)", // Line color
+              borderWidth: 2,
+              pointRadius: 5, // Set point radius for each data point
+              pointBackgroundColor: "#356dae", // Point color
+              fill: true,
+              tension: 0.3,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+          responsive: false,
+          maintainAspectRatio: false,
+        },
+      });
+    </script>
+
+    <script src="../js/select-input.js"></script>
+    <script>
+      // function editMember(btn) {
+      //   console.log(btn.parentElement.parentElement);
+      // }
+
+      // function deleteMember(btn) {
+      //   console.log(btn.parentElement.parentElement);
+      // }
+
+      function readURL(input) {
+        if (input.files && input.files[0]) {
+          var reader = new FileReader();
+          reader.onload = function (e) {
+            $("#imagePreview").css(
+              "background-image",
+              "url(" + e.target.result + ")"
+            );
+            $("#imagePreview").hide();
+            $("#imagePreview").fadeIn(650);
+          };
+          reader.readAsDataURL(input.files[0]);
+        }
+      }
+      $("#imageUpload").change(function () {
+        readURL(this);
+      });
+
+      function readURL(input) {
+        if (input.files && input.files[0]) {
+          var reader = new FileReader();
+          reader.onload = function (e) {
+            $("#editImagePreview").css(
+              "background-image",
+              "url(" + e.target.result + ")"
+            );
+            $("#editImagePreview").hide();
+            $("#editImagePreview").fadeIn(650);
+          };
+          reader.readAsDataURL(input.files[0]);
+        }
+      }
+      $("#editImageUpload").change(function () {
+        readURL(this);
+      });
+
+      function updateFileName() {
+        var input = document.getElementById("fileInput");
+        var output = document.getElementById("label-placeholder");
+        var fileName = input.files[0].name;
+        output.innerText = fileName;
+      }
+    </script>
+  </body>
+</html>
