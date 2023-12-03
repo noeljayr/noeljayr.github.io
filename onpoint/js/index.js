@@ -106,7 +106,65 @@ function startAutoScroll() {
     }, 50); // Adjust the interval as needed
   }
 }
+var windowWidth = window.innerWidth;
 
+if (windowWidth < 800) {
+  let direction = 1;
+  function startAutoScroll() {
+    if (!isScrolling) {
+      isScrolling = true;
+      const scrollInterval = setInterval(() => {
+        if (!isScrolling) {
+          clearInterval(scrollInterval);
+          return;
+        }
+        cardsContainer.scrollLeft += direction * scrollSpeed; // Adjusted scroll speed
+
+        // Check if reached the end of cards
+        if (
+          direction > 0 &&
+          cardsContainer.scrollLeft >=
+            cardsContainer.scrollWidth - cardsContainer.clientWidth
+        ) {
+          direction = -1; // Reverse direction
+        } else if (direction < 0 && cardsContainer.scrollLeft <= 0) {
+          direction = 1; // Reset direction
+        }
+      }, 50); // Adjust the interval as needed
+    }
+  }
+}
+
+window.addEventListener("resize", function () {
+  var windowWidth = window.innerWidth;
+
+  if (windowWidth < 800) {
+    let direction = 1;
+    function startAutoScroll() {
+      if (!isScrolling) {
+        isScrolling = true;
+        const scrollInterval = setInterval(() => {
+          if (!isScrolling) {
+            clearInterval(scrollInterval);
+            return;
+          }
+          cardsContainer.scrollLeft += direction * scrollSpeed; // Adjusted scroll speed
+
+          // Check if reached the end of cards
+          if (
+            direction > 0 &&
+            cardsContainer.scrollLeft >=
+              cardsContainer.scrollWidth - cardsContainer.clientWidth
+          ) {
+            direction = -1; // Reverse direction
+          } else if (direction < 0 && cardsContainer.scrollLeft <= 0) {
+            direction = 1; // Reset direction
+          }
+        }, 50); // Adjust the interval as needed
+      }
+    }
+  }
+});
 function stopAutoScroll() {
   isScrolling = false;
 }
