@@ -1,6 +1,3 @@
-
-
-
 /*
 
     Fetch the comments in decending order, the latest ones first
@@ -9,10 +6,9 @@
 
 const commentsContainer = document.querySelector(".comments-container");
 
-
 function diplayComments() {
   comments.forEach((c) => {
-    if(c.status != "Disapproved"){
+    if (c.status != "Disapproved") {
       var card = document.createElement("div");
       card.className = "card";
 
@@ -37,15 +33,14 @@ function diplayComments() {
   });
 }
 
-
-if(commentsContainer){
+if (commentsContainer) {
   diplayComments();
 }
 const latest = videos.slice(0, 3);
 
 const videosContainer = document.querySelector(".video-container");
 
-if(videosContainer){
+if (videosContainer) {
   latest.forEach((video) => {
     // createPlayer(video)
     var videoDiv = document.createElement("div");
@@ -66,7 +61,6 @@ if(videosContainer){
         `;
     videosContainer.appendChild(videoDiv);
   });
-
 }
 
 const container1 = document.getElementById("container-1");
@@ -83,7 +77,7 @@ let isScrolling = false;
 let direction = 5;
 let scrollSpeed = 1; // Variable to control scroll speed (initially set to 1)
 
-function startAutoScroll() {
+function startAutoScroll(x) {
   if (!isScrolling) {
     isScrolling = true;
     const scrollInterval = setInterval(() => {
@@ -99,9 +93,9 @@ function startAutoScroll() {
         cardsContainer.scrollLeft >=
           cardsContainer.scrollWidth - cardsContainer.clientWidth
       ) {
-        direction = -5; // Reverse direction
+        direction = -x; // Reverse direction
       } else if (direction < 0 && cardsContainer.scrollLeft <= 0) {
-        direction = 5; // Reset direction
+        direction = x; // Reset direction
       }
     }, 50); // Adjust the interval as needed
   }
@@ -115,7 +109,7 @@ const commentCards = cardsContainer.querySelectorAll(".card");
 
 commentCards.forEach((card) => {
   card.addEventListener("mouseenter", () => {
-    scrollSpeed = 0.5; // Halve the scroll speed when hovering over a card
+    scrollSpeed = 0.25; // Halve the scroll speed when hovering over a card
   });
 
   card.addEventListener("mouseleave", () => {
@@ -133,9 +127,23 @@ cardsContainer.addEventListener("scroll", () => {
   timeoutId = setTimeout(startAutoScroll, 10000); // 10 seconds for demonstration, adjust as needed
 });
 
-startAutoScroll();
+var windowWidth = window.innerWidth;
 
+if (windowWidth > 800) {
+  startAutoScroll(5);
+} else {
+  startAutoScroll(2);
+}
 
+window.addEventListener("resize", function () {
+  var windowWidth = window.innerWidth;
+
+  if (windowWidth > 800) {
+    startAutoScroll(5);
+  } else {
+    startAutoScroll(2);
+  }
+});
 
 const leftBtn = document.querySelector(".prev");
 const rightBtn = document.querySelector(".next");
