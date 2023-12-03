@@ -80,7 +80,7 @@ function showMoreServices(btn) {
 
 const cardsContainer = document.getElementById("cardsContainer");
 let isScrolling = false;
-let direction = 10;
+let direction = 5;
 let scrollSpeed = 1; // Variable to control scroll speed (initially set to 1)
 
 function startAutoScroll() {
@@ -99,9 +99,9 @@ function startAutoScroll() {
         cardsContainer.scrollLeft >=
           cardsContainer.scrollWidth - cardsContainer.clientWidth
       ) {
-        direction = -10; // Reverse direction
+        direction = -5; // Reverse direction
       } else if (direction < 0 && cardsContainer.scrollLeft <= 0) {
-        direction = 10; // Reset direction
+        direction = 5; // Reset direction
       }
     }, 50); // Adjust the interval as needed
   }
@@ -115,7 +115,7 @@ const commentCards = cardsContainer.querySelectorAll(".card");
 
 commentCards.forEach((card) => {
   card.addEventListener("mouseenter", () => {
-    scrollSpeed = 0.25; // Halve the scroll speed when hovering over a card
+    scrollSpeed = 0.5; // Halve the scroll speed when hovering over a card
   });
 
   card.addEventListener("mouseleave", () => {
