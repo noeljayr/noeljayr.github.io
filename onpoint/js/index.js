@@ -130,8 +130,10 @@ cardsContainer.addEventListener("scroll", () => {
 var windowWidth = window.innerWidth;
 
 if (windowWidth > 800) {
+    
   startAutoScroll(5);
 } else {
+     scrollSpeed = 0.35;
   startAutoScroll(2);
 }
 
