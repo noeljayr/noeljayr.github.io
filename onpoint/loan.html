@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>On-point Finance and Business Consultants - Lending to small medium businesses</title>
+    <title>
+      On-point Finance and Business Consultants - Lending to small medium
+      businesses
+    </title>
 
     <link rel="stylesheet" href="css/index.css" />
 
@@ -12,7 +15,6 @@
       href="public/logos/favicon.png"
       type="image/x-icon"
     />
-    
 
     <script defer src="js/components/footer.js"></script>
     <script defer src="js/menu.js"></script>
@@ -26,12 +28,12 @@
 
     <div style="margin-top: 8rem" class="main-content service-content section">
       <div class="service-info">
-        <h1 style="margin-bottom: 1rem;">Lending to small medium businesses</h1>
+        <h1 style="margin-bottom: 1rem">Lending to small medium businesses</h1>
         <p><b>Type: </b> Short Term Loans</p>
 
         <p><b>Range: </b> MK 50, 000 - MK 1, 000,000</p>
 
-        <div style="margin-top: 2rem;" class="info">
+        <div style="margin-top: 2rem" class="info">
           <h2>Criteria of the clients</h2>
           <ul>
             <li>An individual above 18 a group of persons.</li>
@@ -57,7 +59,7 @@
 
         <h1>Client registration</h1>
 
-        <div style="margin-top: 1rem;" class="form-wrapper">
+        <div style="margin-top: 1rem" class="form-wrapper">
           <form action="" class="form">
             <div class="input-group">
               <label for="">Name</label>
@@ -161,12 +163,40 @@
         <h2>More Services</h2>
       </div>
     </div>
+
+    <div class="application-mode">
+      <div class="mode">
+        <span onclick="closeAppMode()" class="back-btn cta-2">
+          <img src="public/icons/tabler-icon-chevron-right.svg" alt="" />
+          Back
+        </span>
+        <h2>Just a moment...</h2>
+        <p>
+          We would like to know if you are qualified for a loan application.
+        </p>
+        <div class="mode-links">
+          <a href="public/documents/loan-application.pdf" class="cta-2"
+            >Download Application form</a
+          >
+          <a
+            class="cta-2"
+            href="http://"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Continue with google forms
+            <img src="public/icons/tabler-icon-arrow-narrow-right.svg" alt="" />
+          </a>
+        </div>
+        <p></p>
+      </div>
+    </div>
+
+    <div class="application-mode-overlay"></div>
     <div class="section footer"></div>
 
     <script>
-
       const services = [
-       
         {
           title: "Investment Platform",
           link: "investment-platform",
@@ -208,13 +238,15 @@
       var current = "Lending to small medium businesses";
       const moreDiv = document.querySelector(".service-content .more-services");
       const formServInf = document.getElementById("select");
-      const selectedServ = document.querySelector(".option-selector .select .selected")
+      const selectedServ = document.querySelector(
+        ".option-selector .select .selected"
+      );
 
-      if(current == "Lending to small medium businesses"){
-        current = "Loan"
+      if (current == "Lending to small medium businesses") {
+        current = "Loan";
       }
       formServInf.value = current;
-      
+
       selectedServ.textContent = current;
 
       function showMoreServices() {
@@ -222,7 +254,7 @@
           if (s.title != current) {
             var serv = document.createElement("a");
             serv.href = s.link + ".html";
-            serv.title = s.title
+            serv.title = s.title;
             serv.innerHTML = `
              
                   <span class="title">${s.title}</span>
@@ -240,28 +272,50 @@
 
       showMoreServices();
 
-
       const check = document.querySelectorAll(".check-wrapper");
-    const other = document.querySelectorAll(".checkbox");
-    const typeInput = document.getElementById("type-input");
+      const other = document.querySelectorAll(".checkbox");
+      const typeInput = document.getElementById("type-input");
 
-    typeInput.value = "New Business";
+      typeInput.value = "New Business";
 
-    check.forEach((c) => {
-      c.addEventListener("click", () => {
-        var box = c.querySelector(".checkbox");
-        var value = c.querySelector(".title").textContent;
-        check.forEach((c2) => {
-          c2.classList.remove("selected-box");
+      check.forEach((c) => {
+        c.addEventListener("click", () => {
+          var box = c.querySelector(".checkbox");
+          var value = c.querySelector(".title").textContent;
+          check.forEach((c2) => {
+            c2.classList.remove("selected-box");
+          });
+          c.classList.toggle("selected-box");
+          other.forEach((b) => {
+            b.classList.remove("checked");
+          });
+          box.classList.toggle("checked");
+          typeInput.value = value;
         });
-        c.classList.toggle("selected-box");
-        other.forEach((b) => {
-          b.classList.remove("checked");
-        });
-        box.classList.toggle("checked");
-        typeInput.value = value;
       });
-    });
+
+      const applicationModeOverlay = document.querySelector(
+        ".application-mode-overlay"
+      );
+      const applicationMode = document.querySelector(".application-mode");
+      const form = document.querySelector("form");
+
+      function showApplicationMode() {
+        applicationModeOverlay.classList.add("application-mode-overlay-active");
+        applicationMode.classList.add("application-mode-active");
+      }
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        showApplicationMode();
+      });
+
+      function closeAppMode() {
+        applicationModeOverlay.classList.remove(
+          "application-mode-overlay-active"
+        );
+        applicationMode.classList.remove("application-mode-active");
+      }
     </script>
   </body>
 </html>
