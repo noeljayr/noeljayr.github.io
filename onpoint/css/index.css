@@ -2008,3 +2008,111 @@ a {
     border-radius: var(--radius);
     box-shadow: var(--shadow);
   } */
+
+
+.application-mode-overlay {
+  background-color: rgba(53, 109, 174, 0.2);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 11;
+  visibility: visible;
+  opacity: 1;
+  transition: var(--transition);
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
+}
+.application-mode-overlay-active{
+   visibility: visible;
+  opacity: 1;
+}
+.application-mode {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 12;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+   transition: var(--transition);
+   visibility: hidden;
+   opacity: 0;
+   transform: scale(0.5);
+}
+
+.application-mode-active{
+  visibility: visible;
+   opacity: 1;
+   transform: scale(1);
+}
+
+.application-mode .mode {
+  /* width: 32rem; */
+  border-radius: var(--radius);
+  background-color: var(--white);
+  padding: 1rem;
+}
+
+.application-mode p {
+  margin-top: 0rem;
+  margin-bottom: 1rem;
+}
+
+.application-mode .mode-links {
+  display: flex;
+  justify-content: space-between;
+}
+.application-mode .mode-links a {
+  font-size: 0.8rem;
+}
+.application-mode .mode-links a:nth-child(2) {
+  margin-left: 3rem;
+}
+@media screen and (max-width: 600px) {
+  .application-mode {
+    padding: 2rem;
+  }
+  .application-mode .mode-links a:nth-child(2) {
+  margin-left: 0;
+}
+  .application-mode .mode {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 550px) {
+  .application-mode .mode-links {
+    flex-direction: column;
+    margin-top: 2rem;
+  }
+  .application-mode .mode-links a{
+    width: 100%;
+  }
+   .application-mode .mode-links a:nth-child(2) {
+    margin-top: 1rem;
+   }
+}
+.application-mode .mode .back-btn {
+  margin-bottom: 0.5rem;
+  background-color: transparent;
+  font-size: var(--font-ss);
+  height: 2rem;
+  width: fit-content;
+  padding-left: 0;
+  padding-right: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.application-mode .mode .back-btn:hover {
+  filter: brightness(150%);
+}
+
+.application-mode .mode .back-btn img {
+  transform: rotate(180deg);
+  margin: 0;
+  height: var(--font-s);
+}
