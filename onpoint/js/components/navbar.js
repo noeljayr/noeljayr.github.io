@@ -28,8 +28,8 @@ if (navbar) {
       <span class="menu-list">
       
         <span>
-          <a class="" href=".../index.html">Home</a>
-          <a class="" href=".../index.html#services">Services</a>
+          <a class="" href="./">Home</a>
+          <a class="" href="./#services">Services</a>
           <a class="" href="media.html">Media</a>
           <a class="" href="contact.html">Contact us</a>
           <a class="" href="profile.html">Profile</a>
