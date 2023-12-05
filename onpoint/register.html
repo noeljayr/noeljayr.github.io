@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>On-point Finance and Business Consultants - Client Registration</title>
+
+    <link rel="stylesheet" href="css/index.css" />
+
+    <link
+      rel="shortcut icon"
+      href="public/logos/favicon.png"
+      type="image/x-icon"
+    />
+    
+
+    <script defer src="js/components/footer.js"></script>
+    <script defer src="js/menu.js"></script>
+  </head>
+  <body>
+    <div class="navbar section"></div>
+    <script>
+      const page = "reg";
+    </script>
+    <script src="js/components/navbar.js"></script>
+
+    <div style="margin-top: 8rem" class="main-content section">
+      <div class="reg-section">
+        <h1>Client registration</h1>
+        <p>
+          After submitting your details through the form, one of our customer
+          support willl contact you to finalize your registration.
+          <br /><br />
+          Thank you for choosing On-point Finance and Business Consultants!
+        </p>
+
+        <div class="form-wrapper">
+          <form action="" class="form">
+            <div class="input-group">
+              <label for="">Name</label>
+              <input required
+                oninput="this.value = this.value.replace(/[0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                placeholder="Enter your full name"
+                type="text"
+                name="name"
+              />
+            </div>
+
+            <div class="input-group">
+              <label for="">Phone</label>
+              <input required
+                oninput="this.value = this.value.replace(/[^0-9+]/g, '').replace(/(\+.*)\+.*/g, '$1');"
+                placeholder="+265....."
+                type="text"
+                name="phone"
+              />
+            </div>
+
+            <div class="input-group">
+              <label for="">Email</label>
+              <input name="email" required placeholder="example@gmail.com" type="email" />
+            </div>
+
+            <div class="input-group check-input">
+              <label for="">Type</label>
+              <span class="check-wrapper selected-box">
+                <span class="checkbox checked">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M5 12L10 17L20 7"
+                      stroke="#f7fbff"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+
+                <span class="title">New Business</span>
+              </span>
+
+              <span class="check-wrapper">
+                <span class="checkbox">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M5 12L10 17L20 7"
+                      stroke="#f7fbff"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+
+                <span class="title">Continued Business</span>
+              </span>
+
+              <input required hidden name="type" id="type-input" type="text" />
+            </div>
+
+            <div class="input-group">
+              <label for="">Service</label>
+
+              <span class="option-selector">
+                <span class="select">
+                  <span class="selected">Choose a service</span>
+                  <span class="options">
+                    <span>Loan</span>
+                    <span>Investment Platform</span>
+                    <span>Customized Business Accounting Systems Support</span>
+                    <span>Finance Management Support Training</span>
+                    <span>Book Keeping Training</span>
+                    <span>Data Entry</span>
+                    <span>Tax Computations</span>
+                    <span>Corporate Reports Preparations</span>
+                    <span>Business Plan and Proposals</span>
+                    <span>Free advice on business development strategies</span>
+                  </span>
+                </span>
+
+                <input required hidden id="select" name="service" type="text" />
+                <span class="cta-2 selector-trigger">
+                  <img src="public/icons/tabler-icon-chevron-down.svg" alt="" />
+                </span>
+              </span>
+            </div>
+
+            <button class="cta" type="submit">Looks good, Register</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="application-mode">
+      <div class="mode">
+        <span onclick="closeAppMode()" class="back-btn cta-2">
+          <img src="public/icons/tabler-icon-chevron-right.svg" alt="" />
+          Back
+        </span>
+        <h2>Just a moment...</h2>
+        <p>
+          We would like to know if you are qualified for a loan application.
+        </p>
+        <div class="mode-links">
+          <a href="public/documents/loan-application.pdf" class="cta-2"
+            >Download Application form</a
+          >
+          <a
+            class="cta-2"
+            href="http://"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Continue with google forms
+            <img src="public/icons/tabler-icon-arrow-narrow-right.svg" alt="" />
+          </a>
+        </div>
+        <p></p>
+      </div>
+    </div>
+
+    <div class="application-mode-overlay"></div>
+    <div class="section footer"></div>
+  </body>
+
+  <script src="js/select-input.js"></script>
+  <script>
+    const check = document.querySelectorAll(".check-wrapper");
+    const other = document.querySelectorAll(".checkbox");
+    const typeInput = document.getElementById("type-input");
+
+    typeInput.value = "New Business";
+
+    check.forEach((c) => {
+      c.addEventListener("click", () => {
+        var box = c.querySelector(".checkbox");
+        var value = c.querySelector(".title").textContent;
+        check.forEach((c2) => {
+          c2.classList.remove("selected-box");
+        });
+        c.classList.toggle("selected-box");
+        other.forEach((b) => {
+          b.classList.remove("checked");
+        });
+        box.classList.toggle("checked");
+        typeInput.value = value;
+      });
+    });
+
+    
+    const applicationModeOverlay = document.querySelector(
+        ".application-mode-overlay"
+      );
+      const applicationMode = document.querySelector(".application-mode");
+      const form = document.querySelector("form");
+
+      function showApplicationMode() {
+        applicationModeOverlay.classList.add("application-mode-overlay-active");
+        applicationMode.classList.add("application-mode-active");
+      }
+
+      // form.addEventListener("submit", (e) => {
+      //   e.preventDefault();
+      //   showApplicationMode();
+      // });
+
+      function closeAppMode() {
+        applicationModeOverlay.classList.remove(
+          "application-mode-overlay-active"
+        );
+        applicationMode.classList.remove("application-mode-active");
+      }
+
+      
+  </script>
+</html>

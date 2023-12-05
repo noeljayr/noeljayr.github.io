@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>On-point Finance and Business Consultants</title>
+
+    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="../css/admin.css" />
+    <link rel="stylesheet" href="../css/animations.css" />
+
+    <link
+      rel="shortcut icon"
+      href="../public/logos/favicon.png"
+      type="image/x-icon"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
+
+    <script defer src="js/admin.js"></script>
+    <script defer src="js/modals.js"></script>
+
+    <script src="js/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="content">
+      <div class="side-bar"></div>
+      <script>
+        const page = "Clients";
+      </script>
+
+      <script src="../js/components/sidebar.js"></script>
+
+      <div class="top-bar">
+        <a href="dashboard " class="logo">
+          <img
+            src="../public/logos/logo.png"
+            alt="Girl Engineer Logo"
+            class="logo-gfx"
+          />
+          <h1>OPFBC</h1>
+        </a>
+
+        <span class="settings">
+          <i class="bi bi-person-fill-gear"></i>
+
+          <span class="options">
+            <a href="profile?user_id=">Profile</a>
+            <a href="includes/logout ">Logout</a>
+          </span>
+        </span>
+      </div>
+
+      <span class="greeting">
+        <h1>Clients</h1>
+      </span>
+
+      <div
+        style="justify-content: unset; gap: 2rem"
+        class="section-container quick-action-container"
+      >
+        <a href="client-registration.html" class="quick-action">
+          <span class="quick-action-title">Register a client</span>
+
+          <i class="bi bi-person-plus-fill"></i>
+        </a>
+      </div>
+
+      <div class="section-container client-container message-container">
+        <form action="" class="form">
+          <div class="search-client input-group">
+            <input
+              placeholder="Search by client name, service or type"
+              type="text"
+            />
+            <span class="cta-2">
+              <i class="bi bi-search"></i>
+            </span>
+          </div>
+        </form>
+
+        <!-- <div class="sort-container">
+
+        </div> -->
+      </div>
+
+      <form style="align-items: center;" id="delete-client-form" class="modal-form form">
+        <p>Are you sure you want to delete <b></b> from the Clients list</p>
+
+        <input hidden id="delete-member-id" type="text" />
+
+        <div class="btn-container">
+          <span class="discard-btn btn"> Cancel </span>
+
+          <div class="msg-container success-container">
+            <div class="svg ui-success">
+              <svg
+                viewBox="0 0 87 87"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+                <g
+                  id="Page-1"
+                  stroke="none"
+                  stroke-width="1"
+                  fill="none"
+                  fill-rule="evenodd"
+                >
+                  <g id="Group-3" transform="translate(2.000000, 2.000000)">
+                    <circle
+                      id="Oval-2"
+                      stroke="rgba(165, 220, 134, 0.2)"
+                      stroke-width="4"
+                      cx="41.5"
+                      cy="41.5"
+                      r="41.5"
+                    ></circle>
+                    <circle
+                      class="ui-success-circle"
+                      id="Oval-2"
+                      stroke="#A5DC86"
+                      stroke-width="4"
+                      cx="41.5"
+                      cy="41.5"
+                      r="41.5"
+                    ></circle>
+                    <polyline
+                      class="ui-success-path"
+                      id="Path-2"
+                      stroke="#A5DC86"
+                      stroke-width="4"
+                      points="19 38.8036813 31.1020744 54.8046875 63.299221 28"
+                    ></polyline>
+                  </g>
+                </g>
+              </svg>
+            </div>
+
+            <span class="msg">Client Deleted Successfully</span>
+          </div>
+
+          <div class="msg-container error-container">
+            <div class="svg ui-error">
+              <svg
+                viewBox="0 0 87 87"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+                <g
+                  id="Page-1"
+                  stroke="none"
+                  stroke-width="1"
+                  fill="none"
+                  fill-rule="evenodd"
+                >
+                  <g id="Group-2" transform="translate(2.000000, 2.000000)">
+                    <circle
+                      id="Oval-2"
+                      stroke="rgba(252, 191, 191, .5)"
+                      stroke-width="4"
+                      cx="41.5"
+                      cy="41.5"
+                      r="41.5"
+                    ></circle>
+                    <circle
+                      class="ui-error-circle"
+                      stroke="#F74444"
+                      stroke-width="4"
+                      cx="41.5"
+                      cy="41.5"
+                      r="41.5"
+                    ></circle>
+                    <path
+                      class="ui-error-line1"
+                      d="M22.244224,22 L60.4279902,60.1837662"
+                      id="Line"
+                      stroke="#F74444"
+                      stroke-width="3"
+                      stroke-linecap="square"
+                    ></path>
+                    <path
+                      class="ui-error-line2"
+                      d="M60.755776,21 L23.244224,59.8443492"
+                      id="Line"
+                      stroke="#F74444"
+                      stroke-width="3"
+                      stroke-linecap="square"
+                    ></path>
+                  </g>
+                </g>
+              </svg>
+            </div>
+
+            <span class="msg">Something went wrong</span>
+          </div>
+
+          <button style="background-color: red" class="btn" type="submit">
+            <span class="add">Delete</span>
+            <span class="wait">Please Wait...</span>
+          </button>
+        </div>
+      </form>
+
+    </div>
+
+    <div class="modal-overlay"></div>
+
+    <script>
+      var clients = [
+        {
+          id: 1,
+          name: "Noel Luhanga",
+          email: "noeljayr01@gmail.com",
+          phone: "+265886047774",
+          info: "info",
+          type: "New Business",
+          service: "Service",
+          regDate: "Saturday, 29 November 2023",
+          status: "new",
+        },
+
+        {
+          id: 2,
+          name: "Dumisani Chiumia",
+          email: "chiumia@gmail.com",
+          phone: "+26588688888",
+          info: "Test info",
+          type: "Continued Business",
+          service: "Service",
+          regDate: "Saturday, 2 December 2023",
+          status: "viewed",
+        },
+      ];
+
+      const clientContainer = document.querySelector(".client-container");
+
+      function displayClients() {
+        clients.forEach((m) => {
+          var client = document.createElement("div");
+          client.className = "message";
+          if (m.status == "new") {
+            client.classList.add("new");
+          }
+          client.innerHTML = `
+            <span onclick="showClient(this.parentElement)" class="name">
+              <span class="client-name">${m.name}</span>
+              <span class="user-email"> 
+                    <span>${m.email}</span>
+                    ${m.phone}
+              </span>
+            
+            </span>
+           
+            <span onclick="showClient(this.parentElement)" class="cta-2 show-content">
+              <img src="../public/icons/tabler-icon-chevron-down.svg" alt="">
+            </span>
+
+            <span class="client-info message-content">
+              <span>
+                <b>Type: </b> ${m.type}
+              </span>
+              <span>
+                <b>Service: </b> ${m.service}
+              </span>
+
+              <span class="date">
+                Registered on   ${m.regDate}
+              </span>
+
+              <span class="btn-container">
+                  <a href="edit-client.html?client-id=${m.id}" class="cta">Edit</a>
+                  <span onclick="initilalizeDeleteCleintModal(this.parentElement, clientDeleteForm)" style="background-color:red;" class="cta delete-client">Delete</span>
+              </span>
+            </span>
+         
+          `;
+
+          clientContainer.appendChild(client);
+        });
+      }
+
+      displayClients();
+
+      function showClient(m) {
+        // const messageDivs =  document.querySelectorAll(".message")
+        // messageDivs.forEach((div)=>{
+        //    div.classList.remove("message-active")
+        // })
+        m.classList.toggle("message-active");
+      }
+
+      const clientDeleteForm =  document.querySelector("#delete-client-form");
+
+      function showParent(btn){
+        console.log(btn.parentElement.parentElement.parentElement)
+      }
+    </script>
+  </body>
+</html>

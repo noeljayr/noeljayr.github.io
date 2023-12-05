@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>On-point Finance and Business Consultants - Media</title>
+
+    <link rel="stylesheet" href="css/plyr.min.css" />
+    <link rel="stylesheet" href="css/index.css" />
+
+    <link
+      rel="shortcut icon"
+      href="public/logos/favicon.png"
+      type="image/x-icon"
+    />
+    
+
+    <script defer src="js/components/footer.js"></script>
+    <script defer src="js/menu.js"></script>
+  </head>
+  <body>
+    <div class="navbar section"></div>
+    <script src="js/videos.js"></script>
+    <script>
+      const page = "Media";
+
+      var urlHash = window.location.hash.substring(1);
+      var videoId = parseInt(urlHash);
+
+      if (!videoId) {
+        window.location.href = "media.html";
+      }
+
+       
+
+      var currentVideo;
+        const foundVideo = videos.find(video => video.id === videoId);
+
+
+        if (foundVideo) {
+           currentVideo = foundVideo
+        } else {
+           window.location.href = "media.html";
+        }
+
+
+    </script>
+    <script src="js/components/navbar.js"></script>
+
+    <div style="margin-top: 6rem" class="main-content player-content section">
+      <div id="playerDivWrapper" class="player">
+        <div class="custm-playr-wrapper">
+          <video playsinline controls preload="none" id="player"></video>
+        </div>
+
+        <h2 style="font-size: var(--font-s)"></h2>
+      </div>
+      <div class="more-videos">
+        <a href="media.html" class="cta-2"
+          >View more videos
+          <img src="public/icons/tabler-icon-arrow-narrow-right.svg" alt=""
+        /></a>
+      </div>
+
+      <span style="margin-top: 3rem" class="media-cta section">
+        <h1>Would you like to be part of our stories?</h1>
+        <p>
+          <a href="contact.html">Contact us </a> we are waiting to here from you
+        </p>
+      </span>
+    </div>
+    <div class="section footer"></div>
+
+    <script src="js/plyr.min.js"></script>
+
+    <script>
+      const playBtns = document.querySelectorAll(".video  .play-btn");
+      const player = document.getElementById("playerDivWrapper");
+      const playerOverlay = document.querySelector(".player-overlay");
+
+      playBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          player.classList.add("player-active");
+
+          playerOverlay.classList.add("player-overlay-active");
+        });
+      });
+
+      const video = document.querySelector("video");
+
+     
+      const videoTitle = document.querySelector("#playerDivWrapper h2");
+
+      videos.forEach((vid) => {
+        if (vid.id === videoId) {
+          currentVideo = vid.src;
+          videoTitle.textContent = vid.title
+        }
+      });
+
+      video.innerHTML = `
+          <source src="./public/videos/${currentVideo}" type="video/mp4" />
+      
+      `;
+      const playVideo = new Plyr("#player");
+    </script>
+  </body>
+</html>

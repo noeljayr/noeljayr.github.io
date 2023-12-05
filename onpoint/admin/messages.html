@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>On-point Finance and Business Consultants</title>
+
+    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="../css/admin.css" />
+    <link rel="stylesheet" href="../css/animations.css" />
+
+    <link
+      rel="shortcut icon"
+      href="../public/logos/favicon.png"
+      type="image/x-icon"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
+
+    <script defer src="js/admin.js"></script>
+    <script defer src="js/modals.js"></script>
+
+    <script src="js/jquery.min.js"></script>
+
+   
+  </head>
+  <body>
+    <div class="content">
+      <div class="side-bar"></div>
+      <script>
+        const page = "Emails & Comments";
+      </script>
+
+      <script src="../js/components/sidebar.js"></script>
+
+      <div class="top-bar">
+        <a href="dashboard " class="logo">
+          <img
+            src="../public/logos/logo.png"
+            alt="Girl Engineer Logo"
+            class="logo-gfx"
+          />
+          <h1>OPFBC</h1>
+        </a>
+
+        <span class="settings">
+          <i class="bi bi-person-fill-gear"></i>
+
+          <span class="options">
+            <a href="profile?user_id=">Profile</a>
+            <a href="includes/logout ">Logout</a>
+          </span>
+        </span>
+      </div>
+
+      <span class="greeting">
+        <h1>Messages</h1>
+      </span>
+
+      <div
+        style="justify-content: unset; gap: 2rem"
+        class="section-container quick-action-container"
+      >
+        
+
+        <a href="comments.html" class="quick-action">
+          <span class="quick-action-title">Comments</span>
+
+           <i class="bi bi-chat-square-text-fill"></i>
+          <span class="counter">7</span>
+        </a>
+      </div>
+
+      <div class="section-container message-container">
+        <h1>Messages</h1>
+       
+
+      </div>
+    </div>
+
+    <div class="modal-overlay"></div>
+
+    <script>
+      var messages = [
+        {
+          name: "Noel Luhanga",
+          email: "noeljayr01@gmail.com",
+          subject: "subject",
+          message: "Hi",
+        },
+
+        {
+          name: "Noel Luhanga",
+          email: "noeljayr01@gmail.com",
+          subject: "Test Subject",
+          message: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate incidunt odit quidem eveniet excepturi sint reiciendis, officia recusandae optio quisquam facilis, corrupti et quod? Omnis commodi voluptatibus corrupti maiores ipsam.",
+        }
+      ];
+
+      const messageContainer = document.querySelector(".message-container");
+
+      function displayemails() {
+        messages.forEach((m) => {
+          var message = document.createElement("div");
+          message.className = "message";
+          message.innerHTML = `
+            <span onclick="showMessage(this.parentElement)" class="name">
+              ${m.name}
+              <span class="user-email">${m.email}</span>
+            
+            </span>
+           
+            <span onclick="showMessage(this.parentElement)" class="cta-2 show-content">
+              <img src="../public/icons/tabler-icon-chevron-down.svg" alt="">
+            </span>
+
+            <span class="message-content">
+              <h2>${m.subject}</h2>
+              <p>
+                ${m.message}
+              </p>
+            </span>
+         
+          `;
+
+          messageContainer.appendChild(message);
+        });
+      }
+
+      displayemails();
+
+      function showMessage(m){
+        // const messageDivs =  document.querySelectorAll(".message")
+        // messageDivs.forEach((div)=>{
+        //    div.classList.remove("message-active")
+        // })
+        m.classList.toggle("message-active")
+      }
+    </script>
+  </body>
+</html>

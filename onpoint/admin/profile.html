@@ -1,0 +1,284 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>On-point Finance and Business Consultants</title>
+
+    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="../css/admin.css" />
+    <link rel="stylesheet" href="../css/animations.css" />
+
+    <link
+      rel="shortcut icon"
+      href="../public/logos/favicon.png"
+      type="image/x-icon"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
+
+    <script defer src="js/admin.js"></script>
+    <script defer src="js/settings.js"></script>
+    <script src="js/jquery.min.js"></script>
+   
+  </head>
+  <body>
+    <div class="content">
+      <div class="side-bar"></div>
+      <script>
+        const page = "Dashboard";
+      </script>
+
+         <script src="../js/components/sidebar.js"></script>
+
+      <div class="top-bar">
+        <a href="dashboard" class="logo">
+          <img
+            src="../public/logos/logo.png"
+            
+            class="logo-gfx"
+          />
+
+          <h1>OPFBC</h1>
+        </a>
+
+        <span class="settings">
+          <i class="bi bi-person-fill-gear"></i>
+
+          <span class="options">
+          <a href="includes/logout">Logout</a> 
+          </span>
+        </span>
+      </div>
+
+      <span class="greeting">
+        <h1>Profile Settings</h1>
+      </span>
+
+      
+
+     <form class="settings-form" action="includes/updateAdmin" method="POST" name="update_form" onsubmit="return validateForm()">
+        
+        <!-- <div class="avatar-upload">
+          <div class="avatar-edit">
+            <input type="file" id="imageUpload" accept=".png, .jpg, .jpeg" />
+            <label for="imageUpload"></label>
+          </div>
+          <div class="avatar-preview">
+            <div id="imagePreview"></div>
+          </div>
+        </div> -->
+
+        <div class="input-group">
+          <span class="name">First Name: </span>
+          <input class="text-input" readonly value="" type="text" name="first_name" />
+          <span class="edit-btn">Edit</span>
+        </div>
+        <div class="input-group">
+          <span class="name">Last Name: </span>
+          <input class="text-input" readonly value="" type="text" name="last_name" />
+          <span class="edit-btn">Edit</span>
+        </div>
+        <div class="input-group">
+          <span class="name">Phone: </span>
+          <input
+            class="text-input"
+            readonly
+            value=""
+            type="text"
+            name="phone_number"
+          />
+          <span class="edit-btn">Edit</span>
+        </div>
+        <div class="input-group">
+          <span class="name">Email: </span>
+          <input
+            class="text-input"
+            readonly
+            value=""
+            type="text"
+            name="email"
+          />
+          <span class="edit-btn">Edit</span>
+        </div>
+
+        <div class="input-group">
+          <span class="name">Password: </span>
+          <input
+            id="current-password"
+            class="password-input"
+            readonly
+            value="1234"
+            type="password"
+          />
+          <span class="edit-password">Edit</span>
+        </div>
+
+        <div class="input-group hidden">
+          <span class="name">Old Password: </span>
+          <input
+            required
+            class="password-input old-password-group"
+            readonly
+            type="password"
+            name="password"
+          />
+        </div>
+
+        <div class="input-group hidden">
+          <span class="name">New Password: </span>
+          <input
+            required
+            class="password-input new-password-group"
+            readonly
+            type="password"
+            name="new_password"
+          />
+        </div>
+
+        <div class="input-group conf-password-group hidden">
+          <span class="name">Confirm Password: </span>
+          <input required class="password-input" readonly type="password" name = 'confirm_password' />
+        </div>
+
+        <div class="btn-container">
+          <a href = "dashboard" class="btn discard-edit">Back</a>
+
+          <div class="msg-container success-container">
+            <div class="svg ui-success">
+                  <svg
+                    viewBox="0 0 87 87"
+                    version="1.1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                  >
+                    <g
+                      id="Page-1"
+                      stroke="none"
+                      stroke-width="1"
+                      fill="none"
+                      fill-rule="evenodd"
+                    >
+                      <g id="Group-3" transform="translate(2.000000, 2.000000)">
+                        <circle
+                          id="Oval-2"
+                          stroke="rgba(165, 220, 134, 0.2)"
+                          stroke-width="4"
+                          cx="41.5"
+                          cy="41.5"
+                          r="41.5"
+                        ></circle>
+                        <circle
+                          class="ui-success-circle"
+                          id="Oval-2"
+                          stroke="#A5DC86"
+                          stroke-width="4"
+                          cx="41.5"
+                          cy="41.5"
+                          r="41.5"
+                        ></circle>
+                        <polyline
+                          class="ui-success-path"
+                          id="Path-2"
+                          stroke="#A5DC86"
+                          stroke-width="4"
+                          points="19 38.8036813 31.1020744 54.8046875 63.299221 28"
+                        ></polyline>
+                      </g>
+                    </g>
+                  </svg>
+            </div>
+
+            <span class="msg">Done</span>
+          
+          </div>
+
+          <div class="msg-container error-container">
+             <div class="svg ui-error">
+                <svg
+                  viewBox="0 0 87 87"
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                >
+                  <g
+                    id="Page-1"
+                    stroke="none"
+                    stroke-width="1"
+                    fill="none"
+                    fill-rule="evenodd"
+                  >
+                    <g id="Group-2" transform="translate(2.000000, 2.000000)">
+                      <circle
+                        id="Oval-2"
+                        stroke="rgba(252, 191, 191, .5)"
+                        stroke-width="4"
+                        cx="41.5"
+                        cy="41.5"
+                        r="41.5"
+                      ></circle>
+                      <circle
+                        class="ui-error-circle"
+                        stroke="#F74444"
+                        stroke-width="4"
+                        cx="41.5"
+                        cy="41.5"
+                        r="41.5"
+                      ></circle>
+                      <path
+                        class="ui-error-line1"
+                        d="M22.244224,22 L60.4279902,60.1837662"
+                        id="Line"
+                        stroke="#F74444"
+                        stroke-width="3"
+                        stroke-linecap="square"
+                      ></path>
+                      <path
+                        class="ui-error-line2"
+                        d="M60.755776,21 L23.244224,59.8443492"
+                        id="Line"
+                        stroke="#F74444"
+                        stroke-width="3"
+                        stroke-linecap="square"
+                      ></path>
+                    </g>
+                  </g>
+                </svg>
+             </div>
+
+            <span class="msg">Failed</span>
+          
+          </div>
+
+
+          <button class="btn save-settings" type="submit">
+            <span class="add">Save</span>
+              <span class="wait">Please Wait...</span>
+          </button>
+        </div>
+      </form>
+
+
+     
+
+      
+    </div>
+
+  
+  </body>
+  <script>
+    function validateForm() {
+      var new_password = document.forms["update_form"]["new_password"].value;
+      var confirm_password = document.forms["update_form"]["confirm_password"].value;
+      if ( new_password !== confirm_password  ) {
+        alert("passwords do not match");
+        return false;
+      }
+    }
+  </script>
+</html>
