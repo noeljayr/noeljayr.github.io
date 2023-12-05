@@ -169,6 +169,27 @@
       });
     });
 
-    
+      const applicationModeOverlay = document.querySelector(
+        ".application-mode-overlay"
+      );
+      const applicationMode = document.querySelector(".application-mode");
+      const form = document.querySelector("form");
+
+      function showApplicationMode() {
+        applicationModeOverlay.classList.add("application-mode-overlay-active");
+        applicationMode.classList.add("application-mode-active");
+      }
+
+      // form.addEventListener("submit", (e) => {
+      //   e.preventDefault();
+      //   showApplicationMode();
+      // });
+
+      function closeAppMode() {
+        applicationModeOverlay.classList.remove(
+          "application-mode-overlay-active"
+        );
+        applicationMode.classList.remove("application-mode-active");
+      }
   </script>
 </html>
