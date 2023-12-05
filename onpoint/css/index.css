@@ -292,6 +292,15 @@ a {
   color: var(--white);
 }
 
+.menu-list .cta{
+  background-color: var(--white);
+  width: fit-content;
+  padding: var(--padding);
+  padding-left: var(--padding-2);
+  padding-right: var(--padding-2);
+  color: var(--brand);
+}
+
 .navbar-2 .menu-list a {
   color: var(--black);
 }
@@ -805,6 +814,14 @@ a {
 @media screen and (max-width: 480px) {
   .services-container .cards-container {
     grid-template-columns: 1fr;
+    padding: 0;
+    gap: 0;
+    grid-gap: 0;
+  }
+
+  .services-container .cards-container .card {
+    width: 100%;
+    margin: 0;
   }
 }
 .services-container .cards-container .card .cta-2 {
@@ -1722,7 +1739,6 @@ a {
   width: 40%;
   margin-left: 3rem;
   overflow: hidden;
-
 }
 
 .service-content .more-services a {
@@ -1743,7 +1759,6 @@ a {
   padding-right: 0.3rem;
 }
 
-
 .service-content .more-services a .cta-2 {
   padding: 0;
   width: 3rem;
@@ -1760,30 +1775,30 @@ a {
   width: calc(60% - 3rem);
 }
 @media screen and (max-width: 700px) {
-  .service-content{
+  .service-content {
     flex-direction: column;
   }
 
-  .service-content .more-services{
+  .service-content .more-services {
     width: 100%;
     margin: 0;
     margin-top: 3rem;
   }
-  .service-content .service-info{
+  .service-content .service-info {
     width: 100%;
   }
 }
-.service-content .service-info .packages{
+.service-content .service-info .packages {
   display: flex;
   flex-direction: column;
   padding: 1rem;
   border-radius: var(--radius);
   background-color: var(--white);
-  width: 10rem; 
+  width: 10rem;
   margin-left: 2rem;
   margin-top: 1rem;
 }
-.service-content .service-info .packages span{
+.service-content .service-info .packages span {
   line-height: 1.5rem;
 }
 
@@ -2009,9 +2024,8 @@ a {
     box-shadow: var(--shadow);
   } */
 
-
 .application-mode-overlay {
-  background-color: rgba(53, 109, 174, 0.2);
+  background-color: rgba(53, 109, 174, 0.4);
   width: 100vw;
   height: 100vh;
   position: fixed;
@@ -2034,7 +2048,6 @@ a {
   position: fixed;
   z-index: 12;
   display: flex;
-  align-items: center;
   justify-content: center;
   top: 0;
   left: 0;
@@ -2042,6 +2055,7 @@ a {
    visibility: hidden;
    opacity: 0;
    transform: scale(0.5);
+   padding: 2rem;
 }
 
 .application-mode-active{
@@ -2055,6 +2069,7 @@ a {
   border-radius: var(--radius);
   background-color: var(--white);
   padding: 1rem;
+  height: fit-content;
 }
 
 .application-mode p {
