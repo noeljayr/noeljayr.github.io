@@ -11,7 +11,7 @@ if (navbar) {
       <span class="links">
         <a class="navlink" href="./">Home</a>
 
-        <a class="navlink" href="./index.html#services">Services</a>
+        <a class="navlink" href="./#services">Services</a>
         <a class="navlink" href="media.html">Media</a>
         <a class="navlink" href="contact.html">Contact us</a>
         <a class="navlink" href="profile.html">Profile</a>
