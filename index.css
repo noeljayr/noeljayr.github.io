@@ -612,9 +612,9 @@ a {
   margin-top: 1rem;
 }
 
-.philosophies .philosophy:nth-child(3) .info {
-  /* margin-left: 4rem; */
-}
+/* .philosophies .philosophy:nth-child(3) .info {
+  margin-left: 4rem;
+} */
 
 .puzzle-svg {
   height: 8rem;
