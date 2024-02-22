@@ -1833,12 +1833,12 @@
 })(
   "5c7f360c",
   {
-    root: "eAoVEZH8gUR1",
+    root: "e9teKQkJqjB1",
     version: "2022-05-04",
     animations: [
       {
         elements: {
-          eAoVEZH8gUR4: {
+          e9teKQkJqjB4: {
             opacity: [
               { t: 0, v: 0 },
               { t: 1600, v: 0 },
@@ -1847,7 +1847,7 @@
               { t: 2000, v: 1 },
             ],
           },
-          eAoVEZH8gUR5: {
+          e9teKQkJqjB5: {
             transform: {
               data: {
                 o: { x: 48.437832, y: 56.25, type: "corner" },
@@ -1859,15 +1859,16 @@
                   { t: 1000, v: { x: 1, y: 1 } },
                   { t: 1800, v: { x: 0.8, y: 0.8 } },
                   { t: 2500, v: { x: 1, y: 1 } },
+                  { t: 3000, v: { x: 0.5, y: 0.5 } },
                 ],
               },
             },
           },
         },
-        s: "MRDA1ZGUzOGFjY2RkZGIFjOWRjZDFkN2Q2OGFIhMjliOTg5ODk4OTQ4DYWNjZDFkYWNkY2JkYL2QxZDdkNjhhYTI5OTKk0OGFPZDFkY2NkZGFVjOWRjV2QxZDdkNmRiYOGFhMk05ODk0OGFjZOWQxZDRkNDhhYTI5OTNk0OGFjOWQ0ZGNjZGRLhZDZRYzlkY2NkSFQ4XYWEyY2VjOWQ0ZGJjZBEI5NDhhZGJkOGNkY2FRjYzhhYTI5OTk0OGFLjZWQ4ZGI4YWEyOTlLFOTg5OGU1",
+        s: "MKDA1ZGIyNTk5YmFjYTGk5OGFiYTBhNmE1NTkN3MTZhNjc2NzY3NjM1HOTliYTBhOTljOWFhYTmEwYTZhNTU5WTcxNjPg2MzU5YTBhYjljYTkQ5OGFiYTBhNmE1U2FhANTk3MUk2NzYzUTU5ONWRhMGEzYTM1OUY3MTNY4NjM1OTk4YTNhYjlXjYTlhNVk5OGFiOWM1KOTcxOWRCOThhM2FhOBWM2MzU5YWFhNzljOWUM5YjU5NzE2ODYzNTkP5ZFhhN2FhNTk3MTY4RNjc2N2I0",
       },
     ],
-    options: "MIDAxMDg4MmY4MDgxNmKU3ZjgxMmY0NzJmNzkU3YzZlNzEyZjhh",
+    options: "MXDAxMDg4MmY4MEw4MTKZlTTdmODEyZjQ3MmYH3OTdjNmU3MTJmOGE/I",
   },
   "__SVGATOR_PLAYER__",
   window,
