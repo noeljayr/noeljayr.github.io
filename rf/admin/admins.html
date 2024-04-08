@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Reggae Fresh - Admin</title>
+
+    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="../css/admin.css" />
+    <link rel="stylesheet" href="../css/admins.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.6.7/css/perfect-scrollbar.min.css"
+    />
+
+    <link
+      rel="shortcut icon"
+      href="../public/logos/favicon.png"
+      type="image/x-icon"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../js/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.6.7/js/min/perfect-scrollbar.jquery.min.js"></script>
+    <!-- <script defer src="../js/editor.js"></script>
+    <script defer src="../js/select-input.js"></script>
+    <script defer src="../js/dashboard.js"></script> -->
+  </head>
+  <body class="p-8 py-20 pb-0 grid">
+    <img
+      class="fixed background-blob top-0 z-0 opacity-10 self-center"
+      src="../public//svg/background-blob.svg"
+      alt="Reggae flag"
+    />
+    <div
+      class="fixed top-8 z-20 admin-nav items-center justify-between flex gap-4">
+    </div>
+    <script>
+      const page = "Adminstrators";
+    </script>
+    <script src="../js/components/adminNav.js"></script>
+
+    <div class="main-content relative z-10 h-full grid gap-8 pt-8">
+      <div class="admin-control-panel flex flex-col gap-8">
+        <span class="add-admin-btn flex items-center justify-center"
+          ><img
+            alt="Add Admin"
+            loading="lazy"
+            width="200"
+            height="200"
+            decoding="async"
+            data-nimg="1"
+            style="color: transparent"
+            src="../public/svg/tabler-icon-user-plus.svg"
+        /></span>
+        <div class="admin-container flex flex-col gap-4"></div>
+      </div>
+    </div>
+
+
+    <script>
+      const admins = [
+        {
+          name: "Lee",
+          email: "example@gmail.com",
+          active: true,
+          posts: 200,
+        },
+        {
+          name: "Developer",
+          email: "developer@gmail.com",
+          active: false,
+          posts: 0,
+        },
+      ];
+
+      const container = document.querySelector(".admin-container");
+
+      admins.forEach((ad) => {
+        const adminContainer = document.createElement("div");
+        adminContainer.className =
+          "admin w-full overflow-hidden grid p-4 gap-4";
+
+        const profileSpan = document.createElement("span");
+        profileSpan.className = "profile flex items-center justify-center";
+        const profileImage = document.createElement("img");
+        profileImage.src = "../public/svg/tabler-icon-user.svg";
+        profileImage.alt = ad.name;
+        profileSpan.appendChild(profileImage);
+
+        const infoSpan = document.createElement("span");
+        infoSpan.className = "info grid gap-4";
+        const nameSpan = document.createElement("span");
+        nameSpan.className = "name font-bold";
+        nameSpan.textContent = ad.name;
+        const emailSpan = document.createElement("span");
+        emailSpan.className = "email";
+        emailSpan.textContent = ad.email;
+        const statusInfoSpan = document.createElement("span");
+        statusInfoSpan.className = "status-info";
+        const statusSpan = document.createElement("span");
+        statusSpan.className = ad.active
+          ? "status px-2 py-1 admin-active font-bold"
+          : "status px-2 py-1 admin-diactived font-bold";
+        statusSpan.textContent = ad.active ? "Active" : "Deactived";
+        statusInfoSpan.appendChild(statusSpan);
+        const postsSpan = document.createElement("span");
+        postsSpan.className = "posts opacity-50 max-sm:hidden";
+        postsSpan.textContent = ad.posts + " Posts";
+        infoSpan.appendChild(nameSpan);
+        infoSpan.appendChild(emailSpan);
+        infoSpan.appendChild(statusInfoSpan);
+        infoSpan.appendChild(postsSpan);
+
+        const actionSpan = document.createElement("span");
+        actionSpan.className = "action";
+        const actionSpanText = document.createElement("span");
+        actionSpanText.className = ad.active
+          ? "deactivate text-xs cta"
+          : "activate text-xs cta";
+        actionSpanText.textContent = ad.active ? "Deactivate" : "Activate";
+        actionSpan.appendChild(actionSpanText);
+
+        adminContainer.appendChild(profileSpan);
+        adminContainer.appendChild(infoSpan);
+        adminContainer.appendChild(actionSpan);
+
+        container.appendChild(adminContainer);
+      });
+    </script>
+  </body>
+</html>
