@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Reggae Fresh - Admin</title>
+
+    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="../css/admin.css" />
+    <link rel="stylesheet" href="../css/posts.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.6.7/css/perfect-scrollbar.min.css"
+    />
+
+    <link
+      rel="shortcut icon"
+      href="../public/logos/favicon.png"
+      type="image/x-icon"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../js/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.6.7/js/min/perfect-scrollbar.jquery.min.js"></script>
+    <!-- <script defer src="../js/editor.js"></script>
+    <script defer src="../js/select-input.js"></script>
+    <script defer src="../js/dashboard.js"></script> -->
+    <script type="module" src="../js/admin-posts.js"></script>
+  </head>
+  <body class="p-8 py-20 pb-0 grid">
+    <img
+      class="fixed background-blob top-0 z-0 opacity-10 self-center"
+      src="../public//svg/background-blob.svg"
+      alt="Reggae flag"
+    />
+    <div
+      class="fixed top-8 z-20 admin-nav items-center justify-between flex gap-4"
+    ></div>
+    <script>
+      const page = "Posts";
+    </script>
+    <script src="../js/components/adminNav.js"></script>
+
+    <div class="main-content relative z-10 h-full grid gap-8 pt-8">
+      <div class="admin-posts-wrapper flex flex-col gap-4 w-full">
+        <a class="add-post-btn" href="dashboard.html">
+          <img src="../public/svg/tabler-icon-plus.svg" alt="" />
+        </a>
+        <div class="search-container">
+          <div class="search-input gradient-border">
+            <img
+              loading="lazy"
+              src="../public/svg/tabler-icon-search.svg"
+              alt="search icon"
+              class="search-icon"
+            />
+            <input type="text" placeholder="Search for anything..." />
+          </div>
+
+          <div class="filter-container flex flex-col">
+            <span class="text-sm opacity-50">Filter</span>
+            <div class="filters flex gap-4">
+              <span class="filter gradient-border active-filter">
+                <span class="title">All</span></span
+              >
+              <span class="filter gradient-border">
+                <span class="title">News</span></span
+              >
+              <span class="filter gradient-border">
+                <span class="title">Music</span></span
+              >
+              <span class="filter gradient-border">
+                <span class="title">Artists</span></span
+              >
+              <span class="filter gradient-border">
+                <span class="title">Videos</span></span
+              >
+              <span class="filter gradient-border">
+                <span class="title">Events</span></span
+              >
+            </div>
+          </div>
+
+          <div class="admin-posts-container px-4 grid gap-4"></div>
+        </div>
+        
+      </div>
+    </div>
+  </body>
+</html>
