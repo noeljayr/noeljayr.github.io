@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NOEL LUHANGA | Full-stack developer & Designer</title>
+    <title>NOEL LUHANGA | Frontend developer & Designer</title>
 
     <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="./css/index.css" />
@@ -58,7 +58,7 @@
 
     <div class="hero section">
       <div class="hero-grid">
-        <span class="hero-text grid-item-1">
+        <span class="hero-text grid-item-1 in-view">
           <h1>I Code, I Click, I Make Your Brand Slick</h1>
           <p>
             No project's too big, no challenge too small. From simple revamps to
@@ -66,68 +66,41 @@
             things slick.
           </p>
         </span>
-        <span class="exp grid-item-2">
+        <span class="exp grid-item-2 in-view">
           <h1>2+</h1>
           Years Experience
         </span>
-        <a
-          target="_blank"
-          referrerpolicy="no-referrer"
-          class="cta grid-item-3"
-          href="mailto:noeljayr01@gmail.com"
-        >
-          <span> noeljayr01@gmail.com</span>
+        <a target="_blank" referrerpolicy="no-referrer" class="cta grid-item-3 in-view" href="mailto:noeljayr01@gmail.com">
+          <span class="in-view"> noeljayr01@gmail.com</span>
 
-          <img src="public/svg/sms-edit.svg" alt="" />
+          <img src="public/svg/sms-edit.svg" alt="">
         </a>
 
-        <div class="clients grid-item-4">
-          <span>
-            <img
-              src="public/images/nrc-logo.png"
-              alt="National Resolution For Change Logo"
-            />
+        <div class="clients grid-item-4 in-view">
+          <span class="in-view">
+            <img src="public/images/nrc-logo.png" alt="National Resolution For Change Logo">
           </span>
-          <span style="background-color: #fff">
-            <img
-              src="public/images/onpoint-logo.png"
-              alt="National Resolution For Change Logo"
-            />
+          <span style="background-color: #fff" class="in-view">
+            <img src="public/images/onpoint-logo.png" alt="National Resolution For Change Logo">
           </span>
-          <span>
-            <img
-              src="public/images/girl-engineer-logo.png"
-              alt="Girl Engineer Logo"
-            />
+          <span class="in-view">
+            <img src="public/images/girl-engineer-logo.png" alt="Girl Engineer Logo">
           </span>
-          <span>
-            <img
-              style="height: 1.9rem; width: unset; margin-top: 0.1rem"
-              src="public/images/kaso-logo.png"
-              alt="Kaso Security Services Logo"
-            />
+          <span class="in-view">
+            <img style="height: 1.9rem; width: unset; margin-top: 0.1rem" src="public/images/kaso-logo.png" alt="Kaso Security Services Logo">
           </span>
-          <span>
-            <img src="public/images/paum.png" alt="Paum Clinicians Logo" />
+          <span class="in-view">
+            <img src="public/images/paum.png" alt="Paum Clinicians Logo">
           </span>
 
-          <span>
-            <img
-              src="public/images/rosaf-logo.png"
-              alt="Road Safety Alert Foundation (ROSAF) logo"
-            />
+          <span class="in-view">
+            <img src="public/images/rosaf-logo.png" alt="Road Safety Alert Foundation (ROSAF) logo">
           </span>
-          <span>
-            <img
-              src="public/images/lalibela-logo.png"
-              alt="Lalibela Boutique logo"
-            />
+          <span class="in-view">
+            <img src="public/images/lalibela-logo.png" alt="Lalibela Boutique logo">
           </span>
-          <span>
-            <img
-              src="public/images/dsi-logo.png"
-              alt="Development Studies Institute logo"
-            />
+          <span class="in-view">
+            <img src="public/images/dsi-logo.png" alt="Development Studies Institute logo">
           </span>
         </div>
       </div>
@@ -157,96 +130,167 @@
         class="mockup"
       /> -->
 
-      <img
-        src="public/images/hero-image.png"
-        alt=""
-        class="hero-image hero-photo"
-      />
-      <img
-        src="public/images/hero-image-2.png"
-        alt=""
-        class="hero-image-2 hero-photo-2"
-      />
+      <img src="public/images/hero-image.png" alt="" class="hero-image hero-photo">
+      <img src="public/images/hero-image-2.png" alt="" class="hero-image-2 hero-photo-2">
     </div>
 
     <div class="main-content">
       <h1 id="projects" class="section">Recent Projects</h1>
-      <div class="projects-container">
-        <div class="left">
-          <a
-            target="_blank"
-            referrerpolicy="no-referrer"
-            href="https://nrcmalawi.net/"
-            class="project project-1"
-          >
-            <span class="project-title">
-              <img src="public/svg/export.svg" alt="" />
-              <span class="title">National Resolution For Change</span>
-            </span>
-            <img
-              class="screenshot"
-              src="./public/images/nrc.png"
-              alt="National Resolution For Change Homepage Screenshot"
-            />
-          </a>
-          <a
-            target="_blank"
-            referrerpolicy="no-referrer"
-            href="https://gengineer.org/"
-            class="project project-2"
-          >
-            <span class="project-title">
-              <img src="public/svg/export.svg" alt="" />
-              <span class="title">Girl Engineer</span>
-            </span>
-            <img
-              class="screenshot"
-              src="./public/images/girl-engineer.png"
-              alt="Girl Engineer Homepage Screenshot"
-            />
-          </a>
-        </div>
-
-        <div class="right">
-          <a
-            target="_blank"
-            referrerpolicy="no-referrer"
-            href="https://noeljayr.github.io/onpoint"
-            class="project project-3"
-          >
-            <span class="project-title">
-              <img src="public/svg/export.svg" alt="" />
-              <span class="title"
-                >On-point Finance and Business Consultants</span
+      <div id="projects-toggle" class="project-type-toggle"></div>
+      <div class="projects-swiper-container">
+        <div class="swiper-wrapper">
+          <div class="projects-container swiper-slide">
+            <div class="left">
+              <a
+                target="_blank"
+                referrerpolicy="no-referrer"
+                href="https://nrcmalawi.net/"
+                class="project project-1"
               >
-            </span>
-            <img
-              class="screenshot"
-              src="./public/images/onpoint.png"
-              alt="On-point Homepage Screenshot"
-            />
-          </a>
+                <span class="project-title">
+                  <img src="public/svg/export.svg" alt="" />
+                  <span class="title">National Resolution For Change</span>
+                </span>
+                <img
+                  class="screenshot"
+                  src="./public/images/nrc.png"
+                  alt="National Resolution For Change Homepage"
+                />
+              </a>
+              <a
+                target="_blank"
+                referrerpolicy="no-referrer"
+                href="https://gengineer.org/"
+                class="project project-2"
+              >
+                <span class="project-title">
+                  <img src="public/svg/export.svg" alt="" />
+                  <span class="title">Kaso Security Services</span>
+                </span>
+                <img
+                  class="screenshot"
+                  src="./public/images/kaso.png"
+                  alt="Kaso Security Services Homepage"
+                />
+              </a>
+            </div>
 
-          <a
-            target="_blank"
-            referrerpolicy="no-referrer"
-            href="https://kasosecurity.com/"
-            class="project project-4"
-          >
-            <span class="project-title">
-              <img src="public/svg/export.svg" alt="" />
-              <span class="title">Kaso Security Services</span>
-            </span>
-            <img
-              class="screenshot"
-              src="./public/images/kaso.png"
-              alt="Kaso Security Services Homepage Screenshot"
-            />
-          </a>
+            <div class="right">
+              <a
+                target="_blank"
+                referrerpolicy="no-referrer"
+                href="https://noeljayr.github.io/rf/admin/dashboard.html"
+                class="project project-3"
+              >
+                <span class="project-title">
+                  <img src="public/svg/export.svg" alt="" />
+                  <span class="title">Reggae-Fresh CMS</span>
+                </span>
+                <img
+                  class="screenshot"
+                  src="./public/images/Reggae-Fresh.png"
+                  alt="Reggae-Fresh"
+                />
+              </a>
+
+              <a
+                target="_blank"
+                referrerpolicy="no-referrer"
+                href="https://kasosecurity.com/"
+                class="project project-4"
+              >
+                <span class="project-title">
+                  <img src="public/svg/export.svg" alt="" />
+                  <span class="title"
+                    >On-point Finance and Business Consultants</span
+                  >
+                </span>
+                <img
+                  class="screenshot"
+                  src="./public/images/onpoint.png"
+                  alt="On-point Homepage"
+                />
+              </a>
+            </div>
+          </div>
+
+          <div class="projects-container swiper-slide">
+            <div class="left">
+              <a
+                target="_blank"
+                referrerpolicy="no-referrer"
+                href="https://www.figma.com/proto/mYUsDVxv8VBDbRQVrXp8Fa/Edge-North-International-College?type=design&node-id=701-970&t=DeXCQo6A85Tm8UFH-0&scaling=scale-down-width&page-id=701%3A969"
+                class="project project-1"
+              >
+                <span class="project-title">
+                  <img src="public/svg/export.svg" alt="" />
+                  <span class="title">Edge North International College</span>
+                </span>
+                <img
+                  class="screenshot"
+                  src="./public/images/edgenorth.png"
+                  alt="Edge North International College"
+                />
+              </a>
+              <a
+                target="_blank"
+                referrerpolicy="no-referrer"
+                href="https://www.figma.com/proto/jMIs4DUwUuF2tIKQSGjrsm/Healthy-IQ?type=design&node-id=4-786&t=mQy3nFxBVbrQCHAL-0&scaling=scale-down&page-id=0%3A1"
+                class="project project-2 healthiq"
+              >
+                <span class="project-title">
+                  <img src="public/svg/export.svg" alt="" />
+                  <span class="title">HealthyIQ</span>
+                </span>
+                <img
+                  style="width: 100%; height: 100%"
+                  class="screenshot"
+                  src="./public/images/healthiq.png"
+                  alt="HealthyIQ"
+                />
+              </a>
+            </div>
+
+            <div class="right">
+              <a
+                target="_blank"
+                referrerpolicy="no-referrer"
+                href="https://www.figma.com/proto/otkYZxL7n1lHn8mYRIoLZf/Maestro?type=design&node-id=5-5&t=4Ukzo0XxFz7AwA1s-0&scaling=scale-down-width&page-id=0%3A1"
+                class="project project-3"
+              >
+                <span class="project-title">
+                  <img src="public/svg/export.svg" alt="" />
+                  <span class="title">Maestro</span>
+                </span>
+                <img
+                  class="screenshot"
+                  src="./public/images/maestro.png"
+                  alt="Maestro"
+                />
+              </a>
+
+              <a
+                target="_blank"
+                referrerpolicy="no-referrer"
+                href="https://www.figma.com/proto/L85mAjjMQpvKAoZpCAL5wn/Agro-Holdings?type=design&node-id=6-605&t=sEH3XFOcfdd6GHwu-0&scaling=scale-down-width&page-id=0%3A1"
+                class="project project-4"
+              >
+                <span class="project-title">
+                  <img src="public/svg/export.svg" alt="" />
+                  <span class="title">AgroHoldings</span>
+                </span>
+                <img
+                  class="screenshot"
+                  src="./public/images/agroholdings.png"
+                  alt="AgroHoldings"
+                />
+              </a>
+            </div>
+          </div>
         </div>
       </div>
 
-      <h1 class="section">Here’s what working with me gets you:</h1>
+      <h1 class="section">What makes a successful product?</h1>
 
       <div class="philosophies">
         <div class="philosophy hide">
@@ -265,10 +309,9 @@
           <span class="info">
             <h2>Responsive Design</h2>
             <p>
-              Forget clunky websites! I’m building masterpieces that adapt
-              across any screen (mobile first, of course!).Always perfectly
-              sized for thumbs or desktops. Using fluid grids and media queries.
-              They whisper to each device, making sure everything looks amazing.
+              Forget clunky websites! Masterpieces that adapt across any screen
+              (mobile first, of course!).Always perfectly sized for thumbs or
+              desktops. Using fluid grids and media queries.
             </p>
           </span>
         </div>
@@ -579,7 +622,7 @@
           <span class="info">
             <h2>Collaboration</h2>
             <p>
-              Let's break this design puzzle together! Every piece—designers,
+              Breaking the design puzzle together! Every piece—designers,
               developers, product managers & other stakeholders—fits snugly into
               the big picture.
             </p>
@@ -592,9 +635,9 @@
           <span class="info">
             <h2>User-centered design</h2>
             <p>
-              I sprinkle that user-gold onto every design decision, crafting
-              experiences that are seamless. Think smooth sailing, zero
-              confusion, and pure joy. Users are the heart of design!
+              That user-gold onto every design decision, crafting experiences
+              that are seamless. Think smooth sailing, zero confusion, and pure
+              joy. Users are the heart of design!
             </p>
           </span>
         </div>
@@ -646,6 +689,119 @@
           Choose a plan that's right for you.
         </h1>
         <div class="plans-container hide">
+          <div class="swiper-wrapper">
+            <div class="plan swiper-slide">
+              <h1>Basic</h1>
+              <p>Ideal for startups and small businesses</p>
+              <ul>
+                <li>
+                  <img src="public/svg/tick-circle.svg" alt="" />
+                  <span>1 - 10 Pages </span>
+                </li>
+                <li>
+                  <img src="public/svg/tick-circle.svg" alt="" />
+                  <span>SEO</span>
+                </li>
+                <li>
+                  <img src="public/svg/tick-circle.svg" alt="" />
+                  <span>Monthly updates</span>
+                </li>
+                <li>
+                  <img src="public/svg/tick-circle.svg" alt="" />
+                  <span
+                    >Other designs like illustrations, flyers, brochures,
+                    posters, etc.</span
+                  >
+                </li>
+              </ul>
+
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                class="cta"
+                href="mailto:noeljayr01@gmail.com?subject=Basic Project Plan"
+                >MWK 250,000</a
+              >
+            </div>
+            <div class="plan swiper-slide">
+              <h1>Pro</h1>
+              <p>Perfect for growing businesses</p>
+              <ul>
+                <li>
+                  <img src="public/svg/tick-circle-2.svg" alt="" />
+                  <span>10 - 30 pages </span>
+                </li>
+                <li>
+                  <img src="public/svg/tick-circle-2.svg" alt="" />
+                  <span>SEO</span>
+                </li>
+                <li>
+                  <img src="public/svg/tick-circle-2.svg" alt="" />
+                  <span>Bi-weekly updates</span>
+                </li>
+                <li>
+                  <img src="public/svg/tick-circle-2.svg" alt="" />
+                  <span>Animations and interactions</span>
+                </li>
+                <li>
+                  <img src="public/svg/tick-circle-2.svg" alt="" />
+                  <span
+                    >Other designs like illustrations, flyers, brochures,
+                    posters, etc.</span
+                  >
+                </li>
+              </ul>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                class="cta"
+                href="mailto:noeljayr01@gmail.com?subject=Pro Project Plan"
+                >MWK 350,000</a
+              >
+            </div>
+            <div class="plan swiper-slide">
+              <h1>Ultimate</h1>
+              <p>
+                For larger brands who need custom and scalable solutions like
+                E-Learning platforms or Software systems.
+              </p>
+              <ul>
+                <li>
+                  <img src="public/svg/tick-circle.svg" alt="" />
+                  <span>Unlimited Pages</span>
+                </li>
+                <li>
+                  <img src="public/svg/tick-circle.svg" alt="" />
+                  <span>SEO</span>
+                </li>
+                <li>
+                  <img src="public/svg/tick-circle.svg" alt="" />
+                  <span>Weekly updates</span>
+                </li>
+                <li>
+                  <img src="public/svg/tick-circle.svg" alt="" />
+                  <span>Advanced animations and interactions</span>
+                </li>
+                <li>
+                  <img src="public/svg/tick-circle.svg" alt="" />
+                  <span
+                    >Other designs like illustrations, flyers, brochures,
+                    posters, etc.</span
+                  >
+                </li>
+              </ul>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                class="cta"
+                href="mailto:noeljayr01@gmail.com?subject=Ultimate Project Plan"
+                >Contact</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div id="pricing-swiper" class="plans-container hide">
           <div class="plans-toggle"></div>
           <div class="swiper-wrapper">
             <div class="plan swiper-slide">
@@ -721,7 +877,7 @@
               <h1>Ultimate</h1>
               <p>
                 For larger brands who need custom and scalable solutions like
-                E-Learning platforms.
+                E-Learning platforms or Software systems.
               </p>
               <ul>
                 <li>

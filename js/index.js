@@ -170,31 +170,34 @@ let scrollSpeed = 1; // Variable to control scroll speed (initially set to 1)
 function startAutoScroll() {
   if (!isScrolling) {
     isScrolling = true;
+
     const scrollInterval = setInterval(() => {
       if (!isScrolling) {
         clearInterval(scrollInterval);
         return;
       }
-      cardsContainer.scrollLeft += direction * scrollSpeed; // Adjusted scroll speed
 
-      // Check if reached the end of cards
-      if (
-        direction > 0 &&
-        cardsContainer.scrollLeft >=
-          cardsContainer.scrollWidth - cardsContainer.clientWidth
-      ) {
+      // Use scrollLeft property for consistent behavior:
+      cardsContainer.scrollLeft += direction * scrollSpeed;
+
+      // Ensure scrolling within bounds and adjust for browser differences:
+      const maxScrollLeft =
+        cardsContainer.scrollWidth - cardsContainer.clientWidth;
+      if (direction > 0 && cardsContainer.scrollLeft >= maxScrollLeft) {
         direction = -3; // Reverse direction
+        cardsContainer.scrollLeft = maxScrollLeft; // Ensure smooth edge transition
       } else if (direction < 0 && cardsContainer.scrollLeft <= 0) {
         direction = 3; // Reset direction
+        cardsContainer.scrollLeft = 0; // Ensure smooth edge transition
       }
-    }, 50); // Adjust the interval as needed
+    }, 50);
   }
 }
 
 startAutoScroll();
 
 function initialiseSwiper() {
-  var mySwiper = new Swiper(".plans-container", {
+  var mySwiper = new Swiper("#pricing-swiper", {
     slidesPerView: 1.1,
     spaceBetween: 0,
     initialSlide: 1,
@@ -257,20 +260,64 @@ function initialiseSwiper() {
   });
 }
 
-var windowWidth = window.innerWidth;
+var projectSwipper = new Swiper(".projects-swiper-container", {
+  slidesPerView: 1,
+  spaceBetween: 0,
+  pagination: {
+    el: ".project-type-toggle",
+    clickable: true, // Enable clicking on pagination elements
+    renderBullet: function (index, className) {
+      // Customize the pagination item based on the index
+      var text = "";
+      switch (index) {
+        case 0:
+          text = "Deployed";
+          break;
+        case 1:
+          text = "UI Designs";
+          break;
+        default:
+          // Handle unexpected index values gracefully
+          text = "Slide " + (index + 1);
+      }
 
-if (windowWidth <= 840) {
-  initialiseSwiper();
-} else {
-  mySwiper = null;
-}
+      return '<span class="' + className + '">' + text + "</span>";
+    },
+  },
 
-window.addEventListener("resize", function () {
-  var windowWidth = window.innerWidth;
+  // ... other Swiper events and options
 
-  if (windowWidth <= 840) {
-    initialiseSwiper();
-  } else {
-    mySwiper = null;
-  }
+  onInit: function (swiper) {
+    // Update pagination styles after Swiper initialization
+    var paginationBullets = swiper.pagination.bullets;
+    for (var i = 0; i < paginationBullets.length; i++) {
+      var bullet = paginationBullets[i];
+      bullet.style.backgroundColor = "#ccc"; // Set initial background color
+
+      // Add hover effect (optional)
+      bullet.addEventListener("mouseover", function () {
+        this.style.backgroundColor = "#aaa";
+      });
+      bullet.addEventListener("mouseout", function () {
+        this.style.backgroundColor = "#ccc";
+      });
+    }
+
+    // Set active bullet color after initial slide (optional)
+    swiper.pagination.bullets[swiper.activeIndex].style.backgroundColor =
+      "#999";
+  },
+
+  onSlideChange: function (swiper) {
+    // Update active bullet color on slide change
+    for (var i = 0; i < swiper.pagination.bullets.length; i++) {
+      swiper.pagination.bullets[i].style.backgroundColor = "#ccc";
+    }
+    swiper.pagination.bullets[swiper.activeIndex].style.backgroundColor =
+      "#999";
+  },
 });
+
+
+initialiseSwiper();
+
