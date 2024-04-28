@@ -451,7 +451,7 @@ a {
   height: 30rem;
 }
 .projects-container .project-2 {
-  height: 35rem;
+  height: 100%;
 }
 .projects-container .project-1 {
   height: 35rem;
@@ -470,7 +470,7 @@ a {
     height: 25rem;
   }
   .projects-container .project-2 {
-    height: 30rem;
+    height: 100%;
   }
   .projects-container .project-1 {
     height: 30rem;
@@ -490,7 +490,7 @@ a {
     height: 20rem;
   }
   .projects-container .project-2 {
-    height: 25rem;
+    height: 100%;
   }
   .projects-container .project-1 {
     height: 25rem;
