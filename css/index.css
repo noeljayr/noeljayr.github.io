@@ -358,20 +358,32 @@ a {
 }
 
 .projects-container {
-  margin-top: 1rem;
   display: grid;
   width: 100%;
   grid-template-columns: 1fr;
   /* grid-template-rows: 27rem 27rem; */
-  grid-gap: 2rem;
-  gap: 2rem;
+  grid-gap: 1rem;
+  gap: 1rem;
   align-self: center;
 }
+
 
 .projects-swiper-container {
   display: flex;
   overflow: hidden;
   width: 100%;
+  border-radius: var(--radius-2);
+}
+
+.ui-designs{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+  gap: 1rem;
+}
+@media screen and (max-width: 800px) {
+  .ui-designs{
+    grid-template-columns: 1fr;}
 }
 
 /* @media screen and (min-width: 1600px) {
@@ -407,6 +419,19 @@ a {
   padding: 2rem;
 }
 
+.ui-designs .project{
+  height: unset;
+  aspect-ratio: 4/4;
+  position: relative;
+  padding: 0;
+}
+
+.ui-designs .project .screenshot{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .project .project-title {
   padding: 0.35rem;
   background-color: var(--white);
@@ -419,6 +444,15 @@ a {
   width: 2.8rem;
   height: 2.8rem;
   overflow: hidden;
+  justify-self: start;
+}
+
+.ui-designs .project .project-title{
+  position: absolute;
+  top: 2rem;
+  width: calc(100% - 4rem);
+  width: 2.8rem;
+  left: 2rem;
 }
 
 .project .project-title .title {
@@ -430,14 +464,14 @@ a {
 .projects-container div {
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: 2rem;
-  gap: 2rem;
+  grid-gap: 1rem;
+  gap: 1rem;
 }
 
 .projects-container .left {
   display: grid;
   grid-template-columns: 1fr 35%;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 .projects-container .project-3 {
   height: 30rem;
@@ -525,6 +559,10 @@ a {
 .project:hover .project-title {
   justify-content: start;
   width: 100%;
+}
+
+.ui-designs .project:hover .project-title{
+  width: calc(100% - 4rem);
 }
 
 .project .project-title img {

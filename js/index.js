@@ -270,11 +270,11 @@ var projectSwipper = new Swiper(".projects-swiper-container", {
       // Customize the pagination item based on the index
       var text = "";
       switch (index) {
-        case 0:
-          text = "Deployed";
+        case 0:   
+          text = "Figma Designs";
           break;
         case 1:
-          text = "UI Designs";
+          text = "Deployed";
           break;
         default:
           // Handle unexpected index values gracefully
