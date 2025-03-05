@@ -219,11 +219,23 @@ a {
   transform: rotate(180deg);
 }
 
-
-.contact-link{
+.contact-links {
   width: fit-content;
   font-size: var(--font-ss);
-  opacity: 0.85;
   margin-left: auto;
   margin-right: auto;
+  display: flex;
+  align-items: center;
+  font-weight: 900;
+}
+
+.contact-links * {
+  font-size: var(--font-ss);
+}
+
+.contact-links a {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  opacity: 0.85;
+  font-weight: normal;
 }
