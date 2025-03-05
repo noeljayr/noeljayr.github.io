@@ -48,7 +48,7 @@ h1 {
 body {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto auto 3rem;
+  grid-template-rows: auto auto auto 3rem;
   background-color: var(--white);
   padding-top: 0rem;
   padding-bottom: 0;
