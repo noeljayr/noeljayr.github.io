@@ -113,10 +113,18 @@
   margin-top: 1rem;
 }
 
+
+
 .main-slider .swiper-wrapper {
   display: flex;
   width: 100%;
   height: fit-content;
+}
+
+@media screen and (max-width: 480px) {
+  .main-slider .swiper-wrapper{
+    align-items: center;
+  }
 }
 
 .main-slider .swiper-wrapper .swiper-slide {
@@ -126,6 +134,8 @@
   justify-content: center;
   align-items: center;
 }
+
+
 
 .main-slider .swiper-wrapper .swiper-slide img {
   width: 100%;
@@ -163,7 +173,7 @@
 
 @media screen and (max-width: 480px) {
   .project-view-navigation {
-    width: calc(100% - 6rem);
+    max-width: calc(100% - 6rem);
     overflow: hidden;
     overflow-y: auto;
   }
