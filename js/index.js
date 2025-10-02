@@ -226,63 +226,63 @@ function initialiseSwiper() {
   });
 }
 
-var projectSwipper = new Swiper(".projects-swiper-container", {
-  slidesPerView: 1,
-  spaceBetween: 0,
-  pagination: {
-    el: ".project-type-toggle",
-    clickable: true, // Enable clicking on pagination elements
-    renderBullet: function (index, className) {
-      // Customize the pagination item based on the index
-      var text = "";
-      switch (index) {
-        case 0:
-          text = "Live Sites";
-          break;
-        case 1:
-          text = "UI Designs";
-          break;
-        default:
-          // Handle unexpected index values gracefully
-          text = "Slide " + (index + 1);
-      }
+// var projectSwipper = new Swiper(".projects-swiper-container", {
+//   slidesPerView: 1,
+//   spaceBetween: 0,
+//   pagination: {
+//     el: ".project-type-toggle",
+//     clickable: true, // Enable clicking on pagination elements
+//     renderBullet: function (index, className) {
+//       // Customize the pagination item based on the index
+//       var text = "";
+//       switch (index) {
+//         case 0:
+//           text = "Live Sites";
+//           break;
+//         case 1:
+//           text = "UI Designs";
+//           break;
+//         default:
+//           // Handle unexpected index values gracefully
+//           text = "Slide " + (index + 1);
+//       }
 
-      return '<span class="' + className + '">' + text + "</span>";
-    },
-  },
+//       return '<span class="' + className + '">' + text + "</span>";
+//     },
+//   },
 
-  // ... other Swiper events and options
+//   // ... other Swiper events and options
 
-  onInit: function (swiper) {
-    // Update pagination styles after Swiper initialization
-    var paginationBullets = swiper.pagination.bullets;
-    for (var i = 0; i < paginationBullets.length; i++) {
-      var bullet = paginationBullets[i];
-      bullet.style.backgroundColor = "#ccc"; // Set initial background color
+//   onInit: function (swiper) {
+//     // Update pagination styles after Swiper initialization
+//     var paginationBullets = swiper.pagination.bullets;
+//     for (var i = 0; i < paginationBullets.length; i++) {
+//       var bullet = paginationBullets[i];
+//       bullet.style.backgroundColor = "#ccc"; // Set initial background color
 
-      // Add hover effect (optional)
-      bullet.addEventListener("mouseover", function () {
-        this.style.backgroundColor = "#aaa";
-      });
-      bullet.addEventListener("mouseout", function () {
-        this.style.backgroundColor = "#ccc";
-      });
-    }
+//       // Add hover effect (optional)
+//       bullet.addEventListener("mouseover", function () {
+//         this.style.backgroundColor = "#aaa";
+//       });
+//       bullet.addEventListener("mouseout", function () {
+//         this.style.backgroundColor = "#ccc";
+//       });
+//     }
 
-    // Set active bullet color after initial slide (optional)
-    swiper.pagination.bullets[swiper.activeIndex].style.backgroundColor =
-      "#999";
-  },
+//     // Set active bullet color after initial slide (optional)
+//     swiper.pagination.bullets[swiper.activeIndex].style.backgroundColor =
+//       "#999";
+//   },
 
-  onSlideChange: function (swiper) {
-    // Update active bullet color on slide change
-    for (var i = 0; i < swiper.pagination.bullets.length; i++) {
-      swiper.pagination.bullets[i].style.backgroundColor = "#ccc";
-    }
-    swiper.pagination.bullets[swiper.activeIndex].style.backgroundColor =
-      "#999";
-  },
-});
+//   onSlideChange: function (swiper) {
+//     // Update active bullet color on slide change
+//     for (var i = 0; i < swiper.pagination.bullets.length; i++) {
+//       swiper.pagination.bullets[i].style.backgroundColor = "#ccc";
+//     }
+//     swiper.pagination.bullets[swiper.activeIndex].style.backgroundColor =
+//       "#999";
+//   },
+// });
 
 // initialiseSwiper();
 

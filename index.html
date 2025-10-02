@@ -9,7 +9,6 @@
     <link rel="shortcut icon" href="/public/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./css/index.css" />
 
-
     <script defer src="./js/index.js"></script>
 
     <link rel="stylesheet" href="./css/swiper-bundle.min.css" />
@@ -29,13 +28,31 @@
 
     <div class="main-content">
       <div class="title-toggle-container">
-        <h2 id="projects" class="section">Recent Projects</h2>
-        <div id="projects-toggle" class="project-type-toggle"></div>
+        <h2 style="margin-bottom: 1rem; margin-left: auto; margin-right: auto;" id="projects" class="section">Recent Projects</h2>
+        <!-- <div id="projects-toggle" class="project-type-toggle"></div> -->
       </div>
       <div class="projects-swiper-container">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
             <div id="live-projects" class="projects-container-slide">
+              <a
+                target="_blank"
+                referrerpolicy="no-referrer"
+                href="https://aporent.com/"
+                class="project project-3"
+              >
+                <span class="project-title">
+                  <img src="public/svg/export.svg" alt="" />
+                  <span class="title">ApoRent</span>
+                </span>
+                <img
+                  loading="eager"
+                  class="screenshot"
+                  src="./public/live/aporent.png"
+                  alt="ApoRent"
+                />
+              </a>
+
               <a
                 target="_blank"
                 referrerpolicy="no-referrer"
@@ -57,25 +74,6 @@
               <a
                 target="_blank"
                 referrerpolicy="no-referrer"
-                href="https://aporent.com/"
-                class="project project-3"
-              >
-
-                <span class="project-title">
-                  <img src="public/svg/export.svg" alt="" />
-                  <span class="title">ApoRent</span>
-                </span>
-                <img
-                  loading="eager"
-                  class="screenshot"
-                  src="./public/live/aporent.png"
-                  alt="ApoRent"
-                />
-              </a>
-
-              <a
-                target="_blank"
-                referrerpolicy="no-referrer"
                 href="https://bintel.vercel.app/"
                 class="project project-1"
               >
@@ -90,9 +88,6 @@
                   alt="Bintel Analytics Ltd."
                 />
               </a>
-
-              
-
 
               <a
                 target="_blank"
@@ -116,7 +111,10 @@
 
           <div class="swiper-slide">
             <div id="ui-designs" class="projects-container-slide">
-              <a href="/ui.html?design=metatron-insights" class="project ui-project-1">
+              <a
+                href="/ui.html?design=metatron-insights"
+                class="project ui-project-1"
+              >
                 <span class="project-title">
                   <img src="public/svg/export.svg" alt="" />
                   <span class="title">Metatron Insights Live Dashboard</span>
@@ -153,7 +151,10 @@
                 />
               </a>
 
-              <a href="/ui.html?design=edge-north-international-college" class="project">
+              <a
+                href="/ui.html?design=edge-north-international-college"
+                class="project"
+              >
                 <span class="project-title">
                   <img src="public/svg/export.svg" alt="" />
                   <span class="title">Edge North International College</span>
@@ -604,7 +605,6 @@
         </div>
       </div>
     </div>
-
 
     <footer class="footer">
       <a href="./" class="logo">
